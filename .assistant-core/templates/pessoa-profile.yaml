@@ -1,0 +1,33 @@
+# Template para Perfil de Pessoa
+template:
+  id: "person-profile"
+  version: "1.0"
+
+structure:
+  header:
+    name: "[[{{person_name}}]]"
+    role: "{{role}}"
+    company: "{{company}}"
+
+  sections:
+    - name: "contact"
+      title: "Contato"
+      content: "{{contact_info}}"
+
+    - name: "projects"
+      title: "Projetos Relacionados"
+      format: "link_list"
+      content: "{{related_projects}}"
+
+    - name: "interactions"
+      title: "Histórico de Interações"
+      format: "chronological"
+      content: "{{interaction_history}}"
+
+    - name: "notes"
+      title: "Notas"
+      content: "{{personal_notes}}"
+
+references:
+  auto_link_projects: true
+  auto_link_meetings: true

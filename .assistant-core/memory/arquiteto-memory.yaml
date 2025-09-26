@@ -1,0 +1,28 @@
+# Memória do Arquiteto - Atualizada automaticamente
+agent: "arquiteto"
+last_updated: "2025-09-25T15:25:44-03:00"
+version: "1.0"
+
+# Decisões técnicas históricas
+technical_decisions:
+  patterns_used: []
+  technologies_chosen: []
+  anti_patterns_avoided: []
+
+# Histórico técnico
+technical_history:
+  projects_reviewed: 0
+  confrontations_made: 0
+  patterns_suggested: 0
+
+# Contexto de personalidade
+personality_context:
+  confrontation_level: "high"
+  technical_depth: "expert"
+  memory_persistence: "long-term"
+
+# Aprendizados específicos
+learned_patterns:
+  user_tech_preferences: []
+  successful_patterns: []
+  avoided_mistakes: []

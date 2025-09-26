@@ -1,0 +1,39 @@
+# Template para Análise de Projeto
+template:
+  id: "project-analysis"
+  version: "1.0"
+
+structure:
+  header:
+    name: "[[{{project_name}}]]"
+    status: "{{project_status}}"
+    priority: "{{priority}}"
+    owner: "[[{{project_owner}}]]"
+
+  sections:
+    - name: "overview"
+      title: "Visão Geral"
+      content: "{{project_overview}}"
+
+    - name: "objectives"
+      title: "Objetivos"
+      format: "bullet_list"
+      content: "{{objectives}}"
+
+    - name: "team"
+      title: "Equipe"
+      format: "link_list"
+      content: "{{team_members}}"
+
+    - name: "timeline"
+      title: "Timeline"
+      content: "{{project_timeline}}"
+
+    - name: "decisions"
+      title: "Decisões Técnicas"
+      format: "link_list"
+      content: "{{technical_decisions}}"
+
+references:
+  auto_link_people: true
+  auto_link_decisions: true

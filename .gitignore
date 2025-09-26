@@ -1,0 +1,30 @@
+# Logs
+*.log
+
+# Temporary files
+.tmp/
+temp/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code specific (if any)
+.claude/temp/
+
+# Keep knowledge base but ignore potential sensitive files
+knowledge-base/.obsidian/workspace*
+knowledge-base/.obsidian/cache/
+
+# Ignore processed dumps but keep the folder structure
+despejo/processed/*
+!despejo/processed/.gitkeep

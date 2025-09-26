@@ -1,0 +1,35 @@
+# Template para Resumo de Reunião
+template:
+  id: "meeting-summary"
+  version: "1.0"
+
+structure:
+  header:
+    title: "Reunião: {{meeting_title}}"
+    date: "{{date}}"
+    participants: "{{participants}}"
+    duration: "{{duration}}"
+
+  sections:
+    - name: "context"
+      title: "Contexto"
+      content: "{{meeting_context}}"
+
+    - name: "decisions"
+      title: "Decisões"
+      format: "bullet_list"
+      content: "{{decisions_made}}"
+
+    - name: "action_items"
+      title: "Action Items"
+      format: "todo_list"
+      content: "{{action_items}}"
+
+    - name: "next_steps"
+      title: "Próximos Passos"
+      content: "{{next_steps}}"
+
+references:
+  auto_link_people: true
+  auto_link_projects: true
+  create_todos: true

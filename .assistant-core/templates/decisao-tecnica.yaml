@@ -1,0 +1,38 @@
+# Template para Decisão Técnica
+template:
+  id: "technical-decision"
+  version: "1.0"
+
+structure:
+  header:
+    title: "Decisão: {{decision_title}}"
+    date: "{{date}}"
+    project: "[[{{project_name}}]]"
+    architect: "[[{{architect_name}}]]"
+
+  sections:
+    - name: "context"
+      title: "Contexto"
+      content: "{{decision_context}}"
+
+    - name: "options"
+      title: "Opções Consideradas"
+      format: "numbered_list"
+      content: "{{options_considered}}"
+
+    - name: "decision"
+      title: "Decisão"
+      content: "{{final_decision}}"
+
+    - name: "rationale"
+      title: "Rationale"
+      content: "{{decision_rationale}}"
+
+    - name: "consequences"
+      title: "Consequências"
+      content: "{{consequences}}"
+
+references:
+  auto_link_people: true
+  auto_link_projects: true
+  auto_link_technologies: true

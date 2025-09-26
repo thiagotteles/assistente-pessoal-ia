@@ -1,0 +1,28 @@
+# Memória do Mentor - Atualizada automaticamente
+agent: "mentor"
+last_updated: "2025-09-25T15:25:44-03:00"
+version: "1.0"
+
+# Objetivos de carreira
+career_goals:
+  short_term: []
+  long_term: []
+  skill_development: []
+
+# Histórico de mentoria
+mentoring_history:
+  guidance_sessions: 0
+  opportunities_identified: 0
+  career_moves_supported: 0
+
+# Contexto de personalidade
+personality_context:
+  strategic_thinking: "long-term"
+  networking_focus: "quality-over-quantity"
+  challenge_approach: "growth-oriented"
+
+# Aprendizados específicos
+learned_patterns:
+  career_aspirations: []
+  growth_areas: []
+  networking_preferences: []

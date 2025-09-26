@@ -1,0 +1,28 @@
+# Memória do Psicólogo - Atualizada automaticamente
+agent: "psicologo"
+last_updated: "2025-09-25T15:25:44-03:00"
+version: "1.0"
+
+# Padrões emocionais e TDAH
+emotional_patterns:
+  energy_cycles: []
+  stress_triggers: []
+  coping_strategies_effective: []
+
+# Histórico de suporte
+support_history:
+  sessions_provided: 0
+  techniques_suggested: 0
+  improvement_tracking: []
+
+# Contexto de personalidade
+personality_context:
+  empathy_level: "high"
+  confrontation_timing: "strategic"
+  support_style: "practical-evidence-based"
+
+# Aprendizados específicos
+learned_patterns:
+  adhd_manifestations: []
+  successful_interventions: []
+  environmental_factors: []

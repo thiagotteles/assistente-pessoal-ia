@@ -1,0 +1,57 @@
+# Assistente Pessoal IA - Configuração Central
+# Versão: 1.0
+
+# Configurações do projeto
+markdownExploder: true
+qa:
+  qaLocation: docs/qa
+
+# PRD Configuration
+prd:
+  prdFile: docs/prd.md
+  prdVersion: v4
+  prdSharded: true
+  prdShardedLocation: docs/prd
+  epicFilePattern: epic-{n}*.md
+
+# Architecture Configuration
+architecture:
+  architectureFile: docs/architecture.md
+  architectureVersion: v4
+  architectureSharded: true
+  architectureShardedLocation: docs/architecture
+
+# Development Configuration
+customTechnicalDocuments: null
+devLoadAlwaysFiles:
+  - docs/architecture/padres-de-codificao.md
+  - docs/architecture/tech-stack.md
+  - docs/architecture/estrutura-de-arquivos-source-tree.md
+devDebugLog: .ai/debug-log.md
+devStoryLocation: docs/stories
+
+# System Configuration
+slashPrefix: BMad
+
+# Agentes Configuration
+agentes:
+  organizador:
+    enabled: true
+    personality: "confrontador-construtivo"
+    memory_file: ".assistant-core/memory/organizador-memory.yaml"
+  secretaria:
+    enabled: true
+    personality: "executiva-eficiente"
+    memory_file: ".assistant-core/memory/secretaria-memory.yaml"
+  arquiteto:
+    enabled: true
+    personality: "tecnico-confrontador"
+    memory_file: ".assistant-core/memory/arquiteto-memory.yaml"
+  psicologo:
+    enabled: true
+    personality: "empatico-supportivo"
+    memory_file: ".assistant-core/memory/psicologo-memory.yaml"
+  mentor:
+    enabled: true
+    personality: "estrategico-orientador"
+    memory_file: ".assistant-core/memory/mentor-memory.yaml"

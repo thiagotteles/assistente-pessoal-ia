@@ -1,0 +1,18 @@
+# Daily Dump - Captura Ultra-Rápida
+
+Jogue qualquer informação aqui sem se preocupar com formatação.
+O /organizador processará posteriormente através de perguntas específicas.
+
+---
+
+## Formato Livre
+Você pode escrever aqui em qualquer formato:
+- Ideias soltas
+- Reuniões
+- Decisões
+- TODOs
+- Links interessantes
+- Qualquer coisa!
+
+Use [[Nome]] para referenciar pessoas ou projetos.
+

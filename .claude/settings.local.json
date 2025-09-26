@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "Bash(dir:*)",
-      "Bash(md-tree explode:*)"
+      "Bash(md-tree explode:*)",
+      "Bash(chmod:*)",
+      "Bash(./test-basic.sh:*)",
+      "Bash(./setup.sh)",
+      "Bash(bash:*)",
+      "Bash(timeout:*)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []

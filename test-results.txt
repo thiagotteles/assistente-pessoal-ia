@@ -1,0 +1,22 @@
+
+[0;34m================================[0m
+[0;34m Assistente Pessoal IA - Testes[0m
+[0;34m================================[0m
+
+[0;34mℹ️  Teste 1: Estrutura de Diretórios[0m
+  ✅ .assistant-core
+  ✅ .assistant-core/agents
+  ✅ .assistant-core/templates
+  ✅ .assistant-core/tasks
+  ✅ .assistant-core/data
+  ✅ .assistant-core/memory
+  ✅ despejo
+  ✅ knowledge-base
+  ✅ knowledge-base/decisoes
+  ✅ knowledge-base/contextos
+  ✅ knowledge-base/projetos
+  ✅ knowledge-base/pessoas
+  ✅ todos
+  ✅ diario
+  ✅ scripts
+[0;32m✅ Teste de estrutura: PASSOU[0m

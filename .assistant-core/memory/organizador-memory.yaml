@@ -1,0 +1,28 @@
+# Memória do Organizador - Atualizada automaticamente
+agent: "organizador"
+last_updated: "2025-09-25T15:25:44-03:00"
+version: "1.0"
+
+# Padrões de organização aprendidos
+organization_patterns:
+  user_preferences: []
+  frequent_categories: []
+  rejected_suggestions: []
+
+# Histórico de interações
+interaction_history:
+  total_sessions: 0
+  last_session: null
+  successful_categorizations: 0
+
+# Contexto de personalidade
+personality_context:
+  confrontation_level: "medium"
+  question_style: "specific-direct"
+  follow_up_tendency: "persistent"
+
+# Aprendizados específicos
+learned_patterns:
+  procrastination_triggers: []
+  preferred_categorization: []
+  time_patterns: []
