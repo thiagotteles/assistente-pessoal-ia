@@ -7,10 +7,10 @@ Sistema de assistente pessoal IA com 5 agentes especializados para pessoas com T
 | Epic | Story | Nome | Descrição | Status |
 |------|-------|------|-----------|--------|
 | **Épico 0** | 0.5 | Documentação Operacional Completa | Sistema abrangente de documentação para usuários finais | ✅ Concluído |
-| **Épico 1** | 1.1 | Estrutura de Arquivos Base | Estrutura simples e intuitiva para usuários com TDAH | ✅ Approved |
-| **Épico 1** | 1.2 | Sistema de Captura Ultra-Rápida | Arquivo daily-dump.txt sem estrutura obrigatória | ✅ Approved |
-| **Épico 1** | 1.3 | Comando Slash Base | 5 comandos funcionais com roteamento inteligente | ✅ Approved |
-| **Épico 1** | 1.4 | Knowledge-Base Compartilhada Básica | Sistema de [[referências]] Obsidian com auto-linking | ✅ Approved |
+| **Épico 1** | 1.1 | Estrutura de Arquivos Base | Estrutura simples e intuitiva para usuários com TDAH | ✅ Concluído |
+| **Épico 1** | 1.2 | Sistema de Captura Ultra-Rápida | Arquivo daily-dump.txt sem estrutura obrigatória | ✅ Concluído |
+| **Épico 1** | 1.3 | Comando Slash Base | 5 comandos funcionais com roteamento inteligente | ✅ Concluído |
+| **Épico 1** | 1.4 | Knowledge-Base Compartilhada Básica | Sistema de [[referências]] Obsidian com auto-linking | ✅ Concluído |
 | **Épico 2** | 2.1 | Agente Organizador Completo | Processamento de despejo via perguntas específicas | 📝 Not Created |
 | **Épico 2** | 2.2 | Agente Secretária Executiva Completa | Gestão de agenda e processamento de reuniões | 📝 Not Created |
 | **Épico 2** | 2.3 | Agente Arquiteto Confrontador Completo | Consultoria técnica com confronto construtivo | 📝 Not Created |
