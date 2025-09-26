@@ -14,7 +14,9 @@
       "Bash(python3:*)",
       "Bash(./scripts/add-dump-entry.sh:*)",
       "Bash(./scripts/process-dump.sh:*)",
-      "Bash(./test-story-1.2.sh:*)"
+      "Bash(./test-story-1.2.sh:*)",
+      "Bash(./test-story-1.3.sh:*)",
+      "Bash(./test-story-1.4.sh:*)"
     ],
     "deny": [],
     "ask": []
