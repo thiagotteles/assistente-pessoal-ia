@@ -9,7 +9,12 @@
       "Bash(bash:*)",
       "Bash(timeout:*)",
       "Bash(python:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(python3:*)",
+      "Bash(./scripts/add-dump-entry.sh:*)",
+      "Bash(./scripts/process-dump.sh:*)",
+      "Bash(./test-story-1.2.sh:*)"
     ],
     "deny": [],
     "ask": []
