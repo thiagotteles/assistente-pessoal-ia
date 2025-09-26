@@ -8,7 +8,8 @@
       "Bash(./setup.sh)",
       "Bash(bash:*)",
       "Bash(timeout:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []

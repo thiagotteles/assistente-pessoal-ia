@@ -2,6 +2,34 @@
 
 Sistema de assistente pessoal IA com 5 agentes especializados para pessoas com TDAH, oferecendo um "segundo cérebro" digital completamente local e privado.
 
+## 📋 Status das Stories - Roadmap de Desenvolvimento
+
+| Epic | Story | Nome | Descrição | Status |
+|------|-------|------|-----------|--------|
+| **Épico 0** | 0.5 | Documentação Operacional Completa | Sistema abrangente de documentação para usuários finais | ✅ Concluído |
+| **Épico 1** | 1.1 | Estrutura de Arquivos Base | Estrutura simples e intuitiva para usuários com TDAH | ✅ Approved |
+| **Épico 1** | 1.2 | Sistema de Captura Ultra-Rápida | Arquivo daily-dump.txt sem estrutura obrigatória | ✅ Approved |
+| **Épico 1** | 1.3 | Comando Slash Base | 5 comandos funcionais com roteamento inteligente | ✅ Approved |
+| **Épico 1** | 1.4 | Knowledge-Base Compartilhada Básica | Sistema de [[referências]] Obsidian com auto-linking | ✅ Approved |
+| **Épico 2** | 2.1 | Agente Organizador Completo | Processamento de despejo via perguntas específicas | 📝 Not Created |
+| **Épico 2** | 2.2 | Agente Secretária Executiva Completa | Gestão de agenda e processamento de reuniões | 📝 Not Created |
+| **Épico 2** | 2.3 | Agente Arquiteto Confrontador Completo | Consultoria técnica com confronto construtivo | 📝 Not Created |
+| **Épico 2** | 2.4 | Agente Psicólogo Supportivo | Suporte emocional especializado para TDAH | 📝 Not Created |
+| **Épico 2** | 2.5 | Agente Mentor de Carreira | Desenvolvimento profissional de longo prazo | 📝 Not Created |
+| **Épico 3** | 3.1 | Sistema de Cross-Agent Intelligence | Colaboração automática entre agentes | 📝 Not Created |
+| **Épico 3** | 3.2 | Advanced Knowledge-Base Features | Busca semântica e timeline automático | 📝 Not Created |
+| **Épico 3** | 3.3 | Obsidian Integration Completa | Graph view otimizado e templates customizados | 📝 Not Created |
+| **Épico 3** | 3.4 | Sistema de Backup e Recovery Robusto | Git commits automáticos e cloud backup opcional | 📝 Not Created |
+| **Épico 4** | 4.1 | Testes Essenciais Apenas | Framework de testes básicos focado em funcionalidade | 📝 Not Created |
+
+### Legenda de Status
+- ✅ **Concluído**: Story implementada e funcional
+- ✅ **Approved**: Story validada e pronta para implementação
+- 📝 **Not Created**: Story ainda não foi criada/documentada
+- 🚧 **In Progress**: Story em desenvolvimento
+- ⏸️ **Paused**: Story pausada temporariamente
+- ❌ **Blocked**: Story bloqueada por dependência
+
 ## 🚀 Instalação e Configuração
 
 ### Requisitos do Sistema
