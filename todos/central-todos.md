@@ -9,7 +9,7 @@ Este arquivo centraliza todos os todos extraídos automaticamente do daily-dump.
 <!-- Todos de alta prioridade aparecerão aqui automaticamente -->
 
 ### Média Prioridade
-<!-- Todos de média prioridade aparecerão aqui automaticamente -->
+- [ ] Definir primeiros passos para começar o projeto [[Onboarding]] (prazo: esta semana)
 
 ### Baixa Prioridade
 - [ ] Continuar análise do projeto [[Onboarding]] (em andamento)
@@ -17,6 +17,7 @@ Este arquivo centraliza todos os todos extraídos automaticamente do daily-dump.
 ## Todos por Projeto
 
 ### [[Onboarding]]
+- [ ] Definir primeiros passos para começar o projeto (prazo: esta semana)
 - [ ] Continuar análise do projeto (em andamento)
 
 ## Todos por Pessoa

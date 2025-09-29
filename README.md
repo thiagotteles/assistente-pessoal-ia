@@ -38,6 +38,8 @@ Este arquivo contém avisos críticos sobre o que NÃO deve ser usado e diretriz
 
 ## 🚀 Instalação e Configuração
 
+> **⚡ QUER INSTALAR RÁPIDO?** → [**Deploy Quick Start Guide**](docs/DEPLOY-QUICKSTART.md) - Instalação em 2 minutos!
+
 ### Requisitos do Sistema
 
 - **Python 3.8+** (para funcionalidades avançadas)
@@ -46,6 +48,8 @@ Este arquivo contém avisos críticos sobre o que NÃO deve ser usado e diretriz
 - **Claude Code** (interface principal)
 
 ### Instalação Rápida
+
+**Para Desenvolvimento Completo:**
 
 1. **Clone ou baixe o projeto:**
    ```bash
@@ -65,10 +69,54 @@ Este arquivo contém avisos críticos sobre o que NÃO deve ser usado e diretriz
    setup.bat
    ```
 
-3. **Valide a instalação:**
+**Para Uso Final (Instalação Limpa) - RECOMENDADO:**
+
+1. **Clone o projeto completo** temporariamente:
    ```bash
-   bash test-basic.sh
+   git clone <repositorio> temp-assistente
+   cd temp-assistente
    ```
+
+2. **Execute o deploy para sua pasta final**:
+   ```bash
+   # Para Linux/macOS
+   ./scripts/deploy-assistant.sh ~/assistente-ia
+
+   # Para Windows (Git Bash/WSL)
+   ./scripts/deploy-assistant.sh /c/Users/SeuUsuario/assistente-ia
+   ```
+
+3. **Acesse sua instalação limpa**:
+   ```bash
+   cd ~/assistente-ia  # ou sua pasta escolhida
+   ```
+
+4. **Limpe o projeto temporário**:
+   ```bash
+   cd .. && rm -rf temp-assistente
+   ```
+
+**Vantagens da Instalação Limpa:**
+- ✅ **90% menor** - Apenas arquivos essenciais
+- ✅ **Mais simples** - Sem arquivos de desenvolvimento
+- ✅ **Focada no uso** - Experiência otimizada para usuário final
+- ✅ **Fácil manutenção** - Backup e organização simplificados
+
+### Validação da Instalação
+
+**Para Desenvolvimento:**
+```bash
+bash tests/test-basic.sh
+```
+
+**Para Instalação Limpa:**
+1. **Abra o Claude Code** na pasta do assistente
+2. **Execute o comando inicial**:
+   ```
+   /assistentes:agents:organizador
+   ```
+3. **Teste a captura rápida** - adicione algo em `despejo/daily-dump.txt`
+4. **Use o comando processar** para ver o assistente em ação
 
 4. **Configure o Obsidian (recomendado):**
    - Abra o Obsidian
@@ -217,8 +265,18 @@ assistente-pessoal-ia/
 │   ├── memory/                    # Memória persistente dos agentes
 │   ├── logs/                      # Logs do sistema (opcional)
 │   └── data/                      # Dados internos
-└── 📁 scripts/                    # Scripts de automação
+├── 📁 scripts/                    # Scripts de automação
+└── 📁 tests/                      # Todos os testes organizados
+    ├── test-basic.sh              # Teste básico do sistema
+    ├── test-story-*.sh            # Testes de funcionalidades específicas
+    └── test-agents.py             # Testes dos agentes
 ```
+
+### 🔄 Mudanças Recentes na Estrutura
+
+**Organização de Testes**: Todos os arquivos de teste foram movidos para `tests/`
+**Deploy Limpo**: Novo script `scripts/deploy-assistant.sh` para instalações apenas com arquivos essenciais
+**Documentação**: Guias específicos para desenvolvedores em `docs/architecture/guidelines-desenvolvedores.md`
 
 ## ✨ Características Principais
 

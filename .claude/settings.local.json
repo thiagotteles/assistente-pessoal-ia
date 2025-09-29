@@ -33,7 +33,8 @@
       "Bash(./scripts/agent-cache-system.sh:*)",
       "Bash(./scripts/simple-cache.sh:*)",
       "Bash(./scripts/intelligent-timeout.sh:*)",
-      "Bash(./test-story-2.2.3.sh:*)"
+      "Bash(./test-story-2.2.3.sh:*)",
+      "Bash(./scripts/deploy-assistant.sh:*)"
     ],
     "deny": [],
     "ask": []

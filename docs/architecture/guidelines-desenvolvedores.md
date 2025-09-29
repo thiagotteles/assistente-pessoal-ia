@@ -1,344 +1,334 @@
-# Guidelines para Desenvolvedores
+# Guidelines para Desenvolvedores - Assistente Pessoal IA
 
-Este documento define padrões e boas práticas para desenvolvedores que trabalharão em stories futuras do Assistente Pessoal IA.
+## Mudanças Importantes na Estrutura do Projeto
 
-## 🎯 Princípios Fundamentais
+Este documento descreve as mudanças recentes na organização do projeto e diretrizes para futuros desenvolvedores.
 
-### 1. TDAH-First Design
-- **Prioridade**: Reduzir sobrecarga cognitiva
-- **Abordagem**: Informações consolidadas, não fragmentadas
-- **Performance**: Respostas rápidas para manter foco
+## 🏗️ Mudanças na Estrutura
 
-### 2. Arquivos Únicos por Entidade
-- **Pessoas**: Um arquivo `pessoa-{nome}.md` por pessoa
-- **Projetos**: Um arquivo `projeto-{nome}.md` por projeto
-- **Contextos**: Um arquivo `contexto-{tema}.md` por tema
+### 1. Reorganização dos Testes
 
-### 3. Transparência e Rastreabilidade
-- **Backup obrigatório** antes de mudanças estruturais
-- **Logs detalhados** de todas as operações
-- **Validação de integridade** após mudanças
-
-## 📋 Checklist de Compatibilidade
-
-Antes de implementar qualquer story, verifique:
-
-### ✅ Arquitetura de Arquivos Únicos
-- [ ] Respeita padrão `pessoa-*.md`, `projeto-*.md`, `contexto-*.md`
-- [ ] Não cria múltiplos arquivos para a mesma entidade
-- [ ] Preserva estrutura de metadados YAML
-- [ ] Mantém referências [[]] funcionais
-
-### ✅ Sistema de Backup
-- [ ] Executa backup antes de mudanças estruturais
-- [ ] Testa rollback em ambiente seguro
-- [ ] Valida integridade após operações
-
-### ✅ Performance TDAH
-- [ ] Operações completam em < 3 segundos (80% dos casos)
-- [ ] Fornece feedback de progresso para operações longas
-- [ ] Implementa timeout para evitar esperas excessivas
-
-### ✅ Compatibilidade com Agentes
-- [ ] Funciona com Agente Sofia (organizador)
-- [ ] Preserva sistema de templates YAML
-- [ ] Mantém workflows conversacionais
-
-## 🤖 Padrões para Novos Agentes Conversacionais
-
-### Estrutura de Agente
-
-```yaml
-# .assistant-core/agents/novo-agente.md
-agent:
-  name: NomeAgente
-  id: agente-id
-  title: Título do Agente
-  icon: 🎯
-  whenToUse: Quando usar este agente
-
-persona:
-  role: Papel específico
-  style: Estilo de comunicação
-  identity: Identidade do agente
-  focus: Foco principal
-
-commands:
-  - help: Mostrar comandos disponíveis
-  - comando1: Descrição do comando
-  - exit: Sair do modo agente
-
-dependencies:
-  tasks:
-    - task1.md
-  templates:
-    - template1.yaml
+**ANTES:**
+```
+projeto/
+├── test-story-1.2.sh
+├── test-story-1.3.sh
+├── test-basic.sh
+├── test-agents.py
+├── test-results.txt
+└── ... (outros arquivos espalhados)
 ```
 
-### Regras para Agentes
-
-1. **Sempre** usar arquivos únicos da knowledge-base
-2. **Sempre** fazer backup antes de operações estruturais
-3. **Sempre** validar integridade após mudanças
-4. **Sempre** comunicar em português
-5. **Sempre** manter consistência com outros agentes
-
-### Templates de Comunicação
-
-```markdown
-# Agente detectou pessoa nova
-Detectei uma nova pessoa: [[pessoa-{nome}]]
-Criando arquivo único: knowledge-base/pessoas/pessoa-{nome}.md
-
-# Agente processou informação
-Informações adicionadas em [[pessoa-{nome}]]:
-- Nova interação registrada
-- Projeto [[projeto-{nome}]] vinculado
-- Referências cruzadas atualizadas
+**DEPOIS:**
+```
+projeto/
+└── tests/
+    ├── test-story-1.2.sh
+    ├── test-story-1.3.sh
+    ├── test-basic.sh
+    ├── test-agents.py
+    ├── test-results.txt
+    └── ... (todos os testes organizados)
 ```
 
-## 🚀 Guidelines de Performance
-
-### Otimizações Implementadas (Story 2.2.1)
-
-1. **Arquivos Únicos**: Redução de I/O operations
-2. **Estrutura Consolidada**: Menos navegação de arquivos
-3. **Metadados Padronizados**: Parsing mais eficiente
-
-### Targets de Performance
-
-| Operação | Target | Medição |
-|----------|--------|---------|
-| Carregamento de pessoa | < 1s | pessoa-*.md até 10MB |
-| Busca em knowledge-base | < 2s | Qualquer termo |
-| Categorização automática | < 3s | Entrada daily-dump típica |
-| Backup completo | < 5s | Knowledge-base completa |
-| Operação de merge | < 2s | Consolidação de arquivo |
-
-### Implementação de Cache (Future - Story 2.2.3)
-
-```javascript
-// Padrão de cache para implementação futura
-cache = {
-  "pessoa-fabio": {
-    "content": "conteúdo",
-    "lastModified": "2025-09-28T10:00:00Z",
-    "ttl": 300 // 5 minutos
-  }
-}
-```
-
-## 🔄 Boas Práticas para Consolidação Automática
-
-### Detecção de Entidades
-
-```python
-# Pseudocódigo para detecção
-def detectar_entidade(texto):
-    # Pessoas: nomes próprios conhecidos
-    pessoas = extrair_nomes_proprios(texto)
-
-    # Projetos: padrões conhecidos
-    projetos = extrair_mencoes_projeto(texto)
-
-    # Contextos: palavras-chave temáticas
-    contextos = extrair_contextos_tematicos(texto)
-
-    return {
-        'pessoas': pessoas,
-        'projetos': projetos,
-        'contextos': contextos
-    }
-```
-
-### Algoritmo de Merge
-
-```python
-# Pseudocódigo para consolidação
-def consolidar_informacao(entidade, nova_info):
-    arquivo_unico = f"knowledge-base/{entidade.tipo}s/{entidade.tipo}-{entidade.nome}.md"
-
-    # 1. Backup
-    backup_arquivo(arquivo_unico)
-
-    # 2. Carregar existente
-    conteudo_atual = carregar_arquivo(arquivo_unico)
-
-    # 3. Inserir cronologicamente
-    conteudo_novo = inserir_cronologico(conteudo_atual, nova_info)
-
-    # 4. Salvar
-    salvar_arquivo(arquivo_unico, conteudo_novo)
-
-    # 5. Validar
-    validar_integridade(arquivo_unico)
-```
-
-### Preservação de Contexto Temporal
-
-```markdown
-# Padrão para inserção cronológica
-## Histórico de Interações
-
-### 2025-09-28 - Conversa Inicial
-[Conteúdo mais antigo]
-
-### 2025-09-29 - Follow-up
-[Conteúdo mais recente]
-
-### 2025-09-30 - Nova Informação ← INSERIR AQUI
-[Nova informação sempre no final, cronologicamente]
-```
-
-## 🔍 Debugging e Troubleshooting
-
-### Logs Obrigatórios
+**⚠️ IMPORTANTE:** Todos os scripts de teste agora devem estar na pasta `tests/`. Atualize seus comandos:
 
 ```bash
-# Estrutura de logs
-logs/
-├── migration-{story}-{timestamp}.log    # Migrações
-├── validation-{story}-{timestamp}.log   # Validações
-├── agent-{agent}-{timestamp}.log        # Atividade de agentes
-└── performance-{timestamp}.log          # Métricas de performance
+# ANTES
+./test-basic.sh
+
+# DEPOIS
+./tests/test-basic.sh
 ```
 
-### Comandos de Diagnóstico
+### 2. Novo Sistema de Deploy Limpo
+
+Foi criado o script `scripts/deploy-assistant.sh` que instala apenas os arquivos essenciais para usuários finais.
+
+**Arquivos Essenciais (sempre incluir no deploy):**
+- `.claude/` - Configurações do Claude Code
+- `.assistant-core/` - Core dos agentes
+- `knowledge-base/` - Base de conhecimento
+- `todos/`, `despejo/`, `diario/` - Dados do usuário
+- Scripts específicos para usuário final
+
+**Arquivos de Desenvolvimento (excluir do deploy):**
+- `tests/` - Todos os testes
+- `.bmad-core/` - Configurações de desenvolvimento
+- `docs/` - Documentação técnica
+- `logs/`, `cache/`, `performance/` - Arquivos temporários
+- Scripts de desenvolvimento
+
+## 📋 Diretrizes para Novos Desenvolvedores
+
+### 1. Adicionando Novos Arquivos
+
+**Para arquivos de TESTE:**
+```bash
+# SEMPRE criar na pasta tests/
+touch tests/test-nova-funcionalidade.sh
+chmod +x tests/test-nova-funcionalidade.sh
+```
+
+**Para arquivos de USUÁRIO FINAL:**
+- Se for essencial para o assistente funcionar → adicionar ao script de deploy
+- Se for apenas para desenvolvimento → não adicionar
+
+**Para DOCUMENTAÇÃO:**
+- Documentação técnica → `docs/`
+- Documentação para usuário final → considerar incluir no deploy ou criar versão simplificada
+
+### 2. Modificando o Script de Deploy
+
+Se você adicionar novos componentes essenciais, SEMPRE atualize o script `deploy-assistant.sh`:
 
 ```bash
-# Verificar integridade da knowledge-base
-./scripts/validate-migration.sh
-
-# Backup manual
-./scripts/backup-knowledge-base.sh
-
-# Rollback se necessário
-./scripts/rollback-knowledge-base.sh <backup-name>
-
-# Testar story implementada
-./test-story-{numero}.sh
+# Exemplo: Adicionando nova pasta essencial
+if [ -d "$SOURCE_DIR/nova-pasta-essencial" ]; then
+    log "Copiando nova pasta essencial..."
+    cp -r "$SOURCE_DIR/nova-pasta-essencial" "$DEST_DIR/"
+    success "✓ Nova pasta essencial copiada"
+fi
 ```
 
-### Problemas Comuns e Soluções
-
-| Problema | Causa | Solução |
-|----------|--------|---------|
-| Arquivo duplicado | Falha no merge | Use script de consolidação |
-| Referência [[]] quebrada | Arquivo renomeado | Atualize referências |
-| Performance lenta | Cache inválido | Limpe cache ou reinicie |
-| Backup falhou | Permissões | Verifique permissões de arquivo |
-
-## 📊 Métricas de Qualidade
-
-### KPIs de Desenvolvimento
-
-1. **Cobertura de Backup**: 100% das operações estruturais
-2. **Integridade de Dados**: 0% de perda de informação
-3. **Performance**: 80% das operações < 3s
-4. **Compatibilidade**: 100% dos agentes funcionais
-
-### Ferramentas de Medição
-
+E adicione na lista de verificação:
 ```bash
-# Script de métricas (futuro)
-./scripts/generate-metrics.sh
-
-# Saída esperada:
-# - Arquivos únicos: 15
-# - Referências válidas: 98%
-# - Performance média: 2.1s
-# - Backup coverage: 100%
+ESSENTIAL_DIRS=(".claude" ".assistant-core" "knowledge-base" "todos" "despejo" "nova-pasta-essencial")
 ```
 
-## 🛡️ Segurança e Rollback
+### 3. Executando Testes
 
-### Estratégia de Rollback
-
-1. **Backup Automático**: Antes de qualquer mudança estrutural
-2. **Validação Prévia**: Teste em ambiente isolado
-3. **Rollback Testado**: Scripts de rollback validados
-4. **Notificação**: Log claro de todas as mudanças
-
-### Procedure de Emergência
-
+**Testes individuais:**
 ```bash
-# Em caso de falha crítica:
-
-# 1. Parar operações
-pkill -f "assistente-pessoal"
-
-# 2. Identificar último backup
-ls -t backups/knowledge-base/kb_backup_*
-
-# 3. Executar rollback
-./scripts/rollback-knowledge-base.sh kb_backup_YYYYMMDD_HHMMSS
-
-# 4. Validar integridade
-./scripts/validate-migration.sh
-
-# 5. Reiniciar sistema
-# Agentes devem funcionar normalmente
+./tests/test-basic.sh
+./tests/test-story-1.2.sh
 ```
 
-## 🎯 Roadmap de Implementação
-
-### Próximas Stories (baseado na Story 2.2.1)
-
-1. **Story 2.2.2**: Sistema de consolidação automática
-   - Builds sobre: Arquivos únicos já implementados
-   - Requer: Algoritmos de merge inteligente
-
-2. **Story 2.2.3**: Otimização de performance
-   - Builds sobre: Estrutura consolidada
-   - Requer: Sistema de cache e preloading
-
-3. **Story 2.2.4**: Documentação atualizada
-   - Builds sobre: Padrões estabelecidos
-   - Requer: Este documento e exemplos
-
-### Dependências entre Stories
-
-```mermaid
-graph TD
-    A[Story 2.2.1 - Arquivos Únicos] --> B[Story 2.2.2 - Consolidação]
-    A --> D[Story 2.2.4 - Documentação]
-    B --> C[Story 2.2.3 - Performance]
-    D --> E[Stories Futuras]
+**Todos os testes:**
+```bash
+# Executar todos os testes .sh
+for test in tests/test-*.sh; do
+    echo "Executando $test..."
+    ./"$test"
+done
 ```
 
-## ✅ Checklist de Implementação
+### 4. Testando o Deploy
 
-### Antes de Iniciar Development
+**CRÍTICO**: SEMPRE teste o script de deploy antes de fazer commit de mudanças estruturais.
 
-- [ ] Ler guidelines completas
-- [ ] Verificar dependências da story
-- [ ] Confirmar backup funcional
-- [ ] Testar ambiente local
+**Teste Básico:**
+```bash
+# 1. Teste em pasta temporária
+./scripts/deploy-assistant.sh /tmp/test-deploy-$(date +%H%M%S)
 
-### Durante Development
+# 2. Verifique estrutura essencial
+TEST_DIR="/tmp/test-deploy-$(date +%H%M%S)"
+ls -la "$TEST_DIR"
 
-- [ ] Seguir padrões de arquivos únicos
-- [ ] Implementar logging apropriado
-- [ ] Testar com dados reais
-- [ ] Validar performance targets
+# 3. Validação automática
+cd "$TEST_DIR"
+test -d .claude && echo "✓ Claude OK" || echo "✗ Claude MISSING"
+test -d .assistant-core && echo "✓ Core OK" || echo "✗ Core MISSING"
+test -d knowledge-base && echo "✓ KB OK" || echo "✗ KB MISSING"
+test -d todos && echo "✓ Todos OK" || echo "✗ Todos MISSING"
+test -d despejo && echo "✓ Despejo OK" || echo "✗ Despejo MISSING"
 
-### Antes de Finalizar
+# 4. Teste funcional (manual)
+# Abra Claude Code nesta pasta
+# Execute: /assistentes:agents:organizador
+# Deve carregar sem erros
 
-- [ ] Executar todos os testes
-- [ ] Validar integridade de dados
-- [ ] Atualizar documentação se necessário
-- [ ] Confirmar compatibilidade com agentes
+# 5. Limpeza
+cd .. && rm -rf "$TEST_DIR"
+```
 
-### Critérios de "Ready for Review"
+**Teste Completo (antes de release):**
+```bash
+# Script de teste completo
+cat > test-deploy-complete.sh << 'EOF'
+#!/bin/bash
+set -e
 
-- [ ] Todos os ACs implementados
-- [ ] Scripts de teste passando
-- [ ] Performance dentro dos targets
-- [ ] Backup/rollback testados
-- [ ] Documentação atualizada
+TEMP_DIR="/tmp/deploy-test-$(date +%Y%m%d-%H%M%S)"
+echo "Testando deploy em: $TEMP_DIR"
+
+# 1. Deploy
+./scripts/deploy-assistant.sh "$TEMP_DIR"
+
+# 2. Verificar tamanho
+echo "Tamanho da instalação limpa:"
+du -sh "$TEMP_DIR"
+echo "Tamanho do projeto completo:"
+du -sh . --exclude=".git"
+
+# 3. Verificar arquivos essenciais
+cd "$TEMP_DIR"
+echo "Verificando estrutura..."
+for dir in .claude .assistant-core knowledge-base todos despejo; do
+    if [ -d "$dir" ]; then
+        echo "✓ $dir"
+    else
+        echo "✗ $dir MISSING!"
+        exit 1
+    fi
+done
+
+# 4. Verificar arquivos desnecessários (devem estar AUSENTES)
+for item in tests docs .bmad-core logs performance; do
+    if [ -e "$item" ]; then
+        echo "✗ $item shouldn't be here!"
+        exit 1
+    else
+        echo "✓ $item correctly excluded"
+    fi
+done
+
+echo "✅ Deploy test passed!"
+cd - && rm -rf "$TEMP_DIR"
+EOF
+
+chmod +x test-deploy-complete.sh
+./test-deploy-complete.sh
+```
+
+**Teste de Diferentes Cenários:**
+```bash
+# Teste overwrite
+./scripts/deploy-assistant.sh /tmp/test-overwrite
+echo "y" | ./scripts/deploy-assistant.sh /tmp/test-overwrite
+
+# Teste help
+./scripts/deploy-assistant.sh --help
+
+# Teste path com espaços
+./scripts/deploy-assistant.sh "/tmp/test with spaces"
+```
+
+### 5. Atualizando Documentação
+
+Quando fizer mudanças que afetam usuários finais:
+
+1. **Atualize o README.md principal** com mudanças visíveis
+2. **Atualize guia-instalacao-limpa.md** se mudou estrutura de deploy
+3. **Atualize este arquivo** se mudou diretrizes de desenvolvimento
+
+## 🔧 Comandos Úteis para Desenvolvimento
+
+### Reorganizar Testes (se necessário)
+```bash
+# Mover novos arquivos de teste para pasta correta
+find . -maxdepth 1 -name "test-*" -type f -exec mv {} tests/ \;
+```
+
+### Verificar Integridade do Deploy
+```bash
+# Script para verificar se deploy está funcionando
+./scripts/deploy-assistant.sh /tmp/verify-deploy
+cd /tmp/verify-deploy
+
+# Verificar estrutura essencial
+test -d .claude && echo "✓ Claude config OK" || echo "✗ Claude config MISSING"
+test -d .assistant-core && echo "✓ Assistant core OK" || echo "✗ Assistant core MISSING"
+test -d knowledge-base && echo "✓ Knowledge base OK" || echo "✗ Knowledge base MISSING"
+
+cd - && rm -rf /tmp/verify-deploy
+```
+
+### Backup Antes de Mudanças Grandes
+```bash
+# Sempre faça backup antes de reorganizações
+cp -r . ../backup-$(date +%Y%m%d-%H%M%S)
+```
+
+## 🚨 Checklist antes de Commit
+
+### Organização e Testes
+- [ ] Todos os novos testes estão em `tests/`
+- [ ] Scripts de teste funcionam nas novas localizações (`./tests/test-*.sh`)
+- [ ] Executei pelo menos `./tests/test-basic.sh` com sucesso
+
+### Deploy e Estrutura
+- [ ] **Script de deploy foi atualizado** se adicionei novos componentes essenciais
+- [ ] **Testei o deploy em pasta limpa** com `./scripts/deploy-assistant.sh /tmp/test`
+- [ ] **Validei que arquivos desnecessários não são copiados** (tests/, docs/, logs/, etc.)
+- [ ] **Tamanho da instalação limpa** ainda é ~90% menor que o projeto completo
+
+### Documentação
+- [ ] **README.md atualizado** se mudanças afetam usuários finais
+- [ ] **guia-instalacao-limpa.md atualizado** se mudei estrutura de deploy
+- [ ] **guidelines-desenvolvedores.md atualizado** se mudei processo de desenvolvimento
+
+### Validação Final
+- [ ] **Deploy funciona nos 3 sistemas**: Linux, macOS, Windows (Git Bash)
+- [ ] **Assistente carrega sem erros** na instalação limpa
+- [ ] **Comando básico funciona**: `/assistentes:agents:organizador`
+
+## 📝 Padrões de Nomenclatura
+
+### Arquivos de Teste
+```bash
+test-{funcionalidade}.sh       # Testes de funcionalidade
+test-story-{numero}.sh         # Testes de story específica
+test-integration-{nome}.sh     # Testes de integração
+test-{nome}.py                 # Testes em Python
+```
+
+### Scripts de Utilidade
+```bash
+deploy-{tipo}.sh              # Scripts de deploy
+backup-{componente}.sh        # Scripts de backup
+validate-{componente}.sh      # Scripts de validação
+```
+
+## 🔄 Workflow de Desenvolvimento Recomendado
+
+1. **Desenvolver nova funcionalidade**
+   ```bash
+   # Criar branch
+   git checkout -b feature/nova-funcionalidade
+
+   # Desenvolver...
+   # Criar testes em tests/
+   ./tests/test-nova-funcionalidade.sh
+   ```
+
+2. **Testar integração**
+   ```bash
+   # Executar todos os testes
+   for test in tests/test-*.sh; do ./"$test"; done
+
+   # Testar deploy limpo
+   ./scripts/deploy-assistant.sh /tmp/test-nova-feature
+   ```
+
+3. **Atualizar documentação**
+   ```bash
+   # Atualizar docs relevantes
+   # Atualizar este arquivo se necessário
+   ```
+
+4. **Commit e PR**
+   ```bash
+   git add .
+   git commit -m "feat: nova funcionalidade com testes e docs"
+   git push origin feature/nova-funcionalidade
+   ```
+
+## 🎯 Objetivos Futuros
+
+Para manter o projeto organizado e focado:
+
+1. **Separação clara** entre desenvolvimento e produção
+2. **Deploy automatizado** e confiável
+3. **Testes organizados** e executáveis
+4. **Documentação atualizada** e acessível
+5. **Experiência do usuário** simplificada
 
 ---
 
-*Guidelines criadas como parte da Story 2.2.4 - Atualização de Documentação Arquitetural*
+## ❓ Dúvidas?
 
-*Versão: 1.0 | Data: 2025-09-28 | Autor: James (dev)*
+Para dúvidas sobre estas diretrizes ou sugestões de melhorias, abra uma issue ou discuta no PR.
+
+**Lembre-se:** O objetivo é manter o projeto organizado enquanto oferece uma experiência limpa para usuários finais!
