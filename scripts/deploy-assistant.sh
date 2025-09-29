@@ -82,6 +82,28 @@ if [ -d "$SOURCE_DIR/.assistant-core" ]; then
     log "Copiando core do assistant..."
     cp -r "$SOURCE_DIR/.assistant-core" "$DEST_DIR/"
     success "✓ Assistant core copiado"
+
+    # Instalar agentes no Claude Code
+    log "Instalando agentes no Claude Code..."
+    mkdir -p "$DEST_DIR/.claude/commands/assistentes/agents"
+    mkdir -p "$DEST_DIR/.claude/commands/assistentes/tasks"
+
+    # Instalar agentes
+    if [ -f "$SOURCE_DIR/.assistant-core/agents/organizador.md" ]; then
+        cp "$SOURCE_DIR/.assistant-core/agents/organizador.md" "$DEST_DIR/.claude/commands/assistentes/agents/"
+    fi
+    if [ -f "$SOURCE_DIR/.assistant-core/agents/secretaria.md" ]; then
+        cp "$SOURCE_DIR/.assistant-core/agents/secretaria.md" "$DEST_DIR/.claude/commands/assistentes/agents/"
+    fi
+
+    # Instalar tasks dos agentes
+    for task in organizar-por-projeto processar-despejo revisar-pendencias agenda-do-dia status-projetos registro-reuniao whats-next processar-calendario relatorio-executivo; do
+        if [ -f "$SOURCE_DIR/.assistant-core/tasks/${task}.md" ]; then
+            cp "$SOURCE_DIR/.assistant-core/tasks/${task}.md" "$DEST_DIR/.claude/commands/assistentes/tasks/"
+        fi
+    done
+
+    success "✓ Agentes e tasks instalados no Claude Code"
 else
     warn "Pasta .assistant-core não encontrada. Criando estrutura básica..."
     mkdir -p "$DEST_DIR/.assistant-core"
@@ -246,7 +268,9 @@ if [ ${#MISSING_DIRS[@]} -eq 0 ]; then
     echo "  cd \"$DEST_DIR\""
     echo "  # Abra o Claude Code aqui"
     echo
-    log "Primeiro comando sugerido: /assistentes:agents:organizador"
+    log "Agentes disponíveis:"
+    log "  - Organizador: /assistentes:agents:organizador"
+    log "  - Secretária Executiva: /assistentes:agents:secretaria"
 else
     error "Deploy incompleto! Diretórios não encontrados: ${MISSING_DIRS[*]}"
     exit 1
@@ -255,7 +279,7 @@ fi
 echo
 log "=== RESUMO DA INSTALAÇÃO ==="
 log "✓ Configurações do Claude Code"
-log "✓ Core do assistente"
+log "✓ Core do assistente (Organizador + Secretária)"
 log "✓ Base de conhecimento"
 log "✓ Sistema de todos"
 log "✓ Sistema de despejo"

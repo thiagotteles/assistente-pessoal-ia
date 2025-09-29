@@ -15,23 +15,6 @@ updated: 2025-09-29
 ## Histórico de Desenvolvimento
 
 ### 2025-09-29 - Migração da Story 2.2.1
-# sistema-alpha - Projeto
-
-## Metadados
-```yaml
-tipo: projeto
-nome: sistema-alpha
-tags: [projeto]
-created: 2025-09-29
-updated: 2025-09-29
-```
-
-## Status e Progresso
-**Status**: Em andamento
-
-## Histórico de Desenvolvimento
-
-### 2025-09-29 - Migração da Story 2.2.1
 # Sistema Alpha
 
 **Tipo**: Projeto
@@ -73,15 +56,6 @@ Sistema web moderno para gestão empresarial com foco em produtividade.
 1. Implementar sistema de autenticação
 2. Criar design system com [[João Silva]]
 3. Setup do ambiente de produção
-
-## Pessoas Envolvidas
-
-## Decisões Técnicas
-
-## Notas e Contexto
-
-## Histórico de Modificações
-- 2025-09-29: Arquivo normalizado para Story 2.2.2
 
 ## Pessoas Envolvidas
 

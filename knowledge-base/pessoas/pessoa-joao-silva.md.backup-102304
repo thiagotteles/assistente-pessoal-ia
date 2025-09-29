@@ -12,20 +12,6 @@ updated: 2025-09-29
 ## Histórico de Interações
 
 ### 2025-09-29 - Migração da Story 2.2.1
-# joao-silva - Pessoa
-
-## Metadados
-```yaml
-tipo: pessoa
-nome: joao-silva
-tags: [pessoa]
-created: 2025-09-29
-updated: 2025-09-29
-```
-
-## Histórico de Interações
-
-### 2025-09-29 - Migração da Story 2.2.1
 # João Silva
 
 **Tipo**: Pessoa
@@ -65,11 +51,4 @@ Trabalha bem com [[Maria Santos]] do backend.
 ### 2025-09-29 - daily-dump
 O projeto onboarding precisa de mais testes. Joao-silva sugeriu usar pytest
 
-- 2025-09-29: Arquivo normalizado para Story 2.2.2
-
-## Projetos Relacionados
-
-## Notas e Contexto
-
-## Histórico de Modificações
 - 2025-09-29: Arquivo normalizado para Story 2.2.2

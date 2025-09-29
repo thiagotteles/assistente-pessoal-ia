@@ -1,35 +1,99 @@
 # Template para Resumo de Reunião
 template:
   id: "meeting-summary"
-  version: "1.0"
+  version: "2.0"
+  updated: "2025-09-29"
+
+# Metadados da reunião
+metadata:
+  tipo_reuniao:
+    options: ["1:1", "team_meeting", "client_meeting", "brainstorm", "status_update", "planning"]
+    default: "team_meeting"
+  nivel_prioridade:
+    options: ["alta", "media", "baixa"]
+    default: "media"
 
 structure:
   header:
-    title: "Reunião: {{meeting_title}}"
-    date: "{{date}}"
-    participants: "{{participants}}"
-    duration: "{{duration}}"
+    title: "# Reunião: {{meeting_title}}"
+    date: "**Data:** {{date}}"
+    participants: "**Participantes:** {{participants_with_links}}"
+    duration: "**Duração:** {{duration}}"
+    type: "**Tipo:** {{meeting_type}}"
+    priority: "**Prioridade:** {{priority}}"
 
   sections:
+    - name: "executive_summary"
+      title: "## Resumo Executivo"
+      content: "{{executive_summary}}"
+
     - name: "context"
-      title: "Contexto"
+      title: "## Contexto"
       content: "{{meeting_context}}"
 
     - name: "decisions"
-      title: "Decisões"
-      format: "bullet_list"
+      title: "## Decisões Tomadas"
+      format: "structured_list"
       content: "{{decisions_made}}"
 
     - name: "action_items"
-      title: "Action Items"
-      format: "todo_list"
+      title: "## Ações Necessárias"
+      format: "todo_list_with_owners"
       content: "{{action_items}}"
 
     - name: "next_steps"
-      title: "Próximos Passos"
+      title: "## Próximos Passos"
       content: "{{next_steps}}"
+
+    - name: "observations"
+      title: "## Observações e Notas"
+      content: "{{additional_notes}}"
+
+# Regras de processamento
+processing_rules:
+  participantes:
+    auto_detect: true
+    create_links: true
+    format: "[[pessoa-{nome-normalizado}]]"
+
+  todos_extraction:
+    keywords: ["preciso", "vou", "deve", "tem que", "action item", "próximo passo", "tarefa", "fazer"]
+    format: "- [ ] {acao} (Responsável: [[pessoa-{responsavel}]], Prazo: {prazo})"
+
+  projetos_detection:
+    auto_detect: true
+    create_links: true
+    format: "[[projeto-{nome-normalizado}]]"
+
+  decisoes_format:
+    structure: "**Decisão:** {decisao} | **Rationale:** {justificativa} | **Impacto:** {impacto}"
+
+# Integração com knowledge-base
+knowledge_integration:
+  save_location: "knowledge-base/contextos/contexto-reunioes.md"
+  reference_updates:
+    pessoas: "knowledge-base/pessoas/"
+    projetos: "knowledge-base/projetos/"
+  todos_integration:
+    central_todos: "todos/central-todos.md"
+    project_specific: "todos/por-projeto/"
+    person_specific: "todos/por-pessoa/"
+
+# Configurações TDAH-friendly
+tdah_optimizations:
+  visual_structure: true
+  clear_action_items: true
+  priority_highlighting: true
+  time_estimates: true
+  cognitive_load_reduction:
+    - "group_similar_items"
+    - "clear_ownership"
+    - "specific_deadlines"
+    - "context_preservation"
 
 references:
   auto_link_people: true
   auto_link_projects: true
   create_todos: true
+  update_person_files: true
+  update_project_files: true

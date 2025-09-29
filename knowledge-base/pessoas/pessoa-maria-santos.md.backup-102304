@@ -12,20 +12,6 @@ updated: 2025-09-29
 ## Histórico de Interações
 
 ### 2025-09-29 - Migração da Story 2.2.1
-# maria-santos - Pessoa
-
-## Metadados
-```yaml
-tipo: pessoa
-nome: maria-santos
-tags: [pessoa]
-created: 2025-09-29
-updated: 2025-09-29
-```
-
-## Histórico de Interações
-
-### 2025-09-29 - Migração da Story 2.2.1
 # Maria Santos
 
 **Tipo**: Pessoa
@@ -61,15 +47,4 @@ Tem boa sinergia com [[João Silva]] em projetos fullstack.
 ## Notas e Contexto
 
 ## Histórico de Modificações
-- 2025-09-29: Arquivo normalizado para Story 2.2.2
-
-## Projetos Relacionados
-
-## Notas e Contexto
-
-## Histórico de Modificações
-
-### 2025-09-29 - meeting
-Maria-santos me ajudou com o projeto sistema-alpha, foi muito produtivo
-
 - 2025-09-29: Arquivo normalizado para Story 2.2.2

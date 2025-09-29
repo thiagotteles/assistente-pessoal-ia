@@ -1,18 +1,36 @@
----
-id: contexto-bem-estar-20250929-001
-type: contexto
-created: 2025-09-29T00:00:00Z
-source_agent: organizador
-priority: media
-emotional_indicators: stress
-related_people: []
-related_projects: []
-tags: [bem-estar, stress, dia-dificil, emocional, tdah]
----
+# bem-estar - Contexto
 
+## Metadados
+```yaml
+tipo: contexto
+nome: bem-estar
+tags: [contexto]
+created: 2025-09-29
+updated: 2025-09-29
+```
+
+## Entradas
+
+### 2025-09-29 - Migração da Story 2.2.1
 # Bem-Estar - Dia Estressante
 
 Hoje o dia foi bem estressante
+
+### 2025-09-29 - test-context
+Hoje me senti muito estressante no trabalho, preciso focar no bem-estar
+
+
+### 2025-09-29 - benchmark
+Teste de performance final com múltiplas entidades Fabio onboarding bem-estar
+
+
+### 2025-09-29 - benchmark
+Teste de performance final com múltiplas entidades Fabio onboarding bem-estar
+
+
+### 2025-09-29 - benchmark
+Teste de performance final com múltiplas entidades Fabio onboarding bem-estar
+
 
 ## Contexto Adicional
 - Prioridade: Média (impacta bem-estar)
@@ -24,3 +42,10 @@ Hoje o dia foi bem estressante
 - Verificar se há sobrecarga de tarefas
 - Considerar pausas regulares
 - Validar que é normal ter dias difíceis
+
+## Padrões Identificados
+
+## Notas e Reflexões
+
+## Histórico de Modificações
+- 2025-09-29: Arquivo normalizado para Story 2.2.2
