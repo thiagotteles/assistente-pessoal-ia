@@ -1,0 +1,90 @@
+{
+  "baseline_date": "2025-09-29T00:52:13-03:00",
+  "version": "pre-optimization",
+  "measurements": {
+    "memory_load_time": [1;33mMedindo: Leitura de organizador-memory.yaml[0m
+  Iteração 1/3... [0;32ms[0m
+[00:51:59] Leitura de organizador-memory.yaml - Iteração 1: s
+  Iteração 2/3... [0;32ms[0m
+[00:51:59] Leitura de organizador-memory.yaml - Iteração 2: s
+  Iteração 3/3... [0;32ms[0m
+[00:52:00] Leitura de organizador-memory.yaml - Iteração 3: s
+[0;34m  Média: s[0m
+[00:52:00] Leitura de organizador-memory.yaml - Média: s,
+    "task_load_time": [1;33mMedindo: Leitura de processar-despejo.md[0m
+  Iteração 1/3... [0;32ms[0m
+[00:52:00] Leitura de processar-despejo.md - Iteração 1: s
+  Iteração 2/3... [0;32ms[0m
+[00:52:00] Leitura de processar-despejo.md - Iteração 2: s
+  Iteração 3/3... [0;32ms[0m
+[00:52:00] Leitura de processar-despejo.md - Iteração 3: s
+[0;34m  Média: s[0m
+[00:52:00] Leitura de processar-despejo.md - Média: s,
+    "template_load_time": [1;33mMedindo: Leitura de templates YAML[0m
+  Iteração 1/3... [0;32ms[0m
+[00:52:01] Leitura de templates YAML - Iteração 1: s
+  Iteração 2/3... [0;32ms[0m
+[00:52:01] Leitura de templates YAML - Iteração 2: s
+  Iteração 3/3... [0;32ms[0m
+[00:52:02] Leitura de templates YAML - Iteração 3: s
+[0;34m  Média: s[0m
+[00:52:02] Leitura de templates YAML - Média: s,
+    "knowledge_base_scan_time": [1;33mMedindo: Varredura completa da knowledge-base[0m
+  Iteração 1/3... [0;32ms[0m
+[00:52:02] Varredura completa da knowledge-base - Iteração 1: s
+  Iteração 2/3... [0;32ms[0m
+[00:52:03] Varredura completa da knowledge-base - Iteração 2: s
+  Iteração 3/3... [0;32ms[0m
+[00:52:03] Varredura completa da knowledge-base - Iteração 3: s
+[0;34m  Média: s[0m
+[00:52:03] Varredura completa da knowledge-base - Média: s,
+    "daily_dump_read_time": [1;33mMedindo: Leitura do daily-dump.txt[0m
+  Iteração 1/3... [0;32ms[0m
+[00:52:03] Leitura do daily-dump.txt - Iteração 1: s
+  Iteração 2/3... [0;32ms[0m
+[00:52:04] Leitura do daily-dump.txt - Iteração 2: s
+  Iteração 3/3... [0;32ms[0m
+[00:52:04] Leitura do daily-dump.txt - Iteração 3: s
+[0;34m  Média: s[0m
+[00:52:04] Leitura do daily-dump.txt - Média: s,
+    "agent_full_load_time": [1;33mMedindo: Simulação carregamento completo agente[0m
+  Iteração 1/3... [0;32ms[0m
+[00:52:04] Simulação carregamento completo agente - Iteração 1: s
+  Iteração 2/3... [0;32ms[0m
+[00:52:05] Simulação carregamento completo agente - Iteração 2: s
+  Iteração 3/3... [0;32ms[0m
+[00:52:05] Simulação carregamento completo agente - Iteração 3: s
+[0;34m  Média: s[0m
+[00:52:05] Simulação carregamento completo agente - Média: s,
+    "entry_processing_time": [1;33mMedindo: Simulação processamento entrada daily-dump[0m
+  Iteração 1/3... [0;32ms[0m
+[00:52:05] Simulação processamento entrada daily-dump - Iteração 1: s
+  Iteração 2/3... [0;32ms[0m
+[00:52:06] Simulação processamento entrada daily-dump - Iteração 2: s
+  Iteração 3/3... [0;32ms[0m
+[00:52:06] Simulação processamento entrada daily-dump - Iteração 3: s
+[0;34m  Média: s[0m
+[00:52:06] Simulação processamento entrada daily-dump - Média: s,
+    "consolidation_time": [1;33mMedindo: Consolidação automática (scripts/auto-consolidate.sh)[0m
+  Iteração 1/3... [0;32ms[0m
+[00:52:08] Consolidação automática (scripts/auto-consolidate.sh) - Iteração 1: s
+  Iteração 2/3... [0;32ms[0m
+[00:52:10] Consolidação automática (scripts/auto-consolidate.sh) - Iteração 2: s
+  Iteração 3/3... [0;32ms[0m
+[00:52:12] Consolidação automática (scripts/auto-consolidate.sh) - Iteração 3: s
+[0;34m  Média: s[0m
+[00:52:12] Consolidação automática (scripts/auto-consolidate.sh) - Média: s
+  },
+  "system_metrics": {
+    "knowledge_base_files": 7,
+    "memory_file_size": 2626,
+    "task_file_size": 5492,
+    "daily_dump_size": 111
+  },
+  "performance_targets": {
+    "agent_load_time_target": 5.0,
+    "entry_processing_target": 8.0,
+    "consolidation_target": 3.0,
+    "improvement_goal_percent": 60
+  }
+}

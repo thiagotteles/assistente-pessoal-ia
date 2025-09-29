@@ -1,4 +1,115 @@
 #!/bin/bash
+
+# Script de Backup da Knowledge-base para Story 2.2.1
+# Cria backup completo antes da migração para arquivos únicos
+
+set -e  # Sair imediatamente se qualquer comando falhar
+
+# Configurações
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+BACKUP_DIR="backups/knowledge-base"
+BACKUP_NAME="kb_backup_${TIMESTAMP}"
+BACKUP_PATH="${BACKUP_DIR}/${BACKUP_NAME}"
+SOURCE_DIR="knowledge-base"
+
+# Cores para output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+echo -e "${YELLOW}=== Backup da Knowledge-base - Story 2.2.1 ===${NC}"
+echo "Timestamp: $TIMESTAMP"
+echo "Backup path: $BACKUP_PATH"
+echo ""
+
+# Verificar se o diretório source existe
+if [ ! -d "$SOURCE_DIR" ]; then
+    echo -e "${RED}ERRO: Diretório $SOURCE_DIR não existe!${NC}"
+    exit 1
+fi
+
+# Criar diretório de backup se não existir
+echo -e "${YELLOW}1. Criando estrutura de backup...${NC}"
+mkdir -p "$BACKUP_DIR"
+
+# Verificar se já existe backup
+if [ -d "$BACKUP_PATH" ]; then
+    echo -e "${RED}ERRO: Backup $BACKUP_PATH já existe!${NC}"
+    exit 1
+fi
+
+# Criar backup completo
+echo -e "${YELLOW}2. Copiando arquivos...${NC}"
+cp -r "$SOURCE_DIR" "$BACKUP_PATH"
+
+# Criar arquivo de metadados do backup
+echo -e "${YELLOW}3. Criando metadados do backup...${NC}"
+cat > "${BACKUP_PATH}/backup_metadata.txt" << EOF
+# Backup Metadata - Story 2.2.1
+Timestamp: $TIMESTAMP
+Source: $SOURCE_DIR
+Backup Path: $BACKUP_PATH
+Story: 2.2.1 - Migração para Arquivos Únicos
+Purpose: Backup completo antes da migração
+
+# Estrutura original preservada:
+$(find "$BACKUP_PATH" -name "*.md" -type f | sort)
+
+# Total de arquivos: $(find "$BACKUP_PATH" -name "*.md" -type f | wc -l)
+EOF
+
+# Validar integridade do backup
+echo -e "${YELLOW}4. Validando integridade do backup...${NC}"
+
+# Contar arquivos originais vs backup
+ORIGINAL_COUNT=$(find "$SOURCE_DIR" -name "*.md" -type f | wc -l)
+BACKUP_COUNT=$(find "$BACKUP_PATH" -name "*.md" -type f | wc -l)
+
+echo "Arquivos originais: $ORIGINAL_COUNT"
+echo "Arquivos no backup: $BACKUP_COUNT"
+
+if [ "$ORIGINAL_COUNT" -ne "$BACKUP_COUNT" ]; then
+    echo -e "${RED}ERRO: Contagem de arquivos não confere!${NC}"
+    echo "Original: $ORIGINAL_COUNT, Backup: $BACKUP_COUNT"
+    exit 1
+fi
+
+# Verificar se todos os arquivos foram copiados corretamente
+echo -e "${YELLOW}5. Verificando arquivos individuais...${NC}"
+DIFF_OUTPUT=$(diff -r "$SOURCE_DIR" "$BACKUP_PATH" --exclude="backup_metadata.txt" || true)
+
+if [ -n "$DIFF_OUTPUT" ]; then
+    echo -e "${RED}ERRO: Diferenças encontradas entre original e backup:${NC}"
+    echo "$DIFF_OUTPUT"
+    exit 1
+fi
+
+# Criar arquivo de validação
+echo -e "${YELLOW}6. Criando arquivo de validação...${NC}"
+cat > "${BACKUP_DIR}/backup_validation_${TIMESTAMP}.txt" << EOF
+# Validação do Backup - Story 2.2.1
+Backup: $BACKUP_NAME
+Status: VALIDADO
+Timestamp: $TIMESTAMP
+Arquivos verificados: $BACKUP_COUNT
+Integridade: OK
+Diferenças: NENHUMA
+
+# Comando para rollback:
+# ./scripts/rollback-knowledge-base.sh $BACKUP_NAME
+
+# Lista de arquivos no backup:
+$(find "$BACKUP_PATH" -name "*.md" -type f | sort)
+EOF
+
+echo -e "${GREEN}✅ Backup criado e validado com sucesso!${NC}"
+echo -e "${GREEN}   Localização: $BACKUP_PATH${NC}"
+echo -e "${GREEN}   Validação: ${BACKUP_DIR}/backup_validation_${TIMESTAMP}.txt${NC}"
+echo ""
+echo -e "${YELLOW}Para fazer rollback, execute:${NC}"
+echo -e "${YELLOW}  ./scripts/rollback-knowledge-base.sh $BACKUP_NAME${NC}"
+echo ""
 # Backup automation script for Assistente Pessoal IA
 # Can be run manually or scheduled via cron
 

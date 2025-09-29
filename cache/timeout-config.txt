@@ -1,0 +1,21 @@
+# Configuração de Timeouts Inteligentes
+# Valores otimizados para usuários TDAH
+
+# Operações rápidas (devem ser instantâneas)
+MEMORY_LOAD_TIMEOUT=2
+TASK_LOAD_TIMEOUT=2
+TEMPLATE_LOAD_TIMEOUT=2
+
+# Operações normais (processamento básico)
+ENTITY_DETECTION_TIMEOUT=5
+CATEGORIZATION_TIMEOUT=8
+FILE_READ_TIMEOUT=3
+
+# Operações complexas (mas com limite)
+CONSOLIDATION_TIMEOUT=10
+FULL_PROCESSING_TIMEOUT=15
+KNOWLEDGE_SCAN_TIMEOUT=12
+
+# Operações que podem ser lentas
+BACKUP_TIMEOUT=30
+MIGRATION_TIMEOUT=60

@@ -19,7 +19,21 @@
       "Bash(./test-story-1.4.sh:*)",
       "Bash(find:*)",
       "Bash(./test-story-2.1.sh:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(./scripts/backup-knowledge-base.sh:*)",
+      "Bash(./scripts/migrate-to-unified-files.sh:*)",
+      "Bash(./scripts/validate-migration.sh:*)",
+      "Bash(./test-story-2.2.1.sh:*)",
+      "Bash(./test-story-2.2.4.sh:*)",
+      "Bash(./scripts/auto-consolidate.sh:*)",
+      "Bash(./scripts/normalize-unified-files.sh:*)",
+      "Bash(./test-story-2.2.2.sh:*)",
+      "Bash(./scripts/benchmark-performance.sh:*)",
+      "Bash(./scripts/benchmark-simple.sh:*)",
+      "Bash(./scripts/agent-cache-system.sh:*)",
+      "Bash(./scripts/simple-cache.sh:*)",
+      "Bash(./scripts/intelligent-timeout.sh:*)",
+      "Bash(./test-story-2.2.3.sh:*)"
     ],
     "deny": [],
     "ask": []
