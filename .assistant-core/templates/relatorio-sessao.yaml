@@ -1,0 +1,161 @@
+# Template: Relatório de Sessão
+
+## Uso
+Template para relatórios gerados após cada sessão de processamento do Agente Organizador, incluindo métricas e insights para aprendizado contínuo.
+
+## Template YAML
+```yaml
+---
+# Identificação da sessão
+session_id: "{{ uuid }}"
+agent: "organizador"
+user_profile: "{{ perfil_usuario_tdah }}"
+timestamp: "{{ iso_timestamp }}"
+duration: "{{ duracao_sessao }}"
+
+# Dados da sessão
+processing_summary:
+  entries_found: {{ numero_entradas_encontradas }}
+  entries_processed: {{ numero_entradas_processadas }}
+  entries_skipped: {{ numero_entradas_puladas }}
+  skip_reasons:
+    - "{{ motivo_do_pulo }}"
+
+# Interação e elicitação
+questions_analytics:
+  total_questions_asked: {{ total_perguntas }}
+  avg_questions_per_entry: {{ media_perguntas_por_entrada }}
+  question_types:
+    emotional_wellbeing: {{ perguntas_bem_estar }}
+    urgency_calibration: {{ perguntas_urgencia }}
+    context_clarification: {{ perguntas_contexto }}
+  user_engagement:
+    response_rate: "{{ taxa_resposta }}%"
+    interaction_quality: "{{ qualidade_interacao }}"
+
+# Categorização
+categorization_results:
+  total_categorized: {{ total_categorizadas }}
+  by_category:
+    contextos: {{ contextos_criados }}
+    decisoes: {{ decisoes_criadas }}
+    projetos: {{ projetos_criados }}
+    pessoas: {{ pessoas_criadas }}
+  confidence_scores:
+    high: {{ categorizacoes_alta_confianca }}
+    medium: {{ categorizacoes_media_confianca }}
+    low: {{ categorizacoes_baixa_confianca }}
+
+# Extração de todos
+todos_extraction:
+  total_extracted: {{ todos_extraidos }}
+  by_priority:
+    alta: {{ todos_alta_prioridade }}
+    media: {{ todos_media_prioridade }}
+    baixa: {{ todos_baixa_prioridade }}
+  action_types:
+    explicit: {{ acoes_explicitas }}
+    implicit: {{ acoes_implicitas }}
+    follow_ups: {{ follow_ups }}
+
+# Análise TDAH
+tdah_analysis:
+  emotional_indicators:
+    stress_detected: {{ indicadores_stress }}
+    overwhelm_detected: {{ indicadores_sobrecarga }}
+    procrastination_patterns: {{ padroes_procrastinacao }}
+  urgency_calibration:
+    false_urgencies: {{ urgencias_falsas }}
+    calibrations_made: {{ calibracoes_feitas }}
+    user_acceptance_rate: "{{ taxa_aceitacao_calibracao }}%"
+  wellbeing_focus:
+    wellbeing_questions: {{ perguntas_bem_estar }}
+    support_offered: {{ suporte_oferecido }}
+    breaks_suggested: {{ pausas_sugeridas }}
+
+# Padrões e aprendizado
+patterns_detected:
+  new_people:
+    - "{{ nova_pessoa_detectada }}"
+  new_projects:
+    - "{{ novo_projeto_detectado }}"
+  recurring_themes:
+    - "{{ tema_recorrente }}"
+  emotional_patterns:
+    - "{{ padrao_emocional }}"
+
+# Personalização
+personalization_updates:
+  memory_updates: {{ atualizacoes_memoria }}
+  preference_learnings:
+    - pattern: "{{ padrao_aprendido }}"
+      confidence: {{ confianca_padrao }}
+  behavior_adaptations:
+    - "{{ adaptacao_comportamento }}"
+
+# Qualidade da sessão
+session_quality:
+  user_satisfaction_indicators:
+    - "{{ indicador_satisfacao }}"
+  efficiency_score: {{ score_eficiencia }}
+  effectiveness_score: {{ score_efetividade }}
+  recommendations_for_next_session:
+    - "{{ recomendacao }}"
+
+# Outputs gerados
+files_created:
+  knowledge_base_entries:
+    - file: "{{ arquivo_criado }}"
+      category: "{{ categoria }}"
+      confidence: {{ confianca }}
+  todos_added: {{ todos_adicionados_central }}
+  memory_updates: {{ atualizacoes_memoria_arquivo }}
+
+# Insights para o usuário
+user_insights:
+  productivity_patterns:
+    - "{{ insight_produtividade }}"
+  emotional_patterns:
+    - "{{ insight_emocional }}"
+  organizational_strengths:
+    - "{{ forca_organizacional }}"
+  areas_for_support:
+    - "{{ area_suporte }}"
+
+# Próximas ações sugeridas
+next_session_prep:
+  recommended_focus:
+    - "{{ foco_recomendado }}"
+  suggested_timing: "{{ timing_sugerido }}"
+  prep_actions:
+    - "{{ acao_preparatoria }}"
+
+# Métricas de melhoria contínua
+continuous_improvement:
+  pattern_recognition_accuracy: "{{ precisao_reconhecimento }}%"
+  question_effectiveness: "{{ efetividade_perguntas }}%"
+  user_adaptation_score: {{ score_adaptacao_usuario }}
+  areas_for_agent_improvement:
+    - "{{ area_melhoria_agente }}"
+---
+
+# Relatório da Sessão de Organização
+
+## 📊 Resumo Executivo
+Processadas {{ entries_processed }} entradas em {{ duration }}, com {{ total_questions_asked }} perguntas estratégicas e {{ todos_extracted }} todos extraídos.
+
+## 🎯 Destaques da Sessão
+{{ principais_conquistas_e_insights }}
+
+## 💡 Padrões Identificados
+{{ padroes_importantes_detectados }}
+
+## 🔄 Aprendizados e Adaptações
+{{ aprendizados_aplicados_proxima_sessao }}
+
+## 🌟 Próximos Passos Recomendados
+{{ recomendacoes_personalizadas }}
+
+---
+*Relatório gerado automaticamente pelo Agente Organizador Sofia*
+*Para revisão e aprendizado contínuo*

@@ -1,6 +1,12 @@
-# Assistente Pessoal IA
+# 🤖 Sistema de Assistente Pessoal com IA
 
 Sistema de assistente pessoal IA com 5 agentes especializados para pessoas com TDAH, oferecendo um "segundo cérebro" digital completamente local e privado.
+
+## 🚨 IMPORTANTE - LEIA PRIMEIRO
+
+**🔥 Se você é um desenvolvedor novo no projeto: [LEIA ESTE ARQUIVO PRIMEIRO](docs/IMPORTANTE-LEIA-PRIMEIRO.md)**
+
+Este arquivo contém avisos críticos sobre o que NÃO deve ser usado e diretrizes oficiais.
 
 ## 📋 Status das Stories - Roadmap de Desenvolvimento
 
@@ -11,7 +17,7 @@ Sistema de assistente pessoal IA com 5 agentes especializados para pessoas com T
 | **Épico 1** | 1.2 | Sistema de Captura Ultra-Rápida | Arquivo daily-dump.txt sem estrutura obrigatória | ✅ Concluído |
 | **Épico 1** | 1.3 | Comando Slash Base | 5 comandos funcionais com roteamento inteligente | ✅ Concluído |
 | **Épico 1** | 1.4 | Knowledge-Base Compartilhada Básica | Sistema de [[referências]] Obsidian com auto-linking | ✅ Concluído |
-| **Épico 2** | 2.1 | Agente Organizador Completo | Processamento de despejo via perguntas específicas | 📝 Not Created |
+| **Épico 2** | 2.1 | Agente Organizador Completo | Processamento de despejo via perguntas específicas | ✅ Concluído |
 | **Épico 2** | 2.2 | Agente Secretária Executiva Completa | Gestão de agenda e processamento de reuniões | 📝 Not Created |
 | **Épico 2** | 2.3 | Agente Arquiteto Confrontador Completo | Consultoria técnica com confronto construtivo | 📝 Not Created |
 | **Épico 2** | 2.4 | Agente Psicólogo Supportivo | Suporte emocional especializado para TDAH | 📝 Not Created |
@@ -107,7 +113,7 @@ etc...
 
 Use o Claude Code para processar suas informações:
 
-- **`/organizador despejo/daily-dump.txt`** - Organiza e categoriza automaticamente
+- **`/assistentes:agents:organizador *processar`** - Organiza e categoriza automaticamente
 - **`/secretaria`** - Para status de projetos e gestão executiva
 - **`/arquiteto "como implementar X?"`** - Para decisões técnicas
 - **`/psicologo`** - Para suporte emocional e estratégias TDAH

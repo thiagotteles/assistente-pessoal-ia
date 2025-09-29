@@ -1,0 +1,62 @@
+# Template: Todo Extraído
+
+## Uso
+Template para todos extraídos automaticamente do daily-dump.txt e organizados na central-todos.md com contexto completo.
+
+## Template YAML para Metadados do Todo
+```yaml
+---
+# Identificação
+id: "{{ uuid }}"
+extracted_from: "{{ arquivo_origem }}"
+extracted_by: "organizador"
+created: "{{ iso_timestamp }}"
+
+# Classificação da ação
+action_type: "{{ explicita|implicita|follow_up }}"
+action_verb: "{{ verbo_detectado }}"
+action_object: "{{ objeto_da_acao }}"
+
+# Priorização inteligente
+priority:
+  level: "{{ alta|media|baixa }}"
+  reasoning: "{{ motivo_da_priorizacao }}"
+  emotional_weight: "{{ peso_emocional }}"
+  urgency_calibrated: "{{ urgencia_calibrada }}"
+
+# Contexto
+context:
+  project: "{{ projeto_relacionado }}"
+  people_involved:
+    - "{{ pessoa_responsavel }}"
+    - "{{ pessoa_colaboradora }}"
+  emotional_state: "{{ estado_emocional_detectado }}"
+  overwhelm_indicator: "{{ nivel_sobrecarga }}"
+
+# Temporal
+deadline:
+  detected: "{{ prazo_detectado }}"
+  realistic: "{{ prazo_realista_sugerido }}"
+  flexible: "{{ flexibilidade_do_prazo }}"
+
+# TDAH-specific
+tdah_considerations:
+  complexity_level: "{{ simples|medio|complexo }}"
+  breaking_needed: "{{ true|false }}"
+  energy_required: "{{ baixa|media|alta }}"
+  focus_time_needed: "{{ estimativa_tempo_foco }}"
+
+# Relacionamentos
+dependencies:
+  - "{{ acao_dependente }}"
+blockers:
+  - "{{ bloqueador_identificado }}"
+related_todos:
+  - "{{ todo_relacionado }}"
+
+# Tracking
+completion:
+  estimated_effort: "{{ estimativa_esforco }}"
+  difficulty: "{{ 1_a_5 }}"
+  procrastination_risk: "{{ baixo|medio|alto }}"
+---
