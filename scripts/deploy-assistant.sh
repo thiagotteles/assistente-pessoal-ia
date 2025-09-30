@@ -107,9 +107,15 @@ if [ -d "$SOURCE_DIR/.assistant-core" ]; then
     else
         warn "⚠ Agente Psicólogo não encontrado"
     fi
+    if [ -f "$SOURCE_DIR/.assistant-core/agents/mentor.md" ]; then
+        cp "$SOURCE_DIR/.assistant-core/agents/mentor.md" "$DEST_DIR/.claude/commands/assistentes/agents/"
+        success "✓ Agente Mentor encontrado e instalado"
+    else
+        warn "⚠ Agente Mentor não encontrado"
+    fi
 
     # Instalar tasks dos agentes
-    for task in organizar-por-projeto processar-despejo revisar-pendencias agenda-do-dia status-projetos registro-reuniao whats-next processar-calendario relatorio-executivo consultoria-tecnica analise-projeto confronto-tecnico registrar-decisao historico-decisoes analise-humor suporte-emocional sugerir-tecnicas detectar-procrastinacao; do
+    for task in organizar-por-projeto processar-despejo revisar-pendencias agenda-do-dia status-projetos registro-reuniao whats-next processar-calendario relatorio-executivo consultoria-tecnica analise-projeto confronto-tecnico registrar-decisao historico-decisoes analise-humor suporte-emocional sugerir-tecnicas detectar-procrastinacao tracking-metas identificar-oportunidades analise-crescimento networking-estrategico preparar-conversa; do
         if [ -f "$SOURCE_DIR/.assistant-core/tasks/${task}.md" ]; then
             cp "$SOURCE_DIR/.assistant-core/tasks/${task}.md" "$DEST_DIR/.claude/commands/assistentes/tasks/"
         fi

@@ -1,28 +1,55 @@
-# Memória do Mentor - Atualizada automaticamente
+# Memória do Mentor - Leonardo
+# Contexto de carreira e desenvolvimento profissional
 agent: "mentor"
-last_updated: "2025-09-25T15:25:44-03:00"
-version: "1.0"
+last_updated: "2025-09-30T00:00:00-03:00"
+version: "2.0"
 
-# Objetivos de carreira
-career_goals:
-  short_term: []
-  long_term: []
-  skill_development: []
+# Identidade do agente
+agent_identity:
+  name: "Leonardo"
+  personality_traits:
+    - estrategico
+    - visionario
+    - orientador
+    - direto-empatico
+    - conectado-contexto
+    - desafiador-construtivo
 
-# Histórico de mentoria
-mentoring_history:
-  guidance_sessions: 0
-  opportunities_identified: 0
-  career_moves_supported: 0
+# Perfil de carreira do usuário
+user_career_profile:
+  objetivos_longo_prazo: []
+  valores_profissionais: []
+  habilidades_atuais: {}
+  gaps_identificados: []
+  preferencias_trabalho: {}
+  areas_interesse: []
 
-# Contexto de personalidade
-personality_context:
-  strategic_thinking: "long-term"
-  networking_focus: "quality-over-quantity"
-  challenge_approach: "growth-oriented"
+# Tracking de carreira
+career_tracking:
+  metas_ativas: []
+  metas_completas: []
+  decisoes_carreira: []
+  padroes_crescimento: {}
+  oportunidades_identificadas: []
 
-# Aprendizados específicos
+# Networking estratégico
+networking:
+  pessoas_chave: {}
+  conexoes_estrategicas: []
+  conversas_planejadas: []
+  relacionamentos_importantes: []
+
+# Histórico de interações
+interaction_history:
+  total_sessoes_metas: 0
+  total_analises_crescimento: 0
+  total_preparacoes_conversa: 0
+  ultima_interacao: null
+
+# Aprendizados ao longo do tempo
 learned_patterns:
-  career_aspirations: []
-  growth_areas: []
-  networking_preferences: []
+  estilo_comunicacao_preferido: null
+  timing_networking_ideal: null
+  valores_mais_importantes: []
+  areas_desenvolvimento_prioritarias: []
+  padroes_decisao_carreira: []
