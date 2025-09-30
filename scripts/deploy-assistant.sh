@@ -95,9 +95,15 @@ if [ -d "$SOURCE_DIR/.assistant-core" ]; then
     if [ -f "$SOURCE_DIR/.assistant-core/agents/secretaria.md" ]; then
         cp "$SOURCE_DIR/.assistant-core/agents/secretaria.md" "$DEST_DIR/.claude/commands/assistentes/agents/"
     fi
+    if [ -f "$SOURCE_DIR/.assistant-core/agents/arquiteto.md" ]; then
+        cp "$SOURCE_DIR/.assistant-core/agents/arquiteto.md" "$DEST_DIR/.claude/commands/assistentes/agents/"
+        success "✓ Agente Arquiteto encontrado e instalado"
+    else
+        warn "⚠ Agente Arquiteto não encontrado"
+    fi
 
     # Instalar tasks dos agentes
-    for task in organizar-por-projeto processar-despejo revisar-pendencias agenda-do-dia status-projetos registro-reuniao whats-next processar-calendario relatorio-executivo; do
+    for task in organizar-por-projeto processar-despejo revisar-pendencias agenda-do-dia status-projetos registro-reuniao whats-next processar-calendario relatorio-executivo consultoria-tecnica analise-projeto confronto-tecnico registrar-decisao historico-decisoes; do
         if [ -f "$SOURCE_DIR/.assistant-core/tasks/${task}.md" ]; then
             cp "$SOURCE_DIR/.assistant-core/tasks/${task}.md" "$DEST_DIR/.claude/commands/assistentes/tasks/"
         fi
