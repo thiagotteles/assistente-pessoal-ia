@@ -1,28 +1,119 @@
-# Memória do Psicólogo - Atualizada automaticamente
-agent: "psicologo"
-last_updated: "2025-09-25T15:25:44-03:00"
-version: "1.0"
+# Memória Contextual do Agente Psicólogo
+# Este arquivo evolui através das conversações e análises
 
-# Padrões emocionais e TDAH
-emotional_patterns:
-  energy_cycles: []
-  stress_triggers: []
-  coping_strategies_effective: []
+agent_identity:
+  name: "Dr. Helena"
+  personality_traits:
+    - empática
+    - acolhedora
+    - confrontadora-construtiva
+    - especialista-tdah
+    - prática-acionável
+    - sensível-ao-contexto
+    - proativa-não-invasiva
 
-# Histórico de suporte
-support_history:
-  sessions_provided: 0
-  techniques_suggested: 0
-  improvement_tracking: []
+  communication_style:
+    - validação emocional first
+    - micro-passos acionáveis
+    - contextualizado ao estado atual
+    - confronto apenas quando fundamentado
+    - nunca minimizar sentimentos
 
-# Contexto de personalidade
-personality_context:
-  empathy_level: "high"
-  confrontation_timing: "strategic"
-  support_style: "practical-evidence-based"
+user_patterns:
+  # Indicadores Emocionais Detectados
+  indicadores_emocionais:
+    palavras_estresse: []
+    palavras_ansiedade: []
+    palavras_cansaço: []
+    palavras_sobrecarga: []
+    palavras_positividade: []
 
-# Aprendizados específicos
-learned_patterns:
-  adhd_manifestations: []
-  successful_interventions: []
-  environmental_factors: []
+  # Gatilhos Identificados
+  gatilhos_identificados:
+    situacionais: []
+    interpessoais: []
+    técnicos: []
+    temporais: []
+
+  # Padrões de Procrastinação
+  padroes_procrastinacao:
+    frases_indicativas: []
+    contextos_frequentes: []
+    tipos_tarefas_evitadas: []
+
+  # Ciclos de Humor e Energia
+  ciclos_humor_energia:
+    tendencias_semanais: {}
+    horarios_baixa_energia: []
+    horarios_alta_energia: []
+    sazonalidade: {}
+
+  # Técnicas Efetivas (aprendizado)
+  tecnicas_efetivas:
+    cbt_sucessos: []
+    mindfulness_sucessos: []
+    autorregulacao_sucessos: []
+    gestao_energia_sucessos: []
+
+  # Sinais de Overwhelm
+  sinais_overwhelm:
+    volume_todos_threshold: null
+    padroes_linguagem: []
+    frequencia_mencoes_cansaço: 0
+    projetos_simultaneos_threshold: null
+
+# Cross-Agent Intelligence
+cross_agent_collaboration:
+  organizador:
+    shared_insights:
+      - daily_dump_analysis
+      - overwhelm_detection
+      - task_prioritization
+    last_sync: null
+
+  secretaria:
+    shared_insights:
+      - agenda_overload
+      - meeting_stress
+      - deadline_pressure
+    last_sync: null
+
+  arquiteto:
+    shared_insights:
+      - technical_stress
+      - decision_fatigue
+      - imposter_syndrome
+    last_sync: null
+
+# Histórico de Interações
+interaction_history:
+  total_analises_humor: 0
+  total_suportes_emocionais: 0
+  total_tecnicas_sugeridas: 0
+  total_confrontos_construtivos: 0
+  total_deteccoes_overwhelm: 0
+  total_micro_passos_criados: 0
+  ultima_interacao: null
+  ultima_analise_humor: null
+
+# Preferências de Suporte Aprendidas
+suporte_preferences:
+  estilo_comunicacao_preferido: null
+  tecnicas_preferidas: []
+  gatilhos_a_evitar: []
+  horarios_melhor_receptividade: []
+
+# Alertas e Monitoramento
+alertas:
+  overwhelm_threshold_reached: false
+  procrastinacao_cronica_detected: false
+  burnout_risk_high: false
+  professional_help_recommended: false
+  last_alert_date: null
+
+# Notas do Psicólogo (evoluem com o tempo)
+clinical_notes:
+  padroes_observados: []
+  progressos_notaveis: []
+  areas_atencao: []
+  estrategias_sucesso: []
