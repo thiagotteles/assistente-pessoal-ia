@@ -10,7 +10,7 @@ Para que informações sejam categorizadas sem esforço mental da minha parte.
 
 ### Critérios de Aceitação
 
-1. Organizador lê `daily-dump.txt` e identifica entradas sem categorização
+1. Organizador lê `daily-dump.md` e identifica entradas sem categorização
 2. Faz perguntas específicas como "Bounded contexts te confundiu, qual sua dúvida específica?"
 3. Cada resposta é imediatamente categorizada na knowledge-base apropriada
 4. Não exige processamento de todo o arquivo de uma vez - funciona incrementalmente

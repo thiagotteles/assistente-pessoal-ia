@@ -1,7 +1,7 @@
 # Central de Todos
 
 ## Visão Geral
-Este arquivo centraliza todos os todos extraídos automaticamente do daily-dump.txt e outros agentes do sistema BMAD™ Core.
+Este arquivo centraliza todos os todos extraídos automaticamente do daily-dump.md e outros agentes do sistema BMAD™ Core.
 
 ## Todos Ativos
 

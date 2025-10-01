@@ -111,8 +111,8 @@ git add . && git commit -m "backup" && git push
 ### ❓ **Como faço para "treinar" os agentes com meu contexto?**
 
 **R:** Os agentes aprendem automaticamente:
-- Use o arquivo `despejo/daily-dump.txt` regularmente
-- Processe com `/organizador despejo/daily-dump.txt`
+- Use o arquivo `despejo/daily-dump.md` regularmente
+- Processe com `/organizador despejo/daily-dump.md`
 - Interaja naturalmente com cada agente
 - Quanto mais usar, mais personalizados ficam
 
@@ -307,7 +307,7 @@ memoria:
 **R:** Design TDAH-friendly em todos os aspectos:
 
 **Captura sem fricção:**
-- `daily-dump.txt` para despejo mental rápido
+- `daily-dump.md` para despejo mental rápido
 - Sem preocupação com organização inicial
 
 **Processamento inteligente:**
@@ -334,7 +334,7 @@ memoria:
 ### ❓ **Como uso quando estou em crise/overwhelm?**
 
 **R:** Protocolo de emergência:
-1. **Despeje tudo** em `daily-dump.txt` (sem filtro)
+1. **Despeje tudo** em `daily-dump.md` (sem filtro)
 2. **`/psicologo "protocolo emergência overwhelm"`**
 3. **Siga as instruções** do psicólogo
 4. **Foque em 1 coisa** por vez
@@ -343,7 +343,7 @@ memoria:
 ### ❓ **E se eu esquecer de usar o sistema?**
 
 **R:** Comum e normal! Estratégias:
-- Lembrete visual: deixe `daily-dump.txt` aberto
+- Lembrete visual: deixe `daily-dump.md` aberto
 - Rotina leve: apenas 5 minutos de manhã
 - Sem culpa: retome quando lembrar
 - Start small: use apenas 1 agente primeiro
@@ -517,4 +517,4 @@ du -sh knowledge-base/
 
 **Lembre-se**: Este sistema cresce com você. Quanto mais usar, mais útil fica!
 
-🤖 **Seus agentes estão prontos** - Comece despejando suas ideias em `daily-dump.txt` e processe com `/organizador`!
+🤖 **Seus agentes estão prontos** - Comece despejando suas ideias em `daily-dump.md` e processe com `/organizador`!

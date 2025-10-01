@@ -24,7 +24,7 @@ Este manual ensina como usar eficientemente o sistema de Assistente Pessoal IA c
 
 ### 1. Captura → 2. Processamento → 3. Organização → 4. Ação
 
-#### 1. **Captura** (despejo/daily-dump.txt)
+#### 1. **Captura** (despejo/daily-dump.md)
 Despeje **tudo** que está na sua mente sem se preocupar com organização:
 
 ```
@@ -41,7 +41,7 @@ Use os agentes especializados para processar suas informações:
 
 ```bash
 # No Claude Code
-/organizador despejo/daily-dump.txt
+/organizador despejo/daily-dump.md
 ```
 
 #### 3. **Organização** (Knowledge Base)
@@ -76,7 +76,7 @@ Use o Obsidian para visualizar conexões e os agentes para ações específicas:
 
 **Processamento de Despejo Diário:**
 ```bash
-/organizador despejo/daily-dump.txt
+/organizador despejo/daily-dump.md
 ```
 
 **Saída esperada:**
@@ -247,7 +247,7 @@ Use o Obsidian para visualizar conexões e os agentes para ações específicas:
 É completamente normal se sentir sobrecarregado, especialmente para pessoas com TDAH. Você não está falhando - seu cérebro apenas processa informações de forma diferente.
 
 ## Técnica Imediata: Brain Dump + Priorização
-1. **Despeje tudo** no daily-dump.txt (já fez isso? ótimo!)
+1. **Despeje tudo** no daily-dump.md (já fez isso? ótimo!)
 2. **Respire fundo** - 3 respirações profundas
 3. **Escolha APENAS 3 itens** para hoje
 4. **Ignore o resto** temporariamente
@@ -374,7 +374,7 @@ Foco no progresso, não na perfeição.
 **Situação**: Você está liderando um projeto de desenvolvimento de app com múltiplos stakeholders.
 
 **Workflow**:
-1. **Captura inicial** (`despejo/daily-dump.txt`):
+1. **Captura inicial** (`despejo/daily-dump.md`):
    ```
    Projeto app delivery
    reunião cliente terça 14h
@@ -386,7 +386,7 @@ Foco no progresso, não na perfeição.
 
 2. **Organização** (`/organizador`):
    ```bash
-   /organizador despejo/daily-dump.txt
+   /organizador despejo/daily-dump.md
    ```
 
 3. **Status executivo** (`/secretaria`):
@@ -444,7 +444,7 @@ Foco no progresso, não na perfeição.
 **Situação**: Pessoa com TDAH lutando com produtividade e foco.
 
 **Workflow**:
-1. **Captura sem filtro** (`despejo/daily-dump.txt`):
+1. **Captura sem filtro** (`despejo/daily-dump.md`):
    ```
    não consegui focar hoje
    muitas reuniões interromperam meu flow
@@ -455,7 +455,7 @@ Foco no progresso, não na perfeição.
 
 2. **Suporte emocional** (`/psicologo`):
    ```bash
-   /psicologo despejo/daily-dump.txt
+   /psicologo despejo/daily-dump.md
    ```
 
 3. **Estruturação TDAH-friendly** (`/organizador`):
@@ -528,12 +528,12 @@ Use o Graph View para visualizar como suas ideias se conectam automaticamente at
 
 #### 1. Princípio do "Brain Dump"
 - **NUNCA** se preocupe com organização na captura
-- Use `despejo/daily-dump.txt` como extensão do seu cérebro
+- Use `despejo/daily-dump.md` como extensão do seu cérebro
 - Capture TUDO: ideias, tarefas, preocupações, lembretes
 
 #### 2. Capture Múltipla
 - Tenha múltiplos pontos de captura:
-  - `daily-dump.txt` para desktop
+  - `daily-dump.md` para desktop
   - App de notas no celular que sincroniza
   - Papel físico para emergências
 - Processe tudo com `/organizador` regularmente
@@ -543,7 +543,7 @@ Use o Graph View para visualizar como suas ideias se conectam automaticamente at
 #### 1. Time-boxing com Agentes
 ```bash
 # Sessão de 30 minutos de organização
-/organizador despejo/daily-dump.txt
+/organizador despejo/daily-dump.md
 # Quebra de 10 minutos
 /psicologo "como manter energia para próxima sessão?"
 # Sessão de 30 minutos de ação
@@ -699,4 +699,4 @@ Cada pessoa é única. Use este manual como base e adapte:
 
 **Lembre-se**: Este sistema foi criado para **você**. Adapte, modifique e personalize conforme suas necessidades específicas. Os agentes estão aqui para apoiar, não para julgar ou pressionar.
 
-🤖 **Seus agentes estão prontos para ajudar!** Comece com `/organizador despejo/daily-dump.txt` e veja a mágica acontecer.
+🤖 **Seus agentes estão prontos para ajudar!** Comece com `/organizador despejo/daily-dump.md` e veja a mágica acontecer.

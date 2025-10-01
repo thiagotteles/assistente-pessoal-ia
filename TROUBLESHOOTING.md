@@ -206,7 +206,7 @@ ls knowledge-base/
 # Deve ter conteúdo em pessoas/, projetos/, etc.
 
 # 3. Executar organizador com conteúdo real
-/organizador despejo/daily-dump.txt
+/organizador despejo/daily-dump.md
 ```
 
 ---
@@ -302,8 +302,8 @@ rm -rf knowledge-base/.obsidian/cache
 find .assistant-core/logs/ -name "*.log" -mtime +30 -delete
 
 # Arquivar despejo processado
-mv despejo/daily-dump.txt despejo/processed/dump-$(date +%Y%m%d).txt
-touch despejo/daily-dump.txt
+mv despejo/daily-dump.md despejo/processed/dump-$(date +%Y%m%d).txt
+touch despejo/daily-dump.md
 ```
 
 #### 2. Otimizar knowledge base:
@@ -356,10 +356,10 @@ bash test-recovery.sh
 # Adicionar conteúdo no despejo
 echo "Projeto X - reunião com Maria amanhã
 Ideia: app de receitas
-Comprar café" >> despejo/daily-dump.txt
+Comprar café" >> despejo/daily-dump.md
 
 # Processar com organizador
-/organizador despejo/daily-dump.txt
+/organizador despejo/daily-dump.md
 ```
 
 ### ❌ Referências [[]] quebradas
@@ -526,7 +526,7 @@ bash test-recovery.sh
 git checkout HEAD -- knowledge-base/
 
 # 4. Reprocessar despejo se necessário
-/organizador despejo/daily-dump.txt
+/organizador despejo/daily-dump.md
 ```
 
 ### ❌ Configurações de agentes perdidas

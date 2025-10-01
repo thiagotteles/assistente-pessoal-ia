@@ -38,7 +38,7 @@
 # 2025-01-09 14:30:15 - ERROR - Organizador Agent
 
 # Operação
-Processamento de despejo daily-dump.txt
+Processamento de despejo daily-dump.md
 
 # Erro
 Referência [[Projeto Inexistente]] não encontrada

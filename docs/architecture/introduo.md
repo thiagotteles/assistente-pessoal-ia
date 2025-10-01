@@ -21,7 +21,7 @@ assistente-pessoal-ia/
 │   ├── data/                    # Configurações e métodos de elicitação
 │   └── core-config.yaml         # Configuração central do sistema
 ├── despejo/
-│   └── daily-dump.txt          # Captura ultra-rápida sem estrutura
+│   └── daily-dump.md          # Captura ultra-rápida sem estrutura
 ├── knowledge-base/             # "Segundo cérebro" compartilhado
 │   ├── decisoes/
 │   ├── contextos/

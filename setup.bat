@@ -108,7 +108,7 @@ goto :eof
 :create_base_files
 call :print_info "Criando arquivos base..."
 
-REM Create daily-dump.txt
+REM Create daily-dump.md
 (
 echo # Daily Dump - Captura Ultra-Rápida
 echo.
@@ -128,8 +128,8 @@ echo - Qualquer coisa!
 echo.
 echo Use [[Nome]] para referenciar pessoas ou projetos.
 echo.
-) > despejo\daily-dump.txt
-call :print_success "Criado: despejo\daily-dump.txt"
+) > despejo\daily-dump.md
+call :print_success "Criado: despejo\daily-dump.md"
 
 REM Create README.md
 (
@@ -139,7 +139,7 @@ echo Sistema de "segundo cérebro" especializado para usuários com TDAH, compos
 echo.
 echo ## Início Rápido
 echo.
-echo 1. **Captura Ultra-Rápida**: Use `despejo/daily-dump.txt` para capturar qualquer informação
+echo 1. **Captura Ultra-Rápida**: Use `despejo/daily-dump.md` para capturar qualquer informação
 echo 2. **Agentes Especializados**: Use comandos `/organizador`, `/secretaria`, `/arquiteto`, `/psicologo`, `/mentor`
 echo 3. **Knowledge Base**: Explore `knowledge-base/` no Obsidian para visualização em grafo
 echo.
@@ -235,7 +235,7 @@ echo - Documentação inicial completa
 echo.
 echo ### Características
 echo - Sistema 100%% local
-echo - Captura ultra-rápida via daily-dump.txt
+echo - Captura ultra-rápida via daily-dump.md
 echo - Knowledge-base organizada
 echo - Agentes: /organizador, /secretaria, /arquiteto, /psicologo, /mentor
 echo.
@@ -533,7 +533,7 @@ for %%d in (!directories!) do (
 REM Test key files
 call :print_info "Testando arquivos base..."
 
-set files=despejo\daily-dump.txt README.md .gitignore CHANGELOG.md .assistant-core\core-config.yaml
+set files=despejo\daily-dump.md README.md .gitignore CHANGELOG.md .assistant-core\core-config.yaml
 
 for %%f in (!files!) do (
     if exist "%%f" (
@@ -589,7 +589,7 @@ echo =====================================
 echo.
 call :print_info "Próximos passos:"
 call :print_info "1. Abra knowledge-base\ no Obsidian"
-call :print_info "2. Use despejo\daily-dump.txt para captura rápida"
+call :print_info "2. Use despejo\daily-dump.md para captura rápida"
 call :print_info "3. Experimente os agentes: /organizador, /secretaria, /arquiteto, /psicologo, /mentor"
 echo.
 call :print_info "Para backup automático, configure um repositório Git remoto:"

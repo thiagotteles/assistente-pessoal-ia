@@ -1,7 +1,7 @@
 # Template: Todo Extraído
 
 ## Uso
-Template para todos extraídos automaticamente do daily-dump.txt e organizados na central-todos.md com contexto completo.
+Template para todos extraídos automaticamente do daily-dump.md e organizados na central-todos.md com contexto completo.
 
 ## Template YAML para Metadados do Todo
 ```yaml

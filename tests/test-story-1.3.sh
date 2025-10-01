@@ -233,11 +233,11 @@ else
     EXIT_CODE=1
 fi
 
-# Check if daily-dump.txt is accessible for processing
-if [ -f "despejo/daily-dump.txt" ]; then
-    echo "   ✅ Integration: daily-dump.txt accessible for agents"
+# Check if daily-dump.md is accessible for processing
+if [ -f "despejo/daily-dump.md" ]; then
+    echo "   ✅ Integration: daily-dump.md accessible for agents"
 else
-    echo "   ❌ Integration: daily-dump.txt not accessible"
+    echo "   ❌ Integration: daily-dump.md not accessible"
     EXIT_CODE=1
 fi
 

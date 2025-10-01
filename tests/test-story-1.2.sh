@@ -6,8 +6,8 @@ echo "====================================================="
 
 EXIT_CODE=0
 
-# Test 1: Daily-dump.txt accepts any format without validation
-echo "📝 Test 1: daily-dump.txt aceita qualquer formato..."
+# Test 1: daily-dump.md accepts any format without validation
+echo "📝 Test 1: daily-dump.md aceita qualquer formato..."
 
 # Test various formats
 test_entries=(
@@ -30,7 +30,7 @@ test_entries=(
 )
 
 for i in "${!test_entries[@]}"; do
-    if echo "${test_entries[$i]}" >> despejo/daily-dump.txt; then
+    if echo "${test_entries[$i]}" >> despejo/daily-dump.md; then
         echo "   ✅ Formato $((i+1)): Aceito"
     else
         echo "   ❌ Formato $((i+1)): Rejeitado"
@@ -55,7 +55,7 @@ test_inputs=(
 )
 
 for input in "${test_inputs[@]}"; do
-    echo "$input" >> despejo/daily-dump.txt 2>/dev/null
+    echo "$input" >> despejo/daily-dump.md 2>/dev/null
     if [ $? -eq 0 ]; then
         echo "   ✅ Entrada aceita: '$input'"
     else
@@ -68,11 +68,11 @@ done
 echo ""
 echo "🔗 Test 3: Acesso direto via Claude Code..."
 
-if [ -f "despejo/daily-dump.txt" ]; then
-    echo "   ✅ Arquivo acessível em despejo/daily-dump.txt"
+if [ -f "despejo/daily-dump.md" ]; then
+    echo "   ✅ Arquivo acessível em despejo/daily-dump.md"
 
     # Check file permissions
-    if [ -r "despejo/daily-dump.txt" ] && [ -w "despejo/daily-dump.txt" ]; then
+    if [ -r "despejo/daily-dump.md" ] && [ -w "despejo/daily-dump.md" ]; then
         echo "   ✅ Permissões de leitura/escrita: OK"
     else
         echo "   ❌ Permissões inadequadas"
@@ -114,14 +114,14 @@ fi
 echo ""
 echo "🔄 Test 5: Múltiplas entradas por dia..."
 
-initial_size=$(wc -l < despejo/daily-dump.txt)
+initial_size=$(wc -l < despejo/daily-dump.md)
 
 # Add multiple entries
 for i in {1..3}; do
-    echo "Entrada múltipla $i - $(date)" >> despejo/daily-dump.txt
+    echo "Entrada múltipla $i - $(date)" >> despejo/daily-dump.md
 done
 
-final_size=$(wc -l < despejo/daily-dump.txt)
+final_size=$(wc -l < despejo/daily-dump.md)
 
 if [ $final_size -gt $initial_size ]; then
     echo "   ✅ Múltiplas entradas suportadas"
@@ -161,12 +161,12 @@ echo ""
 echo "💾 Test 7: Preservação de dados..."
 
 # Count entries before and after operations
-content_before=$(grep -c "Entrada múltipla" despejo/daily-dump.txt)
+content_before=$(grep -c "Entrada múltipla" despejo/daily-dump.md)
 
 # Add more content
-echo "Teste de preservação de dados" >> despejo/daily-dump.txt
+echo "Teste de preservação de dados" >> despejo/daily-dump.md
 
-content_after=$(grep -c -E "(Entrada múltipla|Teste de preservação)" despejo/daily-dump.txt)
+content_after=$(grep -c -E "(Entrada múltipla|Teste de preservação)" despejo/daily-dump.md)
 
 if [ $content_after -gt $content_before ]; then
     echo "   ✅ Dados preservados e novos conteúdos aceitos"
@@ -179,7 +179,7 @@ fi
 echo ""
 echo "⚡ Test 8: Performance básica..."
 
-file_size=$(stat -c%s despejo/daily-dump.txt 2>/dev/null || stat -f%z despejo/daily-dump.txt 2>/dev/null || echo "unknown")
+file_size=$(stat -c%s despejo/daily-dump.md 2>/dev/null || stat -f%z despejo/daily-dump.md 2>/dev/null || echo "unknown")
 
 if [ "$file_size" != "unknown" ]; then
     if [ $file_size -lt 1048576 ]; then  # Less than 1MB
@@ -211,7 +211,7 @@ if [ $EXIT_CODE -eq 0 ]; then
     echo "🚀 Sistema de captura ultra-rápida totalmente funcional!"
     echo ""
     echo "📋 Como usar:"
-    echo "• Edite despejo/daily-dump.txt diretamente"
+    echo "• Edite despejo/daily-dump.md diretamente"
     echo "• Use scripts/add-dump-entry.sh para timestamps"
     echo "• Use scripts/process-dump.sh para arquivamento"
 else

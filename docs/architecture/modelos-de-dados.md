@@ -4,7 +4,7 @@
 
 **Propósito:** Captura ultra-rápida de informações sem estrutura obrigatória - o ponto de entrada para todo o sistema.
 
-**Estrutura do Arquivo:** `despejo/daily-dump.txt`
+**Estrutura do Arquivo:** `despejo/daily-dump.md`
 ```
 Qualquer texto livre aqui...
 Reunião com [[Fabio H]] sobre API performance do [[Projeto Alpha]]

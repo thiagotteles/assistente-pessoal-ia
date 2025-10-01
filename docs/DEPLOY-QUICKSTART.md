@@ -80,7 +80,7 @@ du -sh .
    /assistentes:agents:organizador
    ```
 3. **Faça um teste**:
-   - Adicione algo em `despejo/daily-dump.txt`
+   - Adicione algo em `despejo/daily-dump.md`
    - Use o comando `processar` (opção 1)
    - Veja a mágica acontecer! ✨
 

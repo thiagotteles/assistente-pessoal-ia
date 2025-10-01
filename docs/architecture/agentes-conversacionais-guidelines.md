@@ -62,7 +62,7 @@ agent:
   id: organizador
   title: Agente Organizador Especialista em TDAH
   icon: 🗂️
-  whenToUse: 'Use para processamento inteligente de daily-dump.txt'
+  whenToUse: 'Use para processamento inteligente de daily-dump.md'
 
 persona:
   role: Organizadora de Informações Pessoais
@@ -92,7 +92,7 @@ interaction_style: empathetic
 ## Workflow
 
 ### Etapa 1: Verificação Empática
-1. Verificar daily-dump.txt
+1. Verificar daily-dump.md
 2. Carregar memória pessoal
 3. Adaptar abordagem ao usuário
 
@@ -136,7 +136,7 @@ user_patterns:
 ### ✅ Como Usar Agente Conversacional:
 ```
 Usuário: "/organizador *processar"
-Sofia: "Oi! Vou analisar seu daily-dump.txt.
+Sofia: "Oi! Vou analisar seu daily-dump.md.
        Vi que você mencionou estar cansado.
        Quer que eu processe isso de um jeito mais leve hoje?"
 ```
@@ -144,7 +144,7 @@ Sofia: "Oi! Vou analisar seu daily-dump.txt.
 ### ❌ Uso Incorreto:
 ```python
 # ERRADO - não é conversacional
-organizador.processar_despejo(arquivo="daily-dump.txt")
+organizador.processar_despejo(arquivo="daily-dump.md")
 ```
 
 ## 📚 Integração com Sistemas Existentes

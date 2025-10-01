@@ -7,13 +7,13 @@
 **Responsabilidade:** Processamento inteligente do arquivo despejo e categorização automática na knowledge-base.
 
 **Interfaces Principais:**
-- `processar_despejo()` - Analisa daily-dump.txt via perguntas específicas
+- `processar_despejo()` - Analisa daily-dump.md via perguntas específicas
 - `categorizar_automaticamente()` - Salva informações na knowledge-base com metadados
 - `criar_referencias()` - Gera links [[]] automaticamente para pessoas/projetos
 - `organizar_por_projeto()` - Agrupa informações por contexto de projeto
 - `cross_reference_agentes()` - Colabora com outros agentes via knowledge-base
 
-**Dependências:** Knowledge-base Manager, daily-dump.txt, Agent Memory System, Cross-Agent Intelligence
+**Dependências:** Knowledge-base Manager, daily-dump.md, Agent Memory System, Cross-Agent Intelligence
 
 **Stack Tecnológico:** Claude Code + YAML configs + Markdown templates
 
@@ -60,7 +60,7 @@
 - `colaborar_secretaria()` - Detecção conjunta de sobrecarga
 - `suporte_confrontador()` - Confronto empático quando necessário
 
-**Dependências:** Knowledge-base Manager, Agent Memory, Cross-Agent Intelligence, daily-dump.txt
+**Dependências:** Knowledge-base Manager, Agent Memory, Cross-Agent Intelligence, daily-dump.md
 
 **Stack Tecnológico:** Claude Code + YAML configs + padrões comportamentais
 

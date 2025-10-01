@@ -242,7 +242,7 @@ else
 fi
 
 # Check integration with Story 1.2 (capture)
-if [ -f "scripts/process-dump.sh" ] && [ -f "despejo/daily-dump.txt" ]; then
+if [ -f "scripts/process-dump.sh" ] && [ -f "despejo/daily-dump.md" ]; then
     echo "   ✅ Story 1.2: Capture system integration maintained"
 else
     echo "   ❌ Story 1.2: Missing integration with capture system"

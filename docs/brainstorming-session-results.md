@@ -171,7 +171,7 @@
 
 ```
 📁 despejo/
-   └── daily-dump.txt (arquivo único para despejo)
+   └── daily-dump.md (arquivo único para despejo)
 
 📁 diario/
    ├── 2025-09-25-diario.md
@@ -224,7 +224,7 @@
    - Recursos necessários: Configuração inicial do Claude Code + estrutura de comandos
 
 2. **Arquivo Despejo Único**
-   - Descrição: Criar `despejo/daily-dump.txt` para captura rápida
+   - Descrição: Criar `despejo/daily-dump.md` para captura rápida
    - Por que imediato: Resolve necessidade TDAH imediata de não esquecer
    - Recursos necessários: Arquivo simples + rotina de uso
 

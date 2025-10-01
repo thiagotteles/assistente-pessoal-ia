@@ -1,7 +1,7 @@
 # Métodos de Elicitação para Processamento de Despejo
 
 ## Visão Geral
-Este documento define os 9 métodos de elicitação utilizados pelo Agente Organizador para extrair informações específicas do daily-dump.txt através de perguntas inteligentes.
+Este documento define os 9 métodos de elicitação utilizados pelo Agente Organizador para extrair informações específicas do daily-dump.md através de perguntas inteligentes.
 
 ## Método 1: Detecção de Contexto de Pessoas
 **Objetivo**: Identificar pessoas mencionadas e suas relações

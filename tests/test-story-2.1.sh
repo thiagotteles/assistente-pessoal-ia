@@ -221,8 +221,8 @@ if [ -f "todos/central-todos.md" ] && [ -f ".assistant-core/tasks/processar-desp
     fi
 fi
 
-# Check for daily-dump.txt processing
-if [ -f "despejo/daily-dump.txt" ] && [ -f ".assistant-core/tasks/processar-despejo.md" ]; then
+# Check for daily-dump.md processing
+if [ -f "despejo/daily-dump.md" ] && [ -f ".assistant-core/tasks/processar-despejo.md" ]; then
     if grep -q "daily-dump\|despejo" ".assistant-core/tasks/processar-despejo.md"; then
         echo "   ✅ Daily dump: Integration with capture system"
     else
@@ -340,7 +340,7 @@ if [ $EXIT_CODE -eq 0 ]; then
     echo "🚀 Agente Organizador Sofia totalmente funcional via método conversacional!"
     echo ""
     echo "📋 Como usar o agente:"
-    echo "• /organizador *processar - Processar daily-dump.txt"
+    echo "• /organizador *processar - Processar daily-dump.md"
     echo "• /organizador *organizar - Organizar por projeto"
     echo "• /organizador *revisar - Revisar pendências"
     echo "• /organizador *relatorio - Gerar relatório de sessão"

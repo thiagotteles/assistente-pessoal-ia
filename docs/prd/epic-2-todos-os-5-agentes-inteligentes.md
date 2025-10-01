@@ -10,7 +10,7 @@ Para que informações sejam categorizadas sem esforço mental da minha parte.
 
 ### Critérios de Aceitação
 
-1. Processamento completo de `daily-dump.txt` via perguntas inteligentes e específicas
+1. Processamento completo de `daily-dump.md` via perguntas inteligentes e específicas
 2. Categorização automática inteligente na knowledge-base usando Knowledge-Base Manager
 3. Menu completo de funcionalidades: processar despejo, organizar por projeto, revisar pendências
 4. Integração com central de todos - extração automática de ações necessárias

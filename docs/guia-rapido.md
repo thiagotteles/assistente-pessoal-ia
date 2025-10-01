@@ -21,7 +21,7 @@ bash test-basic.sh
 ```
 
 ### 3️⃣ Primeira Captura (1 minuto)
-1. Abra `despejo/daily-dump.txt`
+1. Abra `despejo/daily-dump.md`
 2. Despeje TUDO que está na sua mente:
    ```
    reunião com João amanhã 14h
@@ -35,7 +35,7 @@ bash test-basic.sh
 ### 4️⃣ Primeiro Processamento (30 segundos)
 No Claude Code:
 ```bash
-/organizador despejo/daily-dump.txt
+/organizador despejo/daily-dump.md
 ```
 
 **🎉 Pronto! Você já está usando o sistema.**
@@ -46,7 +46,7 @@ No Claude Code:
 
 ### Manhã (2 minutos)
 ```bash
-/organizador despejo/daily-dump.txt
+/organizador despejo/daily-dump.md
 /secretaria "o que preciso focar hoje?"
 ```
 
@@ -68,7 +68,7 @@ No Claude Code:
 
 | Agente | Quando Usar | Exemplo |
 |--------|-------------|---------|
-| `/organizador` | Info caótica | `despejo/daily-dump.txt` |
+| `/organizador` | Info caótica | `despejo/daily-dump.md` |
 | `/secretaria` | Status/coordenação | `"status projeto X"` |
 | `/arquiteto` | Decisões técnicas | `"React ou Vue?"` |
 | `/psicologo` | Overwhelm/TDAH | `"me sinto perdido"` |
@@ -79,7 +79,7 @@ No Claude Code:
 ## 📁 Estrutura Simples
 
 ```
-📁 despejo/daily-dump.txt    ← Despeje tudo aqui
+📁 despejo/daily-dump.md    ← Despeje tudo aqui
 📁 knowledge-base/           ← Abra no Obsidian
 📁 todos/                    ← Tarefas organizadas
 📁 .assistant-core/          ← Configurações (não mexer)
@@ -114,7 +114,7 @@ bash setup.sh                  # Reinstalar
 
 ## 💡 Dicas TDAH (30 segundos)
 
-- **Capture TUDO** sem filtro em `daily-dump.txt`
+- **Capture TUDO** sem filtro em `daily-dump.md`
 - **Processe depois** com `/organizador`
 - **Use `/psicologo`** quando overwhelm
 - **Sem culpa** se esquecer de usar
@@ -135,8 +135,8 @@ bash setup.sh                  # Reinstalar
 
 - [ ] Setup executado com sucesso
 - [ ] Teste passou (11/11)
-- [ ] Primeira captura em `daily-dump.txt`
-- [ ] Primeiro `/organizador despejo/daily-dump.txt`
+- [ ] Primeira captura em `daily-dump.md`
+- [ ] Primeiro `/organizador despejo/daily-dump.md`
 - [ ] Obsidian configurado com `knowledge-base/`
 - [ ] Backup configurado (opcional, mas recomendado)
 

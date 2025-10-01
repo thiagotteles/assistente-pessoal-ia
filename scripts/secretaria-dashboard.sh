@@ -148,12 +148,12 @@ generate_dashboard() {
         echo "• Atualizar status dos projetos em andamento"
     fi
 
-    echo "• Processar novos itens do daily-dump.txt"
+    echo "• Processar novos itens do daily-dump.md"
     echo "• Revisar e priorizar todos pendentes"
 
     # Verificar se há despejo para processar
-    if [ -f "despejo/daily-dump.txt" ] && [ -s "despejo/daily-dump.txt" ]; then
-        warn "• ATENÇÃO: Há conteúdo novo no daily-dump.txt para processar"
+    if [ -f "despejo/daily-dump.md" ] && [ -s "despejo/daily-dump.md" ]; then
+        warn "• ATENÇÃO: Há conteúdo novo no daily-dump.md para processar"
     fi
 
     echo

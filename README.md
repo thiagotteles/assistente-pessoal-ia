@@ -14,7 +14,7 @@ Este arquivo contém avisos críticos sobre o que NÃO deve ser usado e diretriz
 |------|-------|------|-----------|--------|
 | **Épico 0** | 0.5 | Documentação Operacional Completa | Sistema abrangente de documentação para usuários finais | ✅ Concluído |
 | **Épico 1** | 1.1 | Estrutura de Arquivos Base | Estrutura simples e intuitiva para usuários com TDAH | ✅ Concluído |
-| **Épico 1** | 1.2 | Sistema de Captura Ultra-Rápida | Arquivo daily-dump.txt sem estrutura obrigatória | ✅ Concluído |
+| **Épico 1** | 1.2 | Sistema de Captura Ultra-Rápida | Arquivo daily-dump.md sem estrutura obrigatória | ✅ Concluído |
 | **Épico 1** | 1.3 | Comando Slash Base | 5 comandos funcionais com roteamento inteligente | ✅ Concluído |
 | **Épico 1** | 1.4 | Knowledge-Base Compartilhada Básica | Sistema de [[referências]] Obsidian com auto-linking | ✅ Concluído |
 | **Épico 2** | 2.1 | Agente Organizador Completo | Processamento de despejo via perguntas específicas | ✅ Concluído |
@@ -115,7 +115,7 @@ bash tests/test-basic.sh
    ```
    /assistentes:agents:organizador
    ```
-3. **Teste a captura rápida** - adicione algo em `despejo/daily-dump.txt`
+3. **Teste a captura rápida** - adicione algo em `despejo/daily-dump.md`
 4. **Use o comando processar** para ver o assistente em ação
 
 4. **Configure o Obsidian (recomendado):**
@@ -140,7 +140,7 @@ git push -u origin main
 
 ### 1. Captura Ultra-Rápida
 
-**Arquivo**: `despejo/daily-dump.txt`
+**Arquivo**: `despejo/daily-dump.md`
 
 Simplesmente abra este arquivo e despeje **tudo** que está na sua mente:
 - Ideias aleatórias
@@ -187,7 +187,7 @@ Abra a pasta `knowledge-base/` no Obsidian para:
 
 **Exemplo**:
 ```
-/organizador despejo/daily-dump.txt
+/organizador despejo/daily-dump.md
 ```
 
 ### `/secretaria` - Sua Assistente Executiva
@@ -247,7 +247,7 @@ Abra a pasta `knowledge-base/` no Obsidian para:
 ```
 assistente-pessoal-ia/
 ├── 📁 despejo/                    # Captura ultra-rápida
-│   ├── daily-dump.txt             # Arquivo principal de captura
+│   ├── daily-dump.md             # Arquivo principal de captura
 │   └── processed/                 # Arquivos já processados
 ├── 📁 knowledge-base/             # "Segundo cérebro" (Obsidian Vault)
 │   ├── decisoes/                  # Decisões importantes

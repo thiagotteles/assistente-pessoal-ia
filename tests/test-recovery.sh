@@ -77,9 +77,9 @@ recover_directory_structure() {
 recover_base_files() {
     print_info "Recuperação 2: Criando arquivos base ausentes"
 
-    # Create daily-dump.txt if missing
-    if [ ! -f "despejo/daily-dump.txt" ]; then
-        cat > "despejo/daily-dump.txt" << 'EOF'
+    # Create daily-dump.md if missing
+    if [ ! -f "despejo/daily-dump.md" ]; then
+        cat > "despejo/daily-dump.md" << 'EOF'
 # Daily Dump - Captura Ultra-Rápida
 
 **Data:** $(date +%Y-%m-%d)
@@ -91,7 +91,7 @@ Digite aqui tudo que está na sua mente...
 ---
 *Processado pelo /organizador*
 EOF
-        print_success "Criado: despejo/daily-dump.txt"
+        print_success "Criado: despejo/daily-dump.md"
     fi
 
     # Create .gitignore if missing
@@ -138,7 +138,7 @@ Sistema de assistente pessoal com 5 agentes especializados para pessoas com TDAH
 1. Execute o setup: `bash setup.sh` (Linux/Mac) ou `setup.bat` (Windows)
 2. Execute os testes: `bash test-basic.sh`
 3. Abra `knowledge-base/` no Obsidian
-4. Use `despejo/daily-dump.txt` para captura rápida
+4. Use `despejo/daily-dump.md` para captura rápida
 
 ## Agentes Disponíveis
 

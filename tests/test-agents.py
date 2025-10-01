@@ -89,7 +89,7 @@ def test_slash_command_dispatcher():
         test_cases = [
             ("status", [], "Testing system status"),
             ("organizador", [], "Testing organizador without args"),
-            ("organizador", ["daily-dump.txt"], "Testing organizador with file"),
+            ("organizador", ["daily-dump.md"], "Testing organizador with file"),
             ("secretaria", [], "Testing secretaria agenda"),
             ("secretaria", ["status", "projetos"], "Testing secretaria project status"),
             ("arquiteto", ["análise", "sistema", "web"], "Testing arquiteto analysis"),
@@ -194,7 +194,7 @@ def test_system_integration():
     # Test file structure
     project_root = Path(__file__).parent
     required_paths = [
-        "despejo/daily-dump.txt",
+        "despejo/daily-dump.md",
         "knowledge-base",
         ".assistant-core/agents",
         ".assistant-core/memory"

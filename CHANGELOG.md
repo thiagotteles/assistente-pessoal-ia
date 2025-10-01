@@ -14,7 +14,7 @@ Todas as mudanças importantes do projeto serão documentadas aqui.
 
 ### Características
 - Sistema 100% local
-- Captura ultra-rápida via daily-dump.txt
+- Captura ultra-rápida via daily-dump.md
 - Knowledge-base organizada
 - Agentes: /organizador, /secretaria, /arquiteto, /psicologo, /mentor
 

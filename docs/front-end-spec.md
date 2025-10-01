@@ -78,7 +78,7 @@ graph TD
     KB --> KB3[projetos/*.md]
     KB --> KB4[pessoas/*.md]
 
-    G[daily-dump.txt] --> B
+    G[daily-dump.md] --> B
     H[central-todos.md] --> C
     I[diarios/*.md] --> C
 ```
@@ -108,7 +108,7 @@ graph TD
 **Objetivo do Usuário:** Despejar qualquer informação importante sem perder o fluxo de trabalho
 
 **Pontos de Entrada:**
-- Arquivo `daily-dump.txt` aberto diretamente
+- Arquivo `daily-dump.md` aberto diretamente
 - Via `/organizador` → "processar despejo"
 
 **Critérios de Sucesso:** Informação capturada em <5 segundos, zero fricção
@@ -116,7 +116,7 @@ graph TD
 ```mermaid
 graph TD
     A[Insight/Informação Surge] --> B{Onde Anotar?}
-    B -->|Opção 1| C[Abrir daily-dump.txt]
+    B -->|Opção 1| C[Abrir daily-dump.md]
     B -->|Opção 2| D[Chamar /organizador]
     C --> E[Digitar livremente]
     D --> F[Menu: processar despejo]
@@ -247,7 +247,7 @@ graph TD
 ### Funcionalidades Completas por Agente
 
 #### `/organizador` (MVP)
-- *processar despejo* - Analisa daily-dump.txt e categoriza via perguntas
+- *processar despejo* - Analisa daily-dump.md e categoriza via perguntas
 - *organizar por projeto* - Reorganiza informações por contexto de projeto
 - *revisar pendências* - Identifica ações não categorizadas
 - *categorizar informações* - Processamento manual de inputs específicos
@@ -359,7 +359,7 @@ graph TD
 - **Mobile:** Somente leitura de knowledge-base, sem interação com agentes
 
 **Priorização de Conteúdo:**
-- **Crítico:** Captura de informações (daily-dump.txt)
+- **Crítico:** Captura de informações (daily-dump.md)
 - **Importante:** Consulta a agentes especializados
 - **Secundário:** Navegação visual da knowledge-base
 - **Opcional:** Funcionalidades avançadas dos agentes Fase 2

@@ -2,7 +2,7 @@
 
 ## Funcionais
 
-1. **FR1:** Sistema deve implementar captura ultra-rápida via arquivo despejo único (`daily-dump.txt`) sem estrutura obrigatória
+1. **FR1:** Sistema deve implementar captura ultra-rápida via arquivo despejo único (`daily-dump.md`) sem estrutura obrigatória
 2. **FR2:** Agente `/organizador` deve processar despejo através de perguntas específicas e categorizar automaticamente na knowledge-base
 3. **FR3:** Agente `/secretaria` deve oferecer gestão executiva completa: agenda, status de projetos, lembretes, registro de reuniões
 4. **FR4:** Agente `/arquiteto` deve funcionar como "braço direito" técnico com memória contextual profunda e questionamento confrontador

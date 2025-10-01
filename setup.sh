@@ -118,8 +118,8 @@ create_directory_structure() {
 create_base_files() {
     print_info "Criando arquivos base..."
 
-    # Create daily-dump.txt
-    cat > despejo/daily-dump.txt << 'EOF'
+    # Create daily-dump.md
+    cat > despejo/daily-dump.md << 'EOF'
 # Daily Dump - Captura Ultra-Rápida
 
 Jogue qualquer informação aqui sem se preocupar com formatação.
@@ -139,7 +139,7 @@ Você pode escrever aqui em qualquer formato:
 Use [[Nome]] para referenciar pessoas ou projetos.
 
 EOF
-    print_success "Criado: despejo/daily-dump.txt"
+    print_success "Criado: despejo/daily-dump.md"
 
     # Create README.md
     cat > README.md << 'EOF'
@@ -149,7 +149,7 @@ Sistema de "segundo cérebro" especializado para usuários com TDAH, composto po
 
 ## Início Rápido
 
-1. **Captura Ultra-Rápida**: Use `despejo/daily-dump.txt` para capturar qualquer informação
+1. **Captura Ultra-Rápida**: Use `despejo/daily-dump.md` para capturar qualquer informação
 2. **Agentes Especializados**: Use comandos `/organizador`, `/secretaria`, `/arquiteto`, `/psicologo`, `/mentor`
 3. **Knowledge Base**: Explore `knowledge-base/` no Obsidian para visualização em grafo
 
@@ -240,7 +240,7 @@ Todas as mudanças importantes do projeto serão documentadas aqui.
 
 ### Características
 - Sistema 100% local
-- Captura ultra-rápida via daily-dump.txt
+- Captura ultra-rápida via daily-dump.md
 - Knowledge-base organizada
 - Agentes: /organizador, /secretaria, /arquiteto, /psicologo, /mentor
 
@@ -459,7 +459,7 @@ personality:
 
 functions:
   - name: "processar_despejo"
-    description: "Processa daily-dump.txt via perguntas específicas"
+    description: "Processa daily-dump.md via perguntas específicas"
   - name: "categorizar_automaticamente"
     description: "Salva informações na knowledge-base"
   - name: "extrair_todos"
@@ -962,7 +962,7 @@ run_basic_test() {
     print_info "Testando arquivos base..."
 
     local required_files=(
-        "despejo/daily-dump.txt"
+        "despejo/daily-dump.md"
         "README.md"
         ".gitignore"
         "CHANGELOG.md"
@@ -1038,7 +1038,7 @@ main() {
         print_info ""
         print_info "Próximos passos:"
         print_info "1. Abra knowledge-base/ no Obsidian"
-        print_info "2. Use despejo/daily-dump.txt para captura rápida"
+        print_info "2. Use despejo/daily-dump.md para captura rápida"
         print_info "3. Experimente os agentes: /organizador, /secretaria, /arquiteto, /psicologo, /mentor"
         print_info ""
         print_info "Para backup automático, configure um repositório Git remoto:"

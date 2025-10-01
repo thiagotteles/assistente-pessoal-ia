@@ -39,7 +39,7 @@ c:/repos/assistente-pessoal-ia/
 │   ├── templates/
 │   └── core-config.yaml           # Config principal
 ├── despejo/
-│   └── daily-dump.txt             # Arquivo único para despejo rápido
+│   └── daily-dump.md             # Arquivo único para despejo rápido
 ├── knowledge-base/                # Base Inteligente Compartilhada
 │   ├── decisoes/                  # Decisões técnicas e pessoais
 │   ├── contextos/                 # Contextos de reuniões

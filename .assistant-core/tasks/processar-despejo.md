@@ -1,7 +1,7 @@
 # Task: Processar Despejo
 
 ## Objetivo
-Processar inteligentemente o daily-dump.txt através de perguntas específicas, categorizando automaticamente as informações e extraindo todos sem sobrecarga mental para usuários com TDAH.
+Processar inteligentemente o daily-dump.md através de perguntas específicas, categorizando automaticamente as informações e extraindo todos sem sobrecarga mental para usuários com TDAH.
 
 ## Configuração
 ```yaml
@@ -15,7 +15,7 @@ interaction_style: empathetic
 ## Workflow
 
 ### Etapa 1: Verificação Inicial
-1. **Verificar se daily-dump.txt existe** em `despejo/daily-dump.txt`
+1. **Verificar se daily-dump.md existe** em `despejo/daily-dump.md`
    - Se não existe: "Ainda não há nenhum despejo para processar. Quer que eu te ajude a criar o primeiro?"
    - Se vazio: "O arquivo está vazio. Tudo certo, às vezes a mente já está organizada! 😊"
 
@@ -25,7 +25,7 @@ interaction_style: empathetic
    - Ajustar sensibilidade baseada no histórico
 
 ### Etapa 2: Análise de Entradas
-Para cada entrada não processada no daily-dump.txt:
+Para cada entrada não processada no daily-dump.md:
 
 1. **Detectar padrões automaticamente**:
    - Pessoas mencionadas

@@ -1,8 +1,8 @@
 #!/bin/bash
-# Script para processar daily-dump.txt e arquivar entradas processadas
+# Script para processar daily-dump.md e arquivar entradas processadas
 # Prepara arquivo para processamento pelo /organizador
 
-DUMP_FILE="despejo/daily-dump.txt"
+DUMP_FILE="despejo/daily-dump.md"
 PROCESSED_DIR="despejo/processed"
 PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$PROJECT_ROOT"
@@ -24,7 +24,7 @@ archive_dump() {
     content_lines=$(grep -v "^#\|^**\|^-\|^$\|^---" "$DUMP_FILE" | wc -l)
 
     if [ "$content_lines" -eq 0 ]; then
-        echo "ℹ️  No new entries to process in daily-dump.txt"
+        echo "ℹ️  No new entries to process in daily-dump.md"
         exit 0
     fi
 
@@ -33,10 +33,10 @@ archive_dump() {
 
     echo "📦 Archived current dump to: $archive_file"
 
-    # Reset daily-dump.txt to template
+    # Reset daily-dump.md to template
     reset_dump_file
 
-    echo "✅ daily-dump.txt reset for new entries"
+    echo "✅ daily-dump.md reset for new entries"
     echo "📊 Processed $content_lines lines of content"
 }
 
@@ -124,7 +124,7 @@ show_usage() {
     echo ""
     echo "Features:"
     echo "  • Preserves all entries in processed/ directory"
-    echo "  • Resets daily-dump.txt for new entries"
+    echo "  • Resets daily-dump.md for new entries"
     echo "  • Timestamps all operations"
     echo "  • No data loss - everything is archived"
 }
@@ -142,7 +142,7 @@ case "$COMMAND" in
         ;;
     reset)
         reset_dump_file
-        echo "✅ daily-dump.txt reset to template"
+        echo "✅ daily-dump.md reset to template"
         ;;
     list)
         show_processed_files

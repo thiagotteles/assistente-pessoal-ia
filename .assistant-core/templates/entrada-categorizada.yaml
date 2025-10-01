@@ -1,7 +1,7 @@
 # Template: Entrada Categorizada
 
 ## Uso
-Template para criar arquivos categorizados automaticamente pelo Agente Organizador após processamento do daily-dump.txt.
+Template para criar arquivos categorizados automaticamente pelo Agente Organizador após processamento do daily-dump.md.
 
 ## Template YAML
 ```yaml

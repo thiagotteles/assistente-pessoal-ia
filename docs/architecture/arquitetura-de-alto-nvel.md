@@ -30,7 +30,7 @@ graph TD
     Claude --> Psi[/psicologo - Fase 2]
     Claude --> Men[/mentor - Fase 2]
 
-    Dump[daily-dump.txt] --> Org
+    Dump[daily-dump.md] --> Org
 
     Org --> KB[Knowledge-Base Inteligente]
     Sec --> KB

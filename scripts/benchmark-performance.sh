@@ -76,7 +76,7 @@ template_time=$(measure_time "Leitura de templates YAML" "find .assistant-core/t
 kb_time=$(measure_time "Varredura completa da knowledge-base" "find knowledge-base -name '*.md' -exec cat {} \\;")
 
 # 5. Tempo de leitura do daily-dump
-dump_time=$(measure_time "Leitura do daily-dump.txt" "cat despejo/daily-dump.txt")
+dump_time=$(measure_time "Leitura do daily-dump.md" "cat despejo/daily-dump.md")
 
 echo ""
 echo -e "${YELLOW}=== FASE 2: OPERAÇÕES COMPOSTAS ===${NC}"
@@ -91,7 +91,7 @@ agent_load_time=$(measure_time "Simulação carregamento completo agente" "
 
 # 7. Tempo simulado de processamento de uma entrada
 process_entry_time=$(measure_time "Simulação processamento entrada daily-dump" "
-    cat despejo/daily-dump.txt | head -5 &&
+    cat despejo/daily-dump.md | head -5 &&
     cat .assistant-core/templates/entrada-categorizada.yaml &&
     ls knowledge-base/pessoas/ &&
     ls knowledge-base/projetos/
@@ -110,7 +110,7 @@ echo ""
 echo "Analisando tamanhos de arquivos críticos:"
 echo "organizador-memory.yaml: $(wc -c < .assistant-core/memory/organizador-memory.yaml) bytes"
 echo "processar-despejo.md: $(wc -c < .assistant-core/tasks/processar-despejo.md) bytes"
-echo "daily-dump.txt: $(wc -c < despejo/daily-dump.txt) bytes"
+echo "daily-dump.md: $(wc -c < despejo/daily-dump.md) bytes"
 
 # Contar arquivos na knowledge-base
 kb_files=$(find knowledge-base -name "*.md" | wc -l)
@@ -142,7 +142,7 @@ cat > "$RESULTS_FILE" << EOF
     "knowledge_base_files": $kb_files,
     "memory_file_size": $(wc -c < .assistant-core/memory/organizador-memory.yaml),
     "task_file_size": $(wc -c < .assistant-core/tasks/processar-despejo.md),
-    "daily_dump_size": $(wc -c < despejo/daily-dump.txt)
+    "daily_dump_size": $(wc -c < despejo/daily-dump.md)
   },
   "performance_targets": {
     "agent_load_time_target": 5.0,

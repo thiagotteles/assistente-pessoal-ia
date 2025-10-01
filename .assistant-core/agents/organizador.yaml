@@ -11,7 +11,7 @@ personality:
 
 functions:
   - name: "processar_despejo"
-    description: "Processa daily-dump.txt via perguntas específicas"
+    description: "Processa daily-dump.md via perguntas específicas"
   - name: "categorizar_automaticamente"
     description: "Salva informações na knowledge-base"
   - name: "extrair_todos"

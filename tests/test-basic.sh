@@ -76,7 +76,7 @@ test_base_files() {
     local test_passed=true
 
     local required_files=(
-        "despejo/daily-dump.txt"
+        "despejo/daily-dump.md"
         "README.md"
         ".gitignore"
         "CHANGELOG.md"
@@ -192,11 +192,11 @@ test_file_contents() {
     print_info "Teste 5: Conteúdo dos Arquivos"
     local test_passed=true
 
-    # Test if daily-dump.txt has initial content
-    if [ -f "despejo/daily-dump.txt" ] && [ -s "despejo/daily-dump.txt" ]; then
-        echo "  ✅ daily-dump.txt tem conteúdo inicial"
+    # Test if daily-dump.md has initial content
+    if [ -f "despejo/daily-dump.md" ] && [ -s "despejo/daily-dump.md" ]; then
+        echo "  ✅ daily-dump.md tem conteúdo inicial"
     else
-        echo "  ❌ daily-dump.txt vazio ou inexistente"
+        echo "  ❌ daily-dump.md vazio ou inexistente"
         test_passed=false
     fi
 
@@ -642,7 +642,7 @@ run_all_tests() {
         print_info "• Performance básica validada"
         echo
         print_info "📋 Como usar:"
-        print_info "• Use despejo/daily-dump.txt para captura rápida"
+        print_info "• Use despejo/daily-dump.md para captura rápida"
         print_info "• Abra knowledge-base/ no Obsidian"
         print_info "• Experimente os comandos: /organizador, /secretaria, /arquiteto, /psicologo, /mentor"
         return 0

@@ -36,7 +36,7 @@ Com o aumento da complexidade de projetos de software e a necessidade de desenvo
 Um ecossistema de agentes especializados integrados via slash commands no Claude Code, funcionando como "cérebro externo compartilhado". Cada agente possui personalidade confrontadora específica e acesso a uma knowledge-base inteligente única que elimina duplicação de informações.
 
 **Arquitetura da Solução:**
-- **Sistema de Captura Ultra-Rápida**: Arquivo de despejo único (`daily-dump.txt`) para input sem fricção
+- **Sistema de Captura Ultra-Rápida**: Arquivo de despejo único (`daily-dump.md`) para input sem fricção
 - **Agentes Reativos Especializados**:
   - `/secretaria` - Gestão de agenda, compromissos, registro de reuniões
   - `/arquiteto` - Consultoria técnica, análise de projetos, "braço direito"
@@ -135,7 +135,7 @@ Transformar limitações de TDAH em superpoderes através de augmentação intel
 ### Funcionalidades Principais (Obrigatórias)
 
 - **`/organizador`**: Processamento do arquivo despejo diário
-  - Captura via `daily-dump.txt` sem estrutura obrigatória
+  - Captura via `daily-dump.md` sem estrutura obrigatória
   - Categorização automática de inputs através de perguntas específicas
   - Salvamento inteligente na knowledge-base compartilhada
   - *Rationale*: Base fundamental - sem isso, nada mais funciona
@@ -158,7 +158,7 @@ Transformar limitações de TDAH em superpoderes através de augmentação intel
   - Segregação automática de conhecimentos por relevância
 
 - **Estrutura de Arquivos MVP**:
-  - `despejo/daily-dump.txt` (captura rápida)
+  - `despejo/daily-dump.md` (captura rápida)
   - `knowledge-base/` (base inteligente)
   - `todos/central-todos.md` (centralizado)
 
@@ -277,7 +277,7 @@ c:/repos/assistente/
 │   └── core-config.yaml           # Config principal
 │
 ├── despejo/
-│   └── daily-dump.txt             # Arquivo único para despejo rápido
+│   └── daily-dump.md             # Arquivo único para despejo rápido
 │
 ├── knowledge-base/                # Base Inteligente Compartilhada
 │   ├── .index/                    # Sistema de indexação
@@ -311,7 +311,7 @@ c:/repos/assistente/
 ```
 
 **Interação dos Agentes com Arquivos:**
-- **`/organizador`**: Lê `despejo/daily-dump.txt`, categoriza em `knowledge-base/`, atualiza `todos/central-todos.md`
+- **`/organizador`**: Lê `despejo/daily-dump.md`, categoriza em `knowledge-base/`, atualiza `todos/central-todos.md`
 - **`/secretaria`**: Acessa `knowledge-base/contextos/`, `todos/`, escreve resumos de reunião
 - **`/arquiteto`**: Lê/escreve `knowledge-base/decisoes/arquiteturais/`, mantém contexto técnico
 
@@ -325,7 +325,7 @@ code .  # Abre no Claude Code
 ```
 
 **Uso Imediato:**
-1. Despejar informações em `daily-dump.txt`
+1. Despejar informações em `daily-dump.md`
 2. Executar `/organizador` para processar
 3. Usar `/secretaria` e `/arquiteto` conforme necessidade
 

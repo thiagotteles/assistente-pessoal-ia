@@ -29,7 +29,7 @@ assistente-pessoal-ia/
 │   └── core-config.yaml             # Configuração central
 │
 ├── despejo/                         # Captura ultra-rápida
-│   ├── daily-dump.txt               # Arquivo principal de despejo
+│   ├── daily-dump.md               # Arquivo principal de despejo
 │   └── processed/                   # Histórico de despejos processados
 │       ├── 2025-01-09-processed.txt
 │       └── 2025-01-08-processed.txt

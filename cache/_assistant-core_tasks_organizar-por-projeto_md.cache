@@ -115,7 +115,7 @@ Isso pode acontecer se:
 - Os projetos estão com nomes que eu não reconheci
 
 Quer que eu:
-1. 📝 Processe o daily-dump.txt primeiro
+1. 📝 Processe o daily-dump.md primeiro
 2. 🔍 Busque por padrões de projeto nos contextos existentes
 3. 🛠️ Te ajude a definir nomes de projetos manualmente
 ```

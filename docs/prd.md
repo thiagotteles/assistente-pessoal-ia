@@ -26,7 +26,7 @@ Soluções existentes falham porque assistentes genéricos não oferecem especia
 
 ### Funcionais
 
-1. **FR1:** Sistema deve implementar captura ultra-rápida via arquivo despejo único (`daily-dump.txt`) sem estrutura obrigatória
+1. **FR1:** Sistema deve implementar captura ultra-rápida via arquivo despejo único (`daily-dump.md`) sem estrutura obrigatória
 2. **FR2:** Agente `/organizador` deve processar despejo através de perguntas específicas e categorizar automaticamente na knowledge-base
 3. **FR3:** Agente `/secretaria` deve oferecer gestão executiva completa: agenda, status de projetos, lembretes, registro de reuniões
 4. **FR4:** Agente `/arquiteto` deve funcionar como "braço direito" técnico com memória contextual profunda e questionamento confrontador
@@ -67,7 +67,7 @@ Interface exclusivamente via slash commands no Claude Code, otimizada para veloc
 ### Telas e Visualizações Principais
 
 - **Claude Code Interface**: Único ponto de interação via chat
-- **Arquivo Despejo**: `daily-dump.txt` para captura rápida
+- **Arquivo Despejo**: `daily-dump.md` para captura rápida
 - **Knowledge-base**: Estrutura de arquivos Markdown organizados automaticamente
 - **Menu de Agentes**: Lista de funcionalidades específicas por comando
 - **Conversação Contextual**: Histórico mantido por agente
@@ -125,7 +125,7 @@ c:/repos/assistente-pessoal-ia/
 │   ├── templates/
 │   └── core-config.yaml           # Config principal
 ├── despejo/
-│   └── daily-dump.txt             # Arquivo único para despejo rápido
+│   └── daily-dump.md             # Arquivo único para despejo rápido
 ├── knowledge-base/                # Base Inteligente Compartilhada
 │   ├── decisoes/                  # Decisões técnicas e pessoais
 │   ├── contextos/                 # Contextos de reuniões
@@ -173,7 +173,7 @@ Para que eu possa começar a usar o sistema imediatamente sem configuração com
 #### Critérios de Aceitação
 
 1. Criação automática da estrutura de pastas: `.bmad-core/`, `despejo/`, `knowledge-base/`, `todos/`, `diario/`
-2. Arquivo `daily-dump.txt` criado e acessível para escrita imediata
+2. Arquivo `daily-dump.md` criado e acessível para escrita imediata
 3. Arquivo de configuração `core-config.yaml` inicializado com settings padrão
 4. Estrutura `knowledge-base/` com subpastas: `decisoes/`, `contextos/`, `projetos/`, `pessoas/`
 5. Sistema funciona imediatamente após clone do repositório sem steps adicionais
@@ -186,7 +186,7 @@ Para que eu nunca perca insights importantes por falta de tempo para organizar.
 
 #### Critérios de Aceitação
 
-1. Arquivo `despejo/daily-dump.txt` aceita qualquer formato de texto sem validação
+1. Arquivo `despejo/daily-dump.md` aceita qualquer formato de texto sem validação
 2. Não há campos obrigatórios ou estrutura pré-definida necessária
 3. Arquivo é acessível diretamente pelo Claude Code sem navegação complexa
 4. Timestamps automáticos podem ser adicionados opcionalmente
@@ -232,7 +232,7 @@ Para que informações sejam categorizadas sem esforço mental da minha parte.
 
 #### Critérios de Aceitação
 
-1. Organizador lê `daily-dump.txt` e identifica entradas sem categorização
+1. Organizador lê `daily-dump.md` e identifica entradas sem categorização
 2. Faz perguntas específicas como "Bounded contexts te confundiu, qual sua dúvida específica?"
 3. Cada resposta é imediatamente categorizada na knowledge-base apropriada
 4. Não exige processamento de todo o arquivo de uma vez - funciona incrementalmente

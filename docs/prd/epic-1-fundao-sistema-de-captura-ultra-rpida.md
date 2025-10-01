@@ -13,7 +13,7 @@ Para que eu possa começar a usar o sistema imediatamente sem configuração com
 1. Usar estrutura criada pelo Epic 0 setup automático
 2. Integração completa com Obsidian configurada automaticamente
 3. Git hooks para backup automático ativados
-4. Arquivo `daily-dump.txt` funcional com acesso direto
+4. Arquivo `daily-dump.md` funcional com acesso direto
 5. Sistema de [[referências]] Obsidian funcionando com cross-links automáticos
 
 ## Story 1.2: Sistema de Captura Ultra-Rápida
@@ -24,7 +24,7 @@ Para que eu nunca perca insights importantes por falta de tempo para organizar.
 
 ### Critérios de Aceitação
 
-1. Arquivo `despejo/daily-dump.txt` aceita qualquer formato de texto sem validação
+1. Arquivo `despejo/daily-dump.md` aceita qualquer formato de texto sem validação
 2. Não há campos obrigatórios ou estrutura pré-definida necessária
 3. Arquivo é acessível diretamente pelo Claude Code sem navegação complexa
 4. Timestamps automáticos podem ser adicionados opcionalmente

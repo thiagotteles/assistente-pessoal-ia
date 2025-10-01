@@ -149,7 +149,7 @@ else
 # Central de Todos
 
 ## Visão Geral
-Este arquivo centraliza todos os todos extraídos automaticamente do daily-dump.txt e outros agentes do sistema.
+Este arquivo centraliza todos os todos extraídos automaticamente do daily-dump.md e outros agentes do sistema.
 
 ## Todos Ativos
 
@@ -175,7 +175,7 @@ if [ -d "$SOURCE_DIR/despejo" ]; then
 else
     log "Criando estrutura básica de despejo..."
     mkdir -p "$DEST_DIR/despejo"
-    touch "$DEST_DIR/despejo/daily-dump.txt"
+    touch "$DEST_DIR/despejo/daily-dump.md"
 fi
 
 # 6. Diário
@@ -224,7 +224,7 @@ Este é seu assistente pessoal IA pronto para uso!
 
 1. Abra o Claude Code neste diretório
 2. Use `/assistentes:agents:organizador` para começar
-3. Adicione informações em `despejo/daily-dump.txt`
+3. Adicione informações em `despejo/daily-dump.md`
 4. Deixe o assistente organizar tudo para você!
 
 ## Backup

@@ -28,7 +28,7 @@ Este documento contém exemplos práticos reais de como usar cada um dos 5 agent
 
 **Entrada:**
 ```
-despejo/daily-dump.txt:
+despejo/daily-dump.md:
 
 reunião projeto mobile app terça 14h com maria
 comprar café e açúcar
@@ -43,7 +43,7 @@ ligar para dentista marcar consulta
 
 **Comando:**
 ```bash
-/organizador despejo/daily-dump.txt
+/organizador despejo/daily-dump.md
 ```
 
 **Saída Esperada:**
@@ -930,7 +930,7 @@ Para pessoas com TDAH, o overwhelm não é "falta de organização" - é uma **s
 - **Não pense em nada** além da respiração
 
 ### 2. Brain Dump Total (5 minutos)
-Despeje **TUDO** no `despejo/daily-dump.txt` sem filtro:
+Despeje **TUDO** no `despejo/daily-dump.md` sem filtro:
 - Projetos
 - Deadlines
 - Preocupações
@@ -1111,7 +1111,7 @@ Updates diários às 17h. Obrigado pela compreensão."
 ---
 
 **Próximos comandos recomendados após estabilização:**
-- `/organizador despejo/daily-dump.txt` (para estruturar as 3 prioridades)
+- `/organizador despejo/daily-dump.md` (para estruturar as 3 prioridades)
 - `/secretaria "comunicar status atual e próximos passos para equipe"`
 - `/psicologo "estratégias preventivas contra overwhelm futuro"`
 
@@ -2354,10 +2354,10 @@ You're sitting in a design critique, talking through user research findings with
 # Despejo inicial sem filtro
 echo "projeto ecommerce prazo 6 semanas, equipe só 3 devs, cliente quer muitas features,
 não temos arquitetura definida, frontend/backend/banco todos em aberto,
-ansioso com complexidade, não sei por onde começar" >> despejo/daily-dump.txt
+ansioso com complexidade, não sei por onde começar" >> despejo/daily-dump.md
 
 # Processamento inicial
-/organizador despejo/daily-dump.txt
+/organizador despejo/daily-dump.md
 ```
 
 #### Fase 2: Decisões Técnicas Estratégicas

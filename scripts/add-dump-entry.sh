@@ -1,8 +1,8 @@
 #!/bin/bash
-# Script para adicionar entradas ao daily-dump.txt com facilidade
+# Script para adicionar entradas ao daily-dump.md com facilidade
 # Suporta timestamps opcionais e preserva entradas existentes
 
-DUMP_FILE="despejo/daily-dump.txt"
+DUMP_FILE="despejo/daily-dump.md"
 PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$PROJECT_ROOT"
 
@@ -41,7 +41,7 @@ append_entry() {
     echo "$content" >> "$DUMP_FILE"
     echo "" >> "$DUMP_FILE"
 
-    echo "✅ Entry added to daily-dump.txt"
+    echo "✅ Entry added to daily-dump.md"
     if [ "$use_timestamp" = "true" ]; then
         echo "🕐 Timestamp: $(date '+%Y-%m-%dT%H:%M:%S')"
     fi
@@ -102,5 +102,5 @@ append_entry "$CONTENT" "$USE_TIMESTAMP"
 
 # Show last few lines for confirmation
 echo ""
-echo "📝 Last few lines of daily-dump.txt:"
+echo "📝 Last few lines of daily-dump.md:"
 tail -n 10 "$DUMP_FILE" | sed 's/^/   /'

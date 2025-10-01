@@ -369,7 +369,7 @@ git checkout HEAD -- .assistant-core/agents/
 git checkout HEAD -- .assistant-core/memory/
 
 # Recuperar arquivos específicos
-git checkout HEAD -- despejo/daily-dump.txt
+git checkout HEAD -- despejo/daily-dump.md
 git checkout HEAD -- knowledge-base/pessoas/pessoa-importante.md
 ```
 
@@ -635,7 +635,7 @@ echo "  Total: $(du -sh . --exclude='.git' | cut -f1)"
 # 5. Arquivos críticos
 echo ""
 echo "📁 Arquivos Críticos:"
-for file in "despejo/daily-dump.txt" ".assistant-core/agents/organizador.yaml"; do
+for file in "despejo/daily-dump.md" ".assistant-core/agents/organizador.yaml"; do
     if [ -f "$file" ]; then
         echo "  ✅ $file"
     else

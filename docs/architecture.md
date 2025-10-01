@@ -23,7 +23,7 @@ assistente-pessoal-ia/
 │   ├── data/                    # Configurações e métodos de elicitação
 │   └── core-config.yaml         # Configuração central do sistema
 ├── despejo/
-│   └── daily-dump.txt          # Captura ultra-rápida sem estrutura
+│   └── daily-dump.md          # Captura ultra-rápida sem estrutura
 ├── knowledge-base/             # "Segundo cérebro" compartilhado
 │   ├── decisoes/
 │   ├── contextos/
@@ -80,7 +80,7 @@ graph TD
     Claude --> Psi[/psicologo - Fase 2]
     Claude --> Men[/mentor - Fase 2]
 
-    Dump[daily-dump.txt] --> Org
+    Dump[daily-dump.md] --> Org
 
     Org --> KB[Knowledge-Base Inteligente]
     Sec --> KB
@@ -153,7 +153,7 @@ graph TD
 
 **Propósito:** Captura ultra-rápida de informações sem estrutura obrigatória - o ponto de entrada para todo o sistema.
 
-**Estrutura do Arquivo:** `despejo/daily-dump.txt`
+**Estrutura do Arquivo:** `despejo/daily-dump.md`
 ```
 Qualquer texto livre aqui...
 Reunião com [[Fabio H]] sobre API performance do [[Projeto Alpha]]
@@ -227,12 +227,12 @@ Descrição do projeto...
 **Responsabilidade:** Processamento inteligente do arquivo despejo e categorização automática na knowledge-base.
 
 **Interfaces Principais:**
-- `processar_despejo()` - Analisa daily-dump.txt via perguntas específicas
+- `processar_despejo()` - Analisa daily-dump.md via perguntas específicas
 - `categorizar_automaticamente()` - Salva informações na knowledge-base com metadados
 - `criar_referencias()` - Gera links [[]] automaticamente para pessoas/projetos
 - `organizar_por_projeto()` - Agrupa informações por contexto de projeto
 
-**Dependências:** Knowledge-base, daily-dump.txt, Agent Memory System
+**Dependências:** Knowledge-base, daily-dump.md, Agent Memory System
 
 **Stack Tecnológico:** Claude Code + YAML configs + Markdown templates
 
@@ -361,7 +361,7 @@ assistente-pessoal-ia/
 │   └── core-config.yaml             # Configuração central
 │
 ├── despejo/                         # Captura ultra-rápida
-│   ├── daily-dump.txt               # Arquivo principal de despejo
+│   ├── daily-dump.md               # Arquivo principal de despejo
 │   └── processed/                   # Histórico de despejos processados
 │       ├── 2025-01-09-processed.txt
 │       └── 2025-01-08-processed.txt
@@ -460,7 +460,7 @@ assistente-pessoal-ia/
 # 2025-01-09 14:30:15 - ERROR - Organizador Agent
 
 ## Operação
-Processamento de despejo daily-dump.txt
+Processamento de despejo daily-dump.md
 
 ## Erro
 Referência [[Projeto Inexistente]] não encontrada

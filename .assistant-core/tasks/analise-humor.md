@@ -9,12 +9,12 @@ requires_daily_dump: true
 ```
 
 ## Propósito
-Analisar indicadores emocionais no daily-dump.txt para tracking de humor, energia e padrões emocionais ao longo do tempo.
+Analisar indicadores emocionais no daily-dump.md para tracking de humor, energia e padrões emocionais ao longo do tempo.
 
 ## Workflow
 
 ### Etapa 1: Carregar Contexto
-1. Ler `despejo/daily-dump.txt`
+1. Ler `despejo/daily-dump.md`
 2. Carregar `.assistant-core/memory/psicologo-memory.yaml` para padrões históricos
 3. Verificar `knowledge-base/contextos/contexto-bem-estar.md` para histórico emocional
 

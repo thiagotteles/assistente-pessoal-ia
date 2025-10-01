@@ -15,7 +15,7 @@ Interface exclusivamente via slash commands no Claude Code, otimizada para veloc
 ## Telas e Visualizações Principais
 
 - **Claude Code Interface**: Único ponto de interação via chat
-- **Arquivo Despejo**: `daily-dump.txt` para captura rápida
+- **Arquivo Despejo**: `daily-dump.md` para captura rápida
 - **Knowledge-base**: Estrutura de arquivos Markdown organizados automaticamente
 - **Menu de Agentes**: Lista de funcionalidades específicas por comando
 - **Conversação Contextual**: Histórico mantido por agente
