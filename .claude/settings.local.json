@@ -19,7 +19,9 @@
       "Bash(cat:*)",
       "Bash(mv:*)",
       "Bash(git tag:*)",
-      "Bash(chmod:*)"
+      "Bash(chmod:*)",
+      "Bash(git commit:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []
