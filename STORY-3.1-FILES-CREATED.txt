@@ -1,0 +1,50 @@
+# Story 3.1 - Arquivos Criados/Modificados
+
+## Arquivos Criados
+
+### Exemplos e Onboarding
+despejo/daily-dump.md (template com exemplos práticos)
+MEU-PROGRESSO.md (checklist de 7 dias)
+
+### Testes
+tests/test-story-3.1.sh
+
+### Documentação
+STORY-3.1-FILES-CREATED.txt (este arquivo)
+
+## Arquivos Modificados
+
+### Tasks de Agentes
+.assistant-core/tasks/processar-despejo.md (output visual melhorado com ícones)
+
+### Scripts de Instalação
+setup.sh (criação de daily-dump.md e MEU-PROGRESSO.md com exemplos)
+scripts/upgrade-to-epic3.sh (MEU-PROGRESSO.md com checklist completo)
+
+## Total: 4 arquivos criados + 3 modificados
+
+## Funcionalidades Implementadas
+
+### AC1: Tour Guiado (testado, implementado em Story 3.0)
+- Tour já implementado via patches na Story 3.0
+- Testes validam existência e funcionamento
+
+### AC2: Exemplos Práticos Pré-Incluídos ✅
+- daily-dump.md com 5 exemplos práticos
+- BEM-VINDO.md (criado em Story 3.0)
+- MEU-PROGRESSO.md com checklist
+
+### AC3: Quick Wins Imediatos ✅
+- Output visual melhorado em processar-despejo.md
+- Ícones por tipo: AGENDA, PROJETO, IDEIA, TODO, APRENDIZADO
+- Instruções claras para abrir Obsidian
+- Resumo de sessão com estatísticas
+
+### AC4: Checklist de Sucesso Primeira Semana ✅
+- MEU-PROGRESSO.md com 7 dias de tarefas incrementais
+- Seção de estatísticas
+- Próximo passo sugerido
+- Dicas para TDAH
+
+### AC5: Vídeos/GIFs (OPCIONAL - não implementado)
+- Marcado como opcional, não bloqueia aprovação

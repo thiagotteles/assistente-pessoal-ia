@@ -145,19 +145,51 @@ Para cada entrada processada, detectar automaticamente:
    - Personalizar detecção de urgência
    - Ajustar sensibilidade emocional
 
-### Etapa 7: Finalização Empática
+### Etapa 7: Finalização Empática com Output Visual Detalhado
+
+**IMPORTANTE**: Mostrar resultado visual COMPLETO para quick wins imediatos (Story 3.1 AC3)
 
 ```
-"Pronto! Processei [X] entradas e organizei tudo automaticamente.
+"✅ Processamento Completo!
+
+Organizei [X] itens do seu despejo:
+
+[PARA CADA ITEM PROCESSADO, MOSTRAR COM ÍCONE E PATH COMPLETO]
+
+📅 AGENDA:
+   → [Nome do item] - Salvo em: knowledge-base/pessoas/pessoa-[nome].md
+
+🚀 PROJETO:
+   → [Nome do projeto] - Salvo em: knowledge-base/projetos/projeto-[nome].md
+
+💡 IDEIA:
+   → [Nome da ideia] - Salvo em: knowledge-base/contextos/ideia-[nome].md
+
+✅ TODO:
+   → [Descrição do todo] - Adicionado em: todos/central-todos.md
+
+📚 APRENDIZADO:
+   → [Tema] - Salvo em: knowledge-base/contextos/aprendizado-[tema].md
+
+🎯 Abra o Obsidian para ver tudo organizado com links automáticos!
 
 📊 Resumo desta sessão:
 - [X] informações categorizadas
 - [Y] todos extraídos
 - [Z] padrões aprendidos
 
-Está tudo na knowledge-base e na central de todos.
-Quer que eu mostre um resumo ou tem mais alguma coisa que posso ajudar? 😊"
+Quer que eu mostre mais detalhes ou tem alguma coisa que posso ajudar? 😊"
 ```
+
+**Mapeamento de Ícones por Tipo**:
+- 📅 AGENDA: Eventos, reuniões, compromissos com pessoas
+- 🚀 PROJETO: Projetos de trabalho, iniciativas, contextos profissionais
+- 💡 IDEIA: Ideias criativas, insights, brainstorms
+- ✅ TODO: Tarefas, ações, coisas para fazer
+- 📚 APRENDIZADO: Estudos, pesquisas, conhecimento adquirido
+- 🎯 DECISÃO: Decisões técnicas importantes
+- 💭 CONTEXTO: Contextos gerais, pensamentos
+- 💙 BEM-ESTAR: Estados emocionais, suporte TDAH
 
 ## Tratamento de Casos Especiais
 
