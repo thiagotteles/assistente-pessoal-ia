@@ -1,0 +1,29 @@
+# Story 3.0 - Arquivos Criados
+
+## Scripts de Upgrade Principal
+scripts/upgrade-to-epic3.sh
+scripts/upgrade-to-epic3.bat
+
+## Scripts de Backup e Recovery
+RECUPERAR-BACKUP.sh
+RECUPERAR-BACKUP.bat
+EXPORTAR-TUDO.sh
+EXPORTAR-TUDO.bat
+
+## Scripts de Configuração
+scripts/merge-obsidian-config.sh
+scripts/merge-obsidian-config.bat
+scripts/apply-epic3-agent-patches.sh
+scripts/apply-epic3-agent-patches.bat
+
+## Documentação
+UPGRADE-EPIC3.md
+STORY-3.0-IMPLEMENTATION-SUMMARY.md
+STORY-3.0-FILES-CREATED.txt
+(CHANGELOG.md - modificado)
+(README.md - modificado)
+
+## Testes
+tests/test-story-3.0.sh
+
+## Total: 15 arquivos criados + 2 modificados

@@ -12,11 +12,12 @@
 | **0** | Environment Setup Foundation | ✅ Completo | 5/5 | 100% |
 | **1** | Sistema de Captura Ultra-Rápida | ✅ Completo | 4/4 | 100% |
 | **2** | Sistema de 5 Agentes Inteligentes | ✅ Completo | 5/5 | 100% |
-| **3** | Advanced Features & Integration | ⏳ Planejado | 0/4 | 0% |
+| **3** | Experiência e Sucesso do Usuário Final | ⏳ Planejado | 0/5 | 0% |
 | **4** | Quality Assurance Essencial | ✅ Completo | 1/1 | 100% |
 
-**Total Implementado**: 15 stories (15/19 = 79%)
+**Total Implementado**: 15 stories (15/20 = 75%)
 **Épicos Completos**: 4/5 (80%)
+**Próximo Epic**: Epic 3 (5 stories planejadas)
 
 ---
 
@@ -104,6 +105,7 @@
 
 | Story | Título | Status | Descrição | Prioridade |
 |-------|--------|--------|-----------|------------|
+| 3.0 | Upgrade Path para Usuários Existentes | ❌ Todo | Script upgrade não-destrutivo para Épicos 0-2 | 🔴 CRÍTICA BROWNFIELD |
 | 3.1 | Onboarding Interativo - Primeiros Passos | ❌ Todo | Tour guiado < 10min com quick wins | 🔥 Crítica |
 | 3.2 | Obsidian Simplificado e Pré-Configurado | ❌ Todo | Dashboard visual + busca simples | 🔥 Crítica |
 | 3.3 | Feedback Visual e Progresso Contínuo | ❌ Todo | Dashboard pessoal + achievements | ⚡ Alta |

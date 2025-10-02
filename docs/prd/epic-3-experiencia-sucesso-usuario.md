@@ -8,6 +8,201 @@
 
 ---
 
+## Story 3.0: Upgrade Path para Usuários Existentes
+
+**Como um** usuário que já tem Épicos 0-2 instalados,
+**Eu quero** atualizar para Epic 3 sem perder meus dados ou configurações,
+**Para que** eu aproveite as novas funcionalidades de UX sem fricção.
+
+### Critérios de Aceitação
+
+#### 1. Detecção de Instalação Existente
+
+**Script:** `scripts/upgrade-to-epic3.sh` / `scripts/upgrade-to-epic3.bat`
+
+**Funcionamento:**
+- Detecta se Épicos 0-2 já estão instalados
+- Verifica presença de `.assistant-core/`, `knowledge-base/`, agentes
+- Identifica versão atual do sistema (via arquivo `.version` ou tags Git)
+- Exibe resumo do que será adicionado/modificado
+
+**Validação:**
+```bash
+# Arquivos críticos existentes
+required_files=(
+    ".assistant-core/agents/organizador.md"
+    "knowledge-base/"
+    "despejo/daily-dump.md"
+)
+
+# Se qualquer arquivo crítico ausente → erro: "Execute setup.sh primeiro"
+```
+
+#### 2. Backup Automático Pré-Upgrade
+
+**Antes de qualquer modificação:**
+- Cria backup automático: `backup-pre-epic3-$(date).zip`
+- Inclui: `.obsidian/`, `.assistant-core/memory/`, configurações personalizadas
+- Exibe mensagem: "✅ Backup criado em: backup-pre-epic3-2025-10-01.zip"
+- Permite continuar ou cancelar upgrade
+
+#### 3. Adição de Arquivos Novos (Não-Destrutiva)
+
+**Arquivos adicionados SEM sobrescrever existentes:**
+
+**Obsidian:**
+- `knowledge-base/🏠 INÍCIO.md` (novo dashboard visual)
+- `knowledge-base/BEM-VINDO.md` (tutorial novo usuário)
+- `COMO-BUSCAR.md` (guia de busca)
+- `OBSIDIAN-EM-5-MINUTOS.md` (tutorial rápido)
+- `ATALHOS-OBSIDIAN.md` (cartão de referência)
+
+**Dashboards:**
+- `MEU-PROGRESSO.md` (checklist primeira semana)
+- `📈 MEU-DASHBOARD.md` (dashboard pessoal)
+- `todos/PROGRESSO-VISUAL.md` (progresso visual)
+
+**Scripts:**
+- `RECUPERAR-BACKUP.sh/.bat` (recovery simplificado)
+- `EXPORTAR-TUDO.sh/.bat` (export manual)
+
+**Cache/Data:**
+- `.assistant-core/data/dashboard-cache.yaml` (vazio inicialmente)
+
+#### 4. Atualização de Configurações Obsidian (Preservando Customizações)
+
+**Estratégia de merge inteligente:**
+
+```bash
+# Se .obsidian/workspace.json JÁ existe (usuário customizou)
+if [ -f "knowledge-base/.obsidian/workspace.json" ]; then
+    # Preserva workspace do usuário
+    echo "⚠️  Workspace Obsidian existente detectado - preservando suas customizações"
+
+    # Cria arquivo SUGESTÃO separado
+    cp templates/obsidian-workspace-epic3.json knowledge-base/.obsidian/workspace-suggested.json
+    echo "💡 Sugestões de configuração em: .obsidian/workspace-suggested.json"
+else
+    # Primeira instalação → aplica configuração padrão Epic 3
+    cp templates/obsidian-workspace-epic3.json knowledge-base/.obsidian/workspace.json
+fi
+```
+
+**Hotkeys:**
+```bash
+# Se .obsidian/hotkeys.json existe → merge (não sobrescreve)
+# Adiciona APENAS hotkeys novos que usuário não configurou
+# Preserva 100% dos hotkeys customizados pelo usuário
+```
+
+#### 5. Atualização de Agentes (Saudação Contextual)
+
+**Modificação dos agentes existentes para suportar Epic 3:**
+
+**Agente Organizador (`.assistant-core/agents/organizador.md`):**
+- Adiciona detecção de primeira execução
+- Se primeira vez → inicia tour guiado (Story 3.1 AC1)
+- Se não primeira vez → saudação contextual (Story 3.3 AC2)
+- Preserva 100% da funcionalidade existente
+
+**Outros agentes (secretaria, arquiteto, psicologo, mentor):**
+- Adiciona saudação contextual com memória
+- Mantém comandos e workflows existentes
+- Zero quebra de funcionalidade
+
+**Estratégia:**
+```bash
+# Backup dos agentes originais
+cp .assistant-core/agents/*.md .assistant-core/agents/backup-pre-epic3/
+
+# Aplica patches (adiciona seções, não remove)
+patch .assistant-core/agents/organizador.md < patches/epic3-organizador.patch
+```
+
+#### 6. Validação Pós-Upgrade
+
+**Checklist automático:**
+```bash
+echo "🔍 Validando upgrade..."
+
+# 1. Todos os agentes ainda carregam?
+for agent in organizador secretaria arquiteto psicologo mentor; do
+    # Valida YAML parsing
+done
+
+# 2. Knowledge-base intacta?
+# Verifica que projetos, pessoas, decisões existentes não foram tocados
+
+# 3. Obsidian abre corretamente?
+# Valida .obsidian/workspace.json parsing
+
+# 4. Novos arquivos criados?
+# Verifica presença de BEM-VINDO.md, INÍCIO.md, etc
+
+echo "✅ Upgrade para Epic 3 concluído com sucesso!"
+echo "📖 Leia knowledge-base/BEM-VINDO.md para conhecer novidades"
+```
+
+#### 7. Comunicação Clara ao Usuário
+
+**Mensagem de upgrade:**
+```
+📦 Upgrade para Epic 3: Experiência de Sucesso do Usuário
+
+O que será adicionado:
+✅ Tutorial interativo para novos usuários
+✅ Dashboard visual no Obsidian
+✅ Feedback de progresso e achievements
+✅ Backup automático melhorado
+
+O que NÃO será modificado:
+✅ Seus projetos, pessoas, decisões (knowledge-base/)
+✅ Suas conversas com agentes (memória preservada)
+✅ Suas customizações do Obsidian
+✅ Seu daily-dump.md
+
+💾 Backup será criado automaticamente
+🔄 Processo é reversível via Git
+
+Continuar? (sim/não)
+```
+
+#### 8. Documentação de Upgrade
+
+**Arquivo:** `UPGRADE-EPIC3.md`
+
+```markdown
+# Guia de Upgrade para Epic 3
+
+## Para Usuários com Épicos 0-2 Instalados
+
+### Passo 1: Backup Automático
+Execute: `bash scripts/upgrade-to-epic3.sh`
+Backup criado automaticamente antes de qualquer modificação
+
+### Passo 2: Upgrade Não-Destrutivo
+- Novos arquivos adicionados
+- Configurações preservadas
+- Zero perda de dados
+
+### Passo 3: Explorar Novidades
+- Abra `knowledge-base/BEM-VINDO.md` no Obsidian
+- Conheça o novo dashboard: `🏠 INÍCIO.md`
+- Veja seu progresso: `MEU-DASHBOARD.md`
+
+## Para Instalações Novas
+
+Execute: `bash setup.sh`
+Epic 3 já incluído automaticamente
+```
+
+**Performance:**
+- Upgrade completo: < 30 segundos
+- Backup: < 5 segundos (10-50MB típico)
+- Validação: < 2 segundos
+
+---
+
 ## Story 3.1: Onboarding Interativo - Primeiros Passos
 
 **Como um** novo usuário que acabou de instalar o sistema,
@@ -1062,6 +1257,9 @@ function verificar_integridade() {
 
 ## 🚀 Ordem de Implementação Sugerida
 
+**Prioridade 0 (Upgrade Path - CRÍTICO BROWNFIELD):**
+0. Story 3.0: Upgrade para Usuários Existentes
+
 **Prioridade 1 (Crítico para Adoção):**
 1. Story 3.1: Onboarding Interativo
 2. Story 3.2: Obsidian Simplificado
@@ -1095,5 +1293,6 @@ function verificar_integridade() {
 ---
 
 **Status**: ⏳ Planejado
-**Estimativa**: 3-4 semanas de desenvolvimento
+**Estimativa**: 3-4 semanas de desenvolvimento (+ Story 3.0: 2-3 dias)
 **Dependências**: Epic 0, 1, 2 completos ✅
+**Stories**: 5 (3.0 Upgrade + 3.1-3.4 Features)

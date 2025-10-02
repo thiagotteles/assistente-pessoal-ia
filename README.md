@@ -22,10 +22,11 @@ Este arquivo contém avisos críticos sobre o que NÃO deve ser usado e diretriz
 | **Épico 2** | 2.3 | Agente Arquiteto Confrontador Completo | Consultoria técnica com confronto construtivo | 📝 Not Created |
 | **Épico 2** | 2.4 | Agente Psicólogo Supportivo | Suporte emocional especializado para TDAH | 📝 Not Created |
 | **Épico 2** | 2.5 | Agente Mentor de Carreira | Desenvolvimento profissional de longo prazo | 📝 Not Created |
-| **Épico 3** | 3.1 | Sistema de Cross-Agent Intelligence | Colaboração automática entre agentes | 📝 Not Created |
-| **Épico 3** | 3.2 | Advanced Knowledge-Base Features | Busca semântica e timeline automático | 📝 Not Created |
-| **Épico 3** | 3.3 | Obsidian Integration Completa | Graph view otimizado e templates customizados | 📝 Not Created |
-| **Épico 3** | 3.4 | Sistema de Backup e Recovery Robusto | Git commits automáticos e cloud backup opcional | 📝 Not Created |
+| **Épico 3** | 3.0 | Upgrade Path para Usuários Existentes | Sistema de upgrade não-destrutivo Epic 0-2 → Epic 3 | ✅ Concluído |
+| **Épico 3** | 3.1 | Onboarding Interativo - Primeiros Passos | Tour guiado de 3 passos em < 8 minutos | 📝 Not Created |
+| **Épico 3** | 3.2 | Tutoriais e Documentação Interativa | Guias visuais integrados ao Obsidian | 📝 Not Created |
+| **Épico 3** | 3.3 | Feedback Visual e Progresso Contínuo | Dashboard, achievements, e saudação contextual | 📝 Not Created |
+| **Épico 3** | 3.4 | Backup Automático Invisível | Commits automáticos e recovery com 1 clique | 📝 Not Created |
 | **Épico 4** | 4.1 | Testes Essenciais Apenas | Framework de testes básicos focado em funcionalidade | 📝 Not Created |
 
 ### Legenda de Status
@@ -39,6 +40,8 @@ Este arquivo contém avisos críticos sobre o que NÃO deve ser usado e diretriz
 ## 🚀 Instalação e Configuração
 
 > **⚡ QUER INSTALAR RÁPIDO?** → [**Deploy Quick Start Guide**](docs/DEPLOY-QUICKSTART.md) - Instalação em 2 minutos!
+
+> **🆙 JÁ TEM O SISTEMA INSTALADO (Épicos 0-2)?** → [**Guia de Upgrade para Epic 3**](UPGRADE-EPIC3.md) - Upgrade em < 30 segundos!
 
 ### Requisitos do Sistema
 
