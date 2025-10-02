@@ -1,0 +1,33 @@
+# Dashboard Cache - Assistente Pessoal IA
+ultima_atualizacao: "2025-10-02T13:15:34Z"
+
+# Estatísticas da semana atual
+esta_semana:
+  despejos_processados: 0
+  conversas_total: 5
+  notas_criadas: 1
+  todos_completados: 0
+  todos_total: 0
+
+# Streak
+streak_dias: 7
+ultimo_dia_ativo: "2025-10-02"
+
+# Conversas por agente
+conversas_por_agente:
+  organizador: 1
+  secretaria: 1
+  arquiteto: 1
+  psicologo: 1
+  mentor: 1
+
+# Achievements (calculados depois)
+achievements_desbloqueados: []
+
+# Contadores globais
+contadores:
+  total_despejos: 0
+  total_conversas: 5
+  total_notas: 1
+  total_todos: 0
+  dias_consecutivos_max: 7
