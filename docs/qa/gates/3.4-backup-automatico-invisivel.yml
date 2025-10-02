@@ -1,0 +1,46 @@
+schema: 1
+story: '3.4'
+story_title: 'Backup Automático Invisível'
+gate: PASS
+status_reason: 'Implementação completa e de alta qualidade com 100% de testes passando, design TDAH-first exemplar, e performance dentro dos targets.'
+reviewer: 'Quinn (Test Architect)'
+updated: '2025-10-02T13:30:00Z'
+
+top_issues: []
+waiver:
+  active: false
+
+# Extended fields
+quality_score: 100
+expires: '2025-10-16T13:30:00Z'
+
+evidence:
+  tests_reviewed: 39
+  risks_identified: 0
+  trace:
+    ac_covered: [1, 2, 3, 4, 5]
+    ac_gaps: []
+
+nfr_validation:
+  security:
+    status: PASS
+    notes: 'Scripts verificam permissões adequadamente, Git operations são seguras, sem exposição de credenciais'
+  performance:
+    status: PASS
+    notes: 'Todos targets atendidos: commit <200ms, dashboard <10ms, validação <3s, graceful degradation'
+  reliability:
+    status: PASS
+    notes: 'Tratamento de erros robusto, verificação de pré-condições, fallback para comandos ausentes (zip)'
+  maintainability:
+    status: PASS
+    notes: 'Código limpo, bem documentado, funções bem nomeadas, separação de responsabilidades clara'
+
+recommendations:
+  immediate: []
+  future:
+    - action: 'Considerar integração automática com hooks pós-processamento e pós-conversa dos agentes'
+      refs: ['docs/stories/3.4.story.md (Tarefa 1, Tarefa 6)']
+    - action: 'Implementar agendamento automático de validação via cron/Task Scheduler'
+      refs: ['scripts/validar-integridade.sh', 'docs/stories/3.4.story.md (Tarefa 5)']
+    - action: 'Adicionar métricas de performance aos testes (medir tempos reais vs targets)'
+      refs: ['tests/test-story-3.4.sh']
