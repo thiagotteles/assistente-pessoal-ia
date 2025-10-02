@@ -1,6 +1,6 @@
 # 📈 Meu Dashboard
 
-**Última atualização**: 02/10/2025 às 10:15
+**Última atualização**: 02/10/2025 às 10:22
 
 ---
 
@@ -46,6 +46,19 @@
 ## 🏆 Achievements Desbloqueados
 
 Em breve: sistema de achievements!
+
+---
+
+## 💾 Status de Backup
+
+**Último backup**: 4 minutes ago
+**Total de backups**: 30
+
+✅ Backup ativo
+
+**Próximas ações**:
+- 📦 Export manual recomendado mensalmente: `bash EXPORTAR-TUDO.sh`
+- 🔄 Recuperar backup: `bash RECUPERAR-BACKUP.sh`
 
 ---
 

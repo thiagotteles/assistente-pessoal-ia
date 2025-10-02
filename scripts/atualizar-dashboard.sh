@@ -199,6 +199,19 @@ ACHIEVEMENTS_LIST
 
 ---
 
+## 💾 Status de Backup
+
+**Último backup**: ULTIMO_BACKUP
+**Total de backups**: TOTAL_BACKUPS
+
+BACKUP_STATUS
+
+**Próximas ações**:
+- 📦 Export manual recomendado mensalmente: \`bash EXPORTAR-TUDO.sh\`
+- 🔄 Recuperar backup: \`bash RECUPERAR-BACKUP.sh\`
+
+---
+
 ## 📝 Últimas Atividades
 
 1. Dashboard criado automaticamente
@@ -238,6 +251,34 @@ EOF
 
     # Achievements (temporariamente vazio)
     sed -i "s/ACHIEVEMENTS_LIST/Em breve: sistema de achievements!/g" "$DASHBOARD_FILE"
+
+    # Informações de backup
+    local ultimo_backup="Nunca"
+    local total_backups="0"
+    local backup_status="✅ Backup ativo"
+
+    if [ -d ".git" ]; then
+        # Último backup (último commit)
+        local ultimo_commit=$(git log -1 --format="%ar" 2>/dev/null || echo "nunca")
+        ultimo_backup="$ultimo_commit"
+
+        # Total de backups (total de commits)
+        total_backups=$(git log --oneline 2>/dev/null | wc -l || echo "0")
+
+        # Verificar status do backup
+        if [ -f ".backup-status" ]; then
+            local status_backup=$(grep "^status:" ".backup-status" 2>/dev/null | cut -d: -f2 | tr -d ' ' || echo "OK")
+            if [ "$status_backup" = "PROBLEMAS" ]; then
+                backup_status="⚠️  Problemas detectados - Execute validação"
+            fi
+        fi
+    else
+        backup_status="⚠️  Git não inicializado"
+    fi
+
+    sed -i "s/ULTIMO_BACKUP/$ultimo_backup/g" "$DASHBOARD_FILE"
+    sed -i "s/TOTAL_BACKUPS/$total_backups/g" "$DASHBOARD_FILE"
+    sed -i "s|BACKUP_STATUS|$backup_status|g" "$DASHBOARD_FILE"
 }
 
 # Execução principal
