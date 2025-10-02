@@ -1,0 +1,148 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-10-02",
+  "agents": {
+    "core": [
+      {
+        "id": "organizador",
+        "name": "Sofia",
+        "title": "Organizador Inteligente",
+        "icon": "📋",
+        "description": "Processa despejo diário e organiza automaticamente em tarefas, projetos e anotações",
+        "required": true,
+        "recommended": true,
+        "author": "oficial",
+        "category": "essencial",
+        "tags": ["organization", "tdah", "capture"],
+        "path": "src/agents/core/organizador",
+        "version": "1.0.0"
+      }
+    ],
+    "official": [
+      {
+        "id": "secretaria",
+        "name": "Secretária",
+        "title": "Assistente Executiva",
+        "icon": "📊",
+        "description": "Gestão executiva, agenda, reuniões e status de projetos com dashboards",
+        "required": false,
+        "recommended": true,
+        "recommended_for": ["all"],
+        "author": "oficial",
+        "category": "produtividade",
+        "tags": ["executive", "meetings", "dashboard", "status"],
+        "path": "src/agents/official/secretaria",
+        "version": "1.0.0"
+      },
+      {
+        "id": "arquiteto",
+        "name": "Marcus",
+        "title": "Arquiteto Confrontador",
+        "icon": "🏗️",
+        "description": "Consultoria técnica com confronto construtivo para decisões arquiteturais",
+        "required": false,
+        "recommended": false,
+        "recommended_for": ["developers", "tech-leads", "architects"],
+        "author": "oficial",
+        "category": "tecnico",
+        "tags": ["architecture", "technical", "decisions", "confrontation"],
+        "path": "src/agents/official/arquiteto",
+        "version": "1.0.0"
+      },
+      {
+        "id": "psicologo",
+        "name": "Dr. Helena",
+        "title": "Psicólogo Supportivo",
+        "icon": "🧠",
+        "description": "Suporte emocional especializado para TDAH com técnicas baseadas em TCC",
+        "required": false,
+        "recommended": true,
+        "recommended_for": ["adhd", "all"],
+        "author": "oficial",
+        "category": "bem-estar",
+        "tags": ["mental-health", "tdah", "adhd", "support", "tcc"],
+        "path": "src/agents/official/psicologo",
+        "version": "1.0.0"
+      },
+      {
+        "id": "mentor",
+        "name": "Leonardo",
+        "title": "Mentor de Carreira",
+        "icon": "🎯",
+        "description": "Desenvolvimento de carreira, networking e crescimento profissional",
+        "required": false,
+        "recommended": false,
+        "recommended_for": ["career-growth", "students"],
+        "author": "oficial",
+        "category": "carreira",
+        "tags": ["career", "networking", "growth", "goals"],
+        "path": "src/agents/official/mentor",
+        "version": "1.0.0"
+      }
+    ],
+    "community": []
+  },
+  "categories": {
+    "essencial": {
+      "name": "Essencial",
+      "description": "Agentes fundamentais do sistema",
+      "icon": "⭐"
+    },
+    "produtividade": {
+      "name": "Produtividade",
+      "description": "Gestão de tarefas e projetos",
+      "icon": "📊"
+    },
+    "tecnico": {
+      "name": "Técnico",
+      "description": "Desenvolvimento e arquitetura",
+      "icon": "💻"
+    },
+    "bem-estar": {
+      "name": "Bem-estar",
+      "description": "Saúde mental e emocional",
+      "icon": "🧠"
+    },
+    "carreira": {
+      "name": "Carreira",
+      "description": "Desenvolvimento profissional",
+      "icon": "🎯"
+    },
+    "financas": {
+      "name": "Finanças",
+      "description": "Gestão financeira pessoal",
+      "icon": "💰"
+    },
+    "criativo": {
+      "name": "Criativo",
+      "description": "Design e criatividade",
+      "icon": "🎨"
+    }
+  },
+  "profiles": {
+    "developers": {
+      "name": "Desenvolvedor/a",
+      "recommended_agents": ["organizador", "secretaria", "arquiteto"]
+    },
+    "designers": {
+      "name": "Designer",
+      "recommended_agents": ["organizador", "secretaria"]
+    },
+    "writers": {
+      "name": "Escritor/a",
+      "recommended_agents": ["organizador", "secretaria"]
+    },
+    "students": {
+      "name": "Estudante",
+      "recommended_agents": ["organizador", "psicologo", "mentor"]
+    },
+    "adhd": {
+      "name": "Pessoa com TDAH",
+      "recommended_agents": ["organizador", "secretaria", "psicologo"]
+    },
+    "all": {
+      "name": "Todos os perfis",
+      "recommended_agents": ["organizador", "secretaria"]
+    }
+  }
+}

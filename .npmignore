@@ -1,0 +1,49 @@
+# Development files
+.git
+.github
+.vscode
+*.log
+*.tmp
+
+# Tests
+test-*.sh
+scripts/test-*.sh
+tests/
+
+# Documentation (dev)
+docs/stories/
+docs/prd/
+docs/qa/
+docs/implementation/
+docs/architecture/
+
+# Keep essential docs
+!README.md
+!docs/USAGE.md
+!docs/FAQ.md
+!docs/CONTRIBUTING-AGENTS.md
+
+# Examples and demos
+examples/
+demos/
+
+# Build artifacts
+dist/
+build/
+coverage/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# Local development
+.assistant-core/agents/
+knowledge-base/
+despejo/
+todos/
+diario/

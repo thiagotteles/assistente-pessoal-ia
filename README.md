@@ -1,338 +1,304 @@
-# 🤖 Sistema de Assistente Pessoal com IA
+# 🤖 Assistente Pessoal IA
 
-Sistema de assistente pessoal IA com 5 agentes especializados para pessoas com TDAH, oferecendo um "segundo cérebro" digital completamente local e privado.
+**Seu segundo cérebro para TDAH**
 
-## 🚨 IMPORTANTE - LEIA PRIMEIRO
-
-**🔥 Se você é um desenvolvedor novo no projeto: [LEIA ESTE ARQUIVO PRIMEIRO](docs/IMPORTANTE-LEIA-PRIMEIRO.md)**
-
-Este arquivo contém avisos críticos sobre o que NÃO deve ser usado e diretrizes oficiais.
-
-## 📋 Status das Stories - Roadmap de Desenvolvimento
-
-| Epic | Story | Nome | Descrição | Status |
-|------|-------|------|-----------|--------|
-| **Épico 0** | 0.5 | Documentação Operacional Completa | Sistema abrangente de documentação para usuários finais | ✅ Concluído |
-| **Épico 1** | 1.1 | Estrutura de Arquivos Base | Estrutura simples e intuitiva para usuários com TDAH | ✅ Concluído |
-| **Épico 1** | 1.2 | Sistema de Captura Ultra-Rápida | Arquivo daily-dump.md sem estrutura obrigatória | ✅ Concluído |
-| **Épico 1** | 1.3 | Comando Slash Base | 5 comandos funcionais com roteamento inteligente | ✅ Concluído |
-| **Épico 1** | 1.4 | Knowledge-Base Compartilhada Básica | Sistema de [[referências]] Obsidian com auto-linking | ✅ Concluído |
-| **Épico 2** | 2.1 | Agente Organizador Completo | Processamento de despejo via perguntas específicas | ✅ Concluído |
-| **Épico 2** | 2.2 | Agente Secretária Executiva Completa | Gestão de agenda e processamento de reuniões | 📝 Not Created |
-| **Épico 2** | 2.3 | Agente Arquiteto Confrontador Completo | Consultoria técnica com confronto construtivo | 📝 Not Created |
-| **Épico 2** | 2.4 | Agente Psicólogo Supportivo | Suporte emocional especializado para TDAH | 📝 Not Created |
-| **Épico 2** | 2.5 | Agente Mentor de Carreira | Desenvolvimento profissional de longo prazo | 📝 Not Created |
-| **Épico 3** | 3.0 | Upgrade Path para Usuários Existentes | Sistema de upgrade não-destrutivo Epic 0-2 → Epic 3 | ✅ Concluído |
-| **Épico 3** | 3.1 | Onboarding Interativo - Primeiros Passos | Tour guiado de 3 passos em < 8 minutos | 📝 Not Created |
-| **Épico 3** | 3.2 | Tutoriais e Documentação Interativa | Guias visuais integrados ao Obsidian | 📝 Not Created |
-| **Épico 3** | 3.3 | Feedback Visual e Progresso Contínuo | Dashboard, achievements, e saudação contextual | 📝 Not Created |
-| **Épico 3** | 3.4 | Backup Automático Invisível | Commits automáticos e recovery com 1 clique | 📝 Not Created |
-| **Épico 4** | 4.1 | Testes Essenciais Apenas | Framework de testes básicos focado em funcionalidade | 📝 Not Created |
-
-### Legenda de Status
-- ✅ **Concluído**: Story implementada e funcional
-- ✅ **Approved**: Story validada e pronta para implementação
-- 📝 **Not Created**: Story ainda não foi criada/documentada
-- 🚧 **In Progress**: Story em desenvolvimento
-- ⏸️ **Paused**: Story pausada temporariamente
-- ❌ **Blocked**: Story bloqueada por dependência
-
-## 🚀 Instalação e Configuração
-
-> **⚡ QUER INSTALAR RÁPIDO?** → [**Deploy Quick Start Guide**](docs/DEPLOY-QUICKSTART.md) - Instalação em 2 minutos!
-
-> **🆙 JÁ TEM O SISTEMA INSTALADO (Épicos 0-2)?** → [**Guia de Upgrade para Epic 3**](UPGRADE-EPIC3.md) - Upgrade em < 30 segundos!
-
-### Requisitos do Sistema
-
-- **Python 3.8+** (para funcionalidades avançadas)
-- **Git** (para backup automático)
-- **Obsidian** (recomendado para visualização da knowledge base)
-- **Claude Code** (interface principal)
-
-### Instalação Rápida
-
-**Para Desenvolvimento Completo:**
-
-1. **Clone ou baixe o projeto:**
-   ```bash
-   git clone <repositorio> assistente-pessoal-ia
-   cd assistente-pessoal-ia
-   ```
-
-2. **Execute o setup automático:**
-
-   **Linux/macOS:**
-   ```bash
-   bash setup.sh
-   ```
-
-   **Windows:**
-   ```cmd
-   setup.bat
-   ```
-
-**Para Uso Final (Instalação Limpa) - RECOMENDADO:**
-
-1. **Clone o projeto completo** temporariamente:
-   ```bash
-   git clone <repositorio> temp-assistente
-   cd temp-assistente
-   ```
-
-2. **Execute o deploy para sua pasta final**:
-   ```bash
-   # Para Linux/macOS
-   ./scripts/deploy-assistant.sh ~/assistente-ia
-
-   # Para Windows (Git Bash/WSL)
-   ./scripts/deploy-assistant.sh /c/Users/SeuUsuario/assistente-ia
-   ```
-
-3. **Acesse sua instalação limpa**:
-   ```bash
-   cd ~/assistente-ia  # ou sua pasta escolhida
-   ```
-
-4. **Limpe o projeto temporário**:
-   ```bash
-   cd .. && rm -rf temp-assistente
-   ```
-
-**Vantagens da Instalação Limpa:**
-- ✅ **90% menor** - Apenas arquivos essenciais
-- ✅ **Mais simples** - Sem arquivos de desenvolvimento
-- ✅ **Focada no uso** - Experiência otimizada para usuário final
-- ✅ **Fácil manutenção** - Backup e organização simplificados
-
-### Validação da Instalação
-
-**Para Desenvolvimento:**
-```bash
-bash tests/test-basic.sh
-```
-
-**Para Instalação Limpa:**
-1. **Abra o Claude Code** na pasta do assistente
-2. **Execute o comando inicial**:
-   ```
-   /assistentes:agents:organizador
-   ```
-3. **Teste a captura rápida** - adicione algo em `despejo/daily-dump.md`
-4. **Use o comando processar** para ver o assistente em ação
-
-4. **Configure o Obsidian (recomendado):**
-   - Abra o Obsidian
-   - Clique em "Open folder as vault"
-   - Selecione a pasta `knowledge-base/`
-   - Aceite as configurações automáticas
-
-### Configuração do Git (Backup)
-
-```bash
-# Configure seu nome e email
-git config user.name "Seu Nome"
-git config user.email "seu.email@exemplo.com"
-
-# Opcional: Configure repositório remoto privado
-git remote add origin <seu-repositorio-privado>
-git push -u origin main
-```
-
-## 📖 Guia de Uso Rápido
-
-### 1. Captura Ultra-Rápida
-
-**Arquivo**: `despejo/daily-dump.md`
-
-Simplesmente abra este arquivo e despeje **tudo** que está na sua mente:
-- Ideias aleatórias
-- Tarefas que lembrou
-- Informações importantes
-- Qualquer coisa que precise capturar rapidamente
-
-**Exemplo:**
-```
-reunião com João amanhã 14h
-implementar feature X no projeto Y
-comprar leite
-ideia: app para organizar fotos
-etc...
-```
-
-### 2. Processamento com Agentes
-
-Use o Claude Code para processar suas informações:
-
-- **`/assistentes:agents:organizador *processar`** - Organiza e categoriza automaticamente
-- **`/secretaria`** - Para status de projetos e gestão executiva
-- **`/arquiteto "como implementar X?"`** - Para decisões técnicas
-- **`/psicologo`** - Para suporte emocional e estratégias TDAH
-- **`/mentor`** - Para desenvolvimento de carreira
-
-### 3. Knowledge Base no Obsidian
-
-Abra a pasta `knowledge-base/` no Obsidian para:
-- Visualizar conexões entre informações
-- Usar backlinks automáticos
-- Criar mapas mentais visuais
-- Navegar por referências [[como esta]]
-
-## 🤖 Os 5 Agentes Especializados
-
-### `/organizador` - Seu Organizador Pessoal
-**Função**: Processa despejo diário e organiza informações automaticamente
-
-**Use quando**:
-- Precisar organizar informações caóticas
-- Quiser categorizar tarefas e ideias
-- Precisar de estrutura em dados desorganizados
-
-**Exemplo**:
-```
-/organizador despejo/daily-dump.md
-```
-
-### `/secretaria` - Sua Assistente Executiva
-**Função**: Gestão executiva, agenda, status de projetos, coordenação
-
-**Use quando**:
-- Precisar de status de projetos
-- Quiser agendar ou organizar reuniões
-- Precisar de coordenação entre tarefas
-
-**Exemplo**:
-```
-/secretaria "status do projeto X e próximos passos"
-```
-
-### `/arquiteto` - Arquiteto de Soluções
-**Função**: Consultoria técnica com confronto construtivo e soluções práticas
-
-**Use quando**:
-- Precisar tomar decisões técnicas
-- Quiser arquitetura de sistemas ou processos
-- Precisar de confronto construtivo em ideias
-
-**Exemplo**:
-```
-/arquiteto "como estruturar banco de dados para app Y?"
-```
-
-### `/psicologo` - Psicólogo de Suporte TDAH
-**Função**: Suporte emocional especializado em TDAH, estratégias de foco
-
-**Use quando**:
-- Se sentir sobrecarregado ou ansioso
-- Precisar de estratégias para foco e organização
-- Quiser suporte emocional especializado
-
-**Exemplo**:
-```
-/psicologo "estou me sentindo sobrecarregado com muitas tarefas"
-```
-
-### `/mentor` - Mentor de Carreira
-**Função**: Desenvolvimento de carreira e orientação estratégica de longo prazo
-
-**Use quando**:
-- Precisar de direcionamento de carreira
-- Quiser planejamento estratégico pessoal
-- Precisar de coaching para objetivos de longo prazo
-
-**Exemplo**:
-```
-/mentor "como posso evoluir minha carreira em tecnologia?"
-```
-
-## 📁 Estrutura do Projeto
-
-```
-assistente-pessoal-ia/
-├── 📁 despejo/                    # Captura ultra-rápida
-│   ├── daily-dump.md             # Arquivo principal de captura
-│   └── processed/                 # Arquivos já processados
-├── 📁 knowledge-base/             # "Segundo cérebro" (Obsidian Vault)
-│   ├── decisoes/                  # Decisões importantes
-│   ├── contextos/                 # Contextos de projetos
-│   ├── projetos/                  # Informações de projetos
-│   ├── pessoas/                   # Perfis e relacionamentos
-│   └── .obsidian/                 # Configurações do Obsidian
-├── 📁 todos/                      # Central de tarefas
-│   ├── por-projeto/               # Tarefas organizadas por projeto
-│   └── por-pessoa/                # Tarefas organizadas por pessoa
-├── 📁 diario/                     # Reflexões estruturadas
-│   └── templates/                 # Templates para entradas
-├── 📁 .assistant-core/            # Configurações dos agentes
-│   ├── agents/                    # Configurações YAML dos agentes
-│   ├── memory/                    # Memória persistente dos agentes
-│   ├── logs/                      # Logs do sistema (opcional)
-│   └── data/                      # Dados internos
-├── 📁 scripts/                    # Scripts de automação
-└── 📁 tests/                      # Todos os testes organizados
-    ├── test-basic.sh              # Teste básico do sistema
-    ├── test-story-*.sh            # Testes de funcionalidades específicas
-    └── test-agents.py             # Testes dos agentes
-```
-
-### 🔄 Mudanças Recentes na Estrutura
-
-**Organização de Testes**: Todos os arquivos de teste foram movidos para `tests/`
-**Deploy Limpo**: Novo script `scripts/deploy-assistant.sh` para instalações apenas com arquivos essenciais
-**Documentação**: Guias específicos para desenvolvedores em `docs/architecture/guidelines-desenvolvedores.md`
-
-## ✨ Características Principais
-
-- ✅ **100% Local** - Todos os dados ficam no seu computador
-- ✅ **Privacidade Total** - Nenhum dado é enviado para nuvem
-- ✅ **Claude Code Integration** - Interface familiar e poderosa
-- ✅ **Obsidian Integration** - Visualização em grafo e backlinks
-- ✅ **Git Backup** - Versionamento automático de todos os dados
-- ✅ **TDAH-Optimized** - Captura sem fricção, processamento inteligente
-- ✅ **5 Agentes Especializados** - Cada um com personalidade e função específica
-- ✅ **Memória Persistente** - Agentes lembram de interações anteriores
-- ✅ **Cross-Platform** - Funciona em Windows, macOS e Linux
-
-## 🔧 Testes e Validação
-
-Execute regularmente para garantir que tudo está funcionando:
-
-```bash
-# Teste completo do sistema
-bash test-basic.sh
-
-# Teste específico dos agentes
-python3 test-agents.py
-
-# Se houver problemas, execute recuperação automática
-bash test-recovery.sh
-```
-
-## 📚 Documentação Adicional
-
-- **[Manual de Uso Detalhado](USAGE.md)** - Guia completo para cada agente
-- **[Resolução de Problemas](TROUBLESHOOTING.md)** - Soluções para problemas comuns
-- **[Backup e Recovery](BACKUP.md)** - Proteção completa dos seus dados
-- **[Perguntas Frequentes](FAQ.md)** - Respostas para dúvidas comuns
-- **[Framework de Testes](docs/framework-de-testes.md)** - Documentação técnica dos testes
-
-## 🆘 Precisa de Ajuda?
-
-1. **Problemas básicos**: Consulte [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
-2. **Dúvidas de uso**: Consulte [FAQ.md](FAQ.md)
-3. **Problemas técnicos**: Execute `bash test-recovery.sh`
-4. **Backup de emergência**: Consulte [BACKUP.md](BACKUP.md)
-
-## 🎯 Filosofia do Projeto
-
-Este sistema foi criado especificamente para pessoas com TDAH, seguindo os princípios:
-
-- **Captura sem fricção** - Anote primeiro, organize depois
-- **Processamento inteligente** - Deixe os agentes organizarem por você
-- **Visualização clara** - Use o Obsidian para ver conexões
-- **Backup automático** - Nunca perca informações importantes
-- **Privacidade total** - Seus dados são seus
+Pare de perder pensamentos importantes. O Assistente Pessoal IA captura tudo que vem à sua mente e organiza automaticamente - sem esforço, sem fricção.
 
 ---
 
-🤖 **Sistema funcionando!** Execute `bash test-basic.sh` para validar sua instalação.
+## ✨ Por Que Usar?
+
+Se você tem TDAH, sabe como é:
+
+| 😰 Problema | ✅ Solução |
+|------------|-----------|
+| **Esqueço tudo** | Despejo diário sem fricção - escreva e o Organizador cuida do resto |
+| **Projetos incompletos** | Secretária rastreia tudo e mostra "what's next" |
+| **Decisões difíceis** | Arquiteto confronta suas ideias de forma construtiva |
+| **Sobrecarga emocional** | Psicólogo oferece suporte especializado em TDAH |
+| **Carreira travada** | Mentor ajuda com metas e networking |
+
+---
+
+## 🚀 Instalação em 2 Minutos
+
+```bash
+npx assistente-pessoal install
+```
+
+**Isso é tudo.** O instalador interativo vai:
+
+1. ✅ Perguntar onde instalar
+2. ✅ Deixar você escolher quais agentes quer
+3. ✅ Configurar tudo automaticamente
+4. ✅ Criar sua primeira captura
+
+---
+
+## 🤖 Escolha Seus Agentes
+
+Durante a instalação, você seleciona quais agentes fazem sentido para você:
+
+### 📋 Organizador (Sofia) - *Essencial*
+
+Processa seu "despejo diário" e organiza automaticamente em:
+- ✅ Tarefas (com prioridade)
+- ✅ Projetos (com contexto)
+- ✅ Anotações (categorizadas)
+- ✅ Pessoas (networking)
+
+**Perfeito para**: Todo mundo que esquece coisas
+
+---
+
+### 📊 Secretária - *Recomendado*
+
+Sua assistente executiva que:
+- 📅 Organiza reuniões e agenda
+- 📈 Mostra status de projetos
+- 🎯 Responde "what's next?"
+- 📊 Dashboard executivo visual
+
+**Perfeito para**: Profissionais, gestores, pessoas ocupadas
+
+---
+
+### 🏗️ Arquiteto (Marcus) - *Desenvolvedores*
+
+Consultoria técnica com confronto construtivo:
+- 🤔 Questiona suas decisões arquiteturais
+- 💡 Oferece alternativas que você não pensou
+- 📝 Documenta decisões técnicas
+- 🔍 Detecta inconsistências
+
+**Perfeito para**: Desenvolvedores, tech leads, arquitetos
+
+---
+
+### 🧠 Psicólogo (Dr. Helena) - *TDAH*
+
+Suporte emocional especializado:
+- 😌 Técnicas de TCC para TDAH
+- 🌊 Gestão de sobrecarga emocional
+- 🎯 Estratégias práticas
+- 📔 Diário emocional estruturado
+
+**Perfeito para**: Pessoas com TDAH, ansiedade, burnout
+
+---
+
+### 🎯 Mentor (Leonardo) - *Carreira*
+
+Desenvolvimento profissional:
+- 🚀 Definição de metas de carreira
+- 🤝 Estratégias de networking
+- 📈 Planos de crescimento
+- 💼 Gestão de relacionamentos profissionais
+
+**Perfeito para**: Crescimento de carreira, transições, estudantes
+
+---
+
+## 💡 Como Funciona?
+
+### 1. Capture Sem Pensar
+
+Abra `despejo/daily-dump.md` e escreva tudo que vem à mente:
+
+```markdown
+- Preciso marcar dentista
+- Ideia: app de receitas com IA
+- Lembrar de ligar para João
+- Bug no backend que o cliente reportou
+```
+
+**Sem organização. Sem categorias. Só escreva.**
+
+---
+
+### 2. Deixe o Organizador Trabalhar
+
+No Claude Code, digite:
+
+```
+/organizador
+```
+
+Em segundos, tudo é organizado automaticamente:
+
+- ✅ "Marcar dentista" → `todos/pessoal.md`
+- ✅ "App de receitas" → `knowledge-base/projetos/app-receitas.md`
+- ✅ "Ligar para João" → `knowledge-base/pessoas/joao.md`
+- ✅ "Bug backend" → `todos/trabalho.md`
+
+---
+
+### 3. Use Outros Agentes
+
+```
+/secretaria what's next
+→ Mostra suas 3 próximas prioridades
+
+/arquiteto analise projeto app-receitas
+→ Questiona suas decisões técnicas
+
+/psicologo
+→ Suporte emocional e técnicas de TDAH
+
+/mentor metas
+→ Define metas de carreira
+```
+
+---
+
+## 📦 Gerenciar Agentes
+
+Depois da instalação, você pode adicionar ou remover agentes:
+
+```bash
+# Ver agentes instalados
+npx assistente-pessoal list
+
+# Ver todos disponíveis
+npx assistente-pessoal available
+
+# Adicionar agente
+npx assistente-pessoal add arquiteto
+
+# Remover agente
+npx assistente-pessoal remove mentor
+
+# Ver detalhes
+npx assistente-pessoal info psicologo
+```
+
+---
+
+## 🔒 100% Local e Privado
+
+- ✅ **Seus dados nunca saem do seu computador**
+- ✅ **Nenhuma conexão com servidores externos**
+- ✅ **Você controla tudo (é só Markdown!)**
+- ✅ **Backup automático com Git (opcional)**
+- ✅ **Integração com Obsidian (opcional)**
+
+---
+
+## 📚 Documentação
+
+- **[Guia de Uso Completo](docs/user-guide/USAGE.md)** - Como usar cada agente
+- **[FAQ](docs/user-guide/FAQ.md)** - Perguntas frequentes
+- **[Troubleshooting](docs/user-guide/TROUBLESHOOTING.md)** - Resolvendo problemas
+- **[Backup e Recuperação](docs/user-guide/BACKUP.md)** - Proteção de dados
+
+---
+
+## 🤝 Comunidade
+
+### Contribuir Agentes
+
+A comunidade pode criar e compartilhar agentes! Veja:
+- **[Como Contribuir Agentes](docs/CONTRIBUTING-AGENTS.md)**
+- **[Agentes da Comunidade](src/agents/community/)**
+
+### Reportar Problemas
+
+Encontrou um bug? [Abra uma issue](https://github.com/yourusername/assistente-pessoal-ia/issues)
+
+---
+
+## 🎯 Para Desenvolvedores
+
+Se você quer contribuir com código ou entender a arquitetura:
+
+- **[Arquitetura](docs/architecture/)** - Design do sistema
+- **[Stories](docs/stories/)** - Histórias de desenvolvimento
+- **[Development Docs](docs/development/)** - Documentação técnica
+- **[Instalação Dev](docs/development/INSTALL-DEV.md)** - Setup para desenvolvimento
+
+---
+
+## ⚡ Quick Start Absoluto
+
+```bash
+# 1. Instalar
+npx assistente-pessoal install
+
+# 2. Entrar na pasta instalada
+cd ~/assistente-ia
+
+# 3. Abrir no Claude Code
+# (ou seu editor preferido)
+
+# 4. Escrever em despejo/daily-dump.md
+# Tudo que vier à mente
+
+# 5. Processar
+/organizador
+
+# 6. Profit! 🎉
+```
+
+---
+
+## 💬 Depoimentos
+
+> *"Finalmente um sistema que funciona com meu TDAH, não contra ele."*
+> — Usuário Beta
+
+> *"Não preciso mais lembrar de organizar. Só despejo e funciona."*
+> — Desenvolvedor Full-Stack
+
+> *"O Organizador é literalmente meu segundo cérebro."*
+> — Designer com TDAH
+
+---
+
+## 🏆 Features Únicas
+
+- ✅ **Zero fricção** - Capture primeiro, organize depois (automaticamente)
+- ✅ **Conversacional** - Agentes com personalidade, não comandos frios
+- ✅ **Memória contextual** - Agentes lembram de conversas anteriores
+- ✅ **Cross-agent intelligence** - Agentes colaboram entre si
+- ✅ **Markdown puro** - Portável, versionável, durável
+- ✅ **Obsidian ready** - Visualização rica opcional
+- ✅ **Modular** - Escolha apenas o que precisa
+
+---
+
+## 📊 Requisitos
+
+- **Node.js 14+** (para instalação)
+- **Claude Code** (ou qualquer editor Markdown)
+- **Git** (opcional, para backup)
+- **Obsidian** (opcional, para visualização)
+
+---
+
+## 🚀 Comece Agora
+
+```bash
+npx assistente-pessoal install
+```
+
+**Tempo até o primeiro valor: < 5 minutos**
+
+---
+
+## 📜 Licença
+
+MIT - Use como quiser, onde quiser
+
+---
+
+## 🙏 Créditos
+
+Criado com ❤️ para pessoas com TDAH que querem produtividade sem fricção.
+
+Baseado no framework [BMAD](https://github.com/bmad-method/bmad) para agentes conversacionais.
+
+---
+
+**Não é mais um sistema de produtividade. É o seu segundo cérebro.**
+
+🤖 Instale agora: `npx assistente-pessoal install`

@@ -14,10 +14,12 @@
 | **2** | Sistema de 5 Agentes Inteligentes | ✅ Completo | 5/5 | 100% |
 | **3** | Experiência e Sucesso do Usuário Final | 🔄 Em Progresso | 3/5 | 60% |
 | **4** | Quality Assurance Essencial | ✅ Completo | 1/1 | 100% |
+| **5** | NPM Package e Produção User-First | 🔄 Em Progresso | 0/8 | 60%* |
 
-**Total Implementado**: 18 stories (18/20 = 90%)
-**Épicos Completos**: 4/5 (80%)
-**Epic em Progresso**: Epic 3 (3/5 stories concluídas - 60%)
+**Total Implementado**: 18 stories (18/28 = 64%)
+**Épicos Completos**: 4/6 (67%)
+**Epics em Progresso**: Epic 3 (3/5 stories - 60%), Epic 5 (0/8 stories - 60% infra)
+**Nota**: Story 3.5 foi movida para Epic 5 como Story 5.0 (container das 8 sub-stories)
 
 ---
 
@@ -95,7 +97,7 @@
 
 ---
 
-## 🔄 Epic 3: Experiência e Sucesso do Usuário Final - EM PROGRESSO (60%)
+## 🔄 Epic 3: Experiência e Sucesso do Usuário Final - EM PROGRESSO (50%)
 
 **Objetivo**: Garantir adoção bem-sucedida por usuários não-técnicos através de onboarding guiado, feedback visual e backup invisível
 
@@ -110,6 +112,7 @@
 | 3.2 | Obsidian Simplificado e Pré-Configurado | ✅ Done | Dashboard visual + busca simples | ✅ PASS (99/100) |
 | 3.3 | Feedback Visual e Progresso Contínuo | ❌ Todo | Dashboard pessoal + achievements | - |
 | 3.4 | Backup Automático Invisível | ❌ Todo | Git silencioso + recovery 1-clique | - |
+| 3.5 | NPM Package e Instalador Interativo User-First | 🔄 In Progress | NPM install + seleção de agentes + community | - |
 
 ### 🎯 Foco do Epic 3 NOVO
 
@@ -193,9 +196,9 @@ Os seguintes épicos foram **CONSOLIDADOS** no Epic 2 e movidos para `archive/`:
 
 ## 📈 Métricas de Progresso
 
-**Stories Implementadas**: 18/20 (90%)
+**Stories Implementadas**: 18/21 (86%)
 **Épicos Completos**: 4/5 (80%)
-**Epic 3 Progresso**: 3/5 stories (60%)
+**Epic 3 Progresso**: 3/6 stories (50%)
 **Agentes Funcionais**: 5/5 (100%)
 **Cobertura de Testes**: 100% (stories implementadas)
 
@@ -215,7 +218,65 @@ Os seguintes épicos foram **CONSOLIDADOS** no Epic 2 e movidos para `archive/`:
   - ✅ Story 3.2: Obsidian Simplificado (Done - QA PASS 99/100)
   - ⏳ Story 3.3: Feedback Visual e Progresso (Todo)
   - ⏳ Story 3.4: Backup Automático Invisível (Todo)
+  - ~~Story 3.5~~ → **Movida para Epic 5 como Story 5.0**
 
 ---
 
-**Última atualização**: 2025-10-02 por Quinn (Test Architect)
+## 🔄 Epic 5: NPM Package e Produção User-First - EM PROGRESSO (60%)
+
+**Objetivo**: Completar transformação para produto NPM user-first pronto para produção
+
+**Arquivo**: [epic-5-npm-package-production.md](epic-5-npm-package-production.md)
+
+### Stories
+
+| Story | Título | Status | Descrição | Estimativa |
+|-------|--------|--------|-----------|------------|
+| **5.0** | **NPM Package (Container)** | 🔄 In Progress | Story guarda-chuva - ver [5.0.story.md](../stories/5.0.story.md) | 20h total |
+| 5.1 | Migração de Agentes para src/agents/ | ⏳ Todo | Mover 5 agentes para nova estrutura | 2h |
+| 5.2 | Criação de Templates Base | ⏳ Todo | Templates para instalação limpa | 1h |
+| 5.3 | Testes End-to-End da Instalação | ⏳ Todo | Validar npx install completo | 3h |
+| 5.4 | Comandos CLI Pós-Instalação | ⏳ Todo | Testar list, add, remove, etc | 2h |
+| 5.5 | Community Workflow e CI/CD | ⏳ Todo | Contribuição de agentes + CI | 3h |
+| 5.6 | Documentação Final User-First | ⏳ Todo | Screenshots, GIFs, docs finais | 2h |
+| 5.7 | Preparação para Publicação NPM | ⏳ Todo | Package pronto para publish | 2h |
+| 5.8 | Deprecação de Instalação Legacy | ⏳ Todo | Marcar setup.sh deprecated | 1h |
+
+### 🎯 Infraestrutura Já Implementada (60%)
+
+**✅ Completo**:
+- NPM package structure (`package.json`, bin entry point)
+- CLI completo (6 comandos: install, list, add, remove, available, info)
+- Agent Registry System (`agents.json` + utility)
+- Interactive installer (prompts + agent selector + setup)
+- README.md user-first completo
+- Reorganização de arquivos (raiz limpa)
+- Documentação separada (user-guide/, development/)
+
+**⏳ Pendente**:
+- Migração dos 5 agentes para `src/agents/`
+- Templates base para instalação
+- Testes end-to-end
+- CI/CD para validação
+- Publicação no NPM
+
+### 📊 Progresso
+
+- **Infraestrutura**: 60% (estrutura pronta, falta conteúdo)
+- **Stories**: 0/8 (todas pendentes)
+- **Estimativa Total**: 16 horas (~2 dias úteis)
+- **Timeline**: Semana 1-2
+
+### 🚀 Próximo Passo Imediato
+
+**Story 5.1 - Migração de Agentes** (2h):
+```bash
+mkdir -p src/agents/core/organizador
+mkdir -p src/agents/official/{secretaria,arquiteto,psicologo,mentor}
+cp -r .assistant-core/agents/* src/agents/
+npm run validate-agents
+```
+
+---
+
+**Última atualização**: 2025-10-02 por Winston (Architect)

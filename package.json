@@ -1,0 +1,60 @@
+{
+  "name": "assistente-pessoal-ia",
+  "version": "1.0.0",
+  "description": "Assistente Pessoal IA - Seu segundo cérebro para TDAH com 5 agentes especializados",
+  "keywords": [
+    "assistant",
+    "ai",
+    "adhd",
+    "productivity",
+    "knowledge-base",
+    "obsidian",
+    "personal-assistant",
+    "second-brain"
+  ],
+  "author": "Assistente Pessoal IA Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/assistente-pessoal-ia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/assistente-pessoal-ia/issues"
+  },
+  "homepage": "https://github.com/yourusername/assistente-pessoal-ia#readme",
+  "bin": {
+    "assistente-pessoal": "./bin/cli.js"
+  },
+  "main": "src/index.js",
+  "files": [
+    "bin/",
+    "src/",
+    "templates/",
+    ".assistant-core/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node bin/cli.js",
+    "validate-agents": "node src/scripts/validate-agents.js",
+    "test": "bash test-basic.sh",
+    "test:story": "bash scripts/test-all-stories.sh",
+    "lint": "echo 'Linting not configured yet'",
+    "prepublishOnly": "npm run validate-agents"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "fs-extra": "^11.1.1",
+    "inquirer": "^8.2.5",
+    "ora": "^5.4.1",
+    "yaml": "^2.3.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0"
+  }
+}
