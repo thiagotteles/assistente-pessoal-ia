@@ -16,12 +16,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/assistente-pessoal-ia.git"
+    "url": "https://github.com/thiagotteles/assistente-pessoal-ia.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/assistente-pessoal-ia/issues"
+    "url": "https://github.com/thiagotteles/assistente-pessoal-ia/issues"
   },
-  "homepage": "https://github.com/yourusername/assistente-pessoal-ia#readme",
+  "homepage": "https://github.com/thiagotteles/assistente-pessoal-ia#readme",
   "bin": {
     "assistente-pessoal": "./bin/cli.js"
   },
