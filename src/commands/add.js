@@ -29,10 +29,12 @@ async function addCommand(agentId) {
     return;
   }
 
-  // Check if already installed (in .claude/commands/)
-  const targetDir = path.join(installPath, '.claude', 'commands', agentId);
+  // Check if already installed (in .claude/commands/assistentes/agents/)
+  const agentsDir = path.join(installPath, '.claude', 'commands', 'assistentes', 'agents');
+  const tasksDir = path.join(installPath, '.claude', 'commands', 'assistentes', 'tasks');
+  const targetAgentFile = path.join(agentsDir, `${agentId}.md`);
 
-  if (await fs.pathExists(targetDir)) {
+  if (await fs.pathExists(targetAgentFile)) {
     console.log(chalk.yellow(`⚠️  Agente ${agent.name} já está instalado`));
     console.log(chalk.gray('\nPara reinstalar, remova primeiro: npx assistente-pessoal remove ' + agentId + '\n'));
     return;
@@ -42,32 +44,31 @@ async function addCommand(agentId) {
   const spinner = ora(`Copiando ${agent.name}...`).start();
 
   try {
-    await fs.ensureDir(targetDir);
+    await fs.ensureDir(agentsDir);
+    await fs.ensureDir(tasksDir);
 
     // Copiar arquivo .md do agente
     const agentMdSource = path.join(__dirname, '../..', '.assistant-core', 'agents', `${agentId}.md`);
-    const agentMdTarget = path.join(targetDir, `${agentId}.md`);
 
     if (!await fs.pathExists(agentMdSource)) {
       spinner.fail(`Arquivo ${agentId}.md não encontrado`);
       return;
     }
 
-    await fs.copy(agentMdSource, agentMdTarget);
+    await fs.copy(agentMdSource, targetAgentFile);
 
-    // Copiar tasks
+    // Copiar TODAS as tasks (compartilhadas entre agentes)
     const tasksSource = path.join(__dirname, '../..', '.assistant-core', 'tasks');
-    const tasksTarget = path.join(targetDir, 'tasks');
 
     if (await fs.pathExists(tasksSource)) {
-      await fs.ensureDir(tasksTarget);
       const tasks = await fs.readdir(tasksSource);
 
       for (const task of tasks) {
         if (task.endsWith('.md')) {
           await fs.copy(
             path.join(tasksSource, task),
-            path.join(tasksTarget, task)
+            path.join(tasksDir, task),
+            { overwrite: true }
           );
         }
       }

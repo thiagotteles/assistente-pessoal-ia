@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2025-10-03
+
+### Fixed
+- **CRÍTICO**: Estrutura de diretórios corrigida para padrão BMAD/Claude Code
+  - **ANTES (ERRADO)**: `.claude/commands/{agentId}/{agentId}.md` + `tasks/`
+  - **AGORA (CORRETO)**: `.claude/commands/assistentes/agents/{agentId}.md`
+  - **AGORA (CORRETO)**: `.claude/commands/assistentes/tasks/{task}.md`
+  - Tasks agora são compartilhadas entre todos os agentes (como no BMAD)
+
+### Changed
+- `setup.js`: Instalação usa estrutura `assistentes/agents/` e `assistentes/tasks/`
+- `list.js`: Lê agentes de `.claude/commands/assistentes/agents/`
+- `add.js`: Adiciona agentes em `.claude/commands/assistentes/agents/`
+- `remove.js`: Remove agentes de `.claude/commands/assistentes/agents/`
+
 ## [1.0.2] - 2025-10-03
 
 ### Fixed

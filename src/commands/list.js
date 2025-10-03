@@ -20,15 +20,19 @@ async function listCommand() {
     return;
   }
 
-  // Read installed agents from .claude/commands/ folder
-  const commandsPath = path.join(installPath, '.claude', 'commands');
+  // Read installed agents from .claude/commands/assistentes/agents/ folder
+  const agentsPath = path.join(installPath, '.claude', 'commands', 'assistentes', 'agents');
 
-  if (!await fs.pathExists(commandsPath)) {
-    console.log(chalk.yellow('❌ Pasta de comandos não encontrada'));
+  if (!await fs.pathExists(agentsPath)) {
+    console.log(chalk.yellow('❌ Pasta de agentes não encontrada'));
+    console.log(chalk.gray('\nExecute a instalação primeiro: npx assistente-pessoal install\n'));
     return;
   }
 
-  const installedAgentIds = await fs.readdir(commandsPath);
+  const agentFiles = await fs.readdir(agentsPath);
+  const installedAgentIds = agentFiles
+    .filter(f => f.endsWith('.md'))
+    .map(f => f.replace('.md', ''));
 
   if (installedAgentIds.length === 0) {
     console.log(chalk.yellow('Nenhum agente instalado'));
