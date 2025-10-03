@@ -66,7 +66,7 @@ class AssistenteSetup {
         'knowledge-base/aprendizados',
         'todos',
         'diario',
-        '.claude',
+        '.claude/commands',
         '.assistant',
         '.assistant/memory',
         '.assistant/config'
@@ -137,20 +137,42 @@ class AssistenteSetup {
           continue;
         }
 
-        // Get source path from registry
-        const sourcePath = agentRegistry.getAgentSourcePath(agentId);
+        // CORREÇÃO: Estrutura Claude Code correta
+        // .claude/commands/{agentId}/{agentId}.md
+        const targetDir = path.join(this.installPath, '.claude', 'commands', agentId);
+        await fs.ensureDir(targetDir);
 
-        // CORREÇÃO: Instalar em .claude/ para slash commands funcionarem
-        const targetPath = path.join(this.installPath, '.claude', agentId);
+        // Copiar arquivo principal do agente (.md)
+        const agentMdSource = path.join(__dirname, '../../.assistant-core/agents', `${agentId}.md`);
+        const agentMdTarget = path.join(targetDir, `${agentId}.md`);
 
-        // Check if source exists
-        if (!await fs.pathExists(sourcePath)) {
-          spinner.warn(`Pasta do agente ${agent.name} não encontrada: ${sourcePath}`);
+        if (await fs.pathExists(agentMdSource)) {
+          await fs.copy(agentMdSource, agentMdTarget, { overwrite: true });
+        } else {
+          spinner.warn(`Arquivo ${agentId}.md não encontrado`);
           continue;
         }
 
-        // Copy agent
-        await fs.copy(sourcePath, targetPath, { overwrite: true });
+        // Copiar tasks do agente (se existirem)
+        const tasksSourceDir = path.join(__dirname, '../../.assistant-core/tasks');
+        const tasksTargetDir = path.join(targetDir, 'tasks');
+
+        if (await fs.pathExists(tasksSourceDir)) {
+          // Copiar apenas tasks deste agente (filtrar por prefixo ou convenção)
+          await fs.ensureDir(tasksTargetDir);
+          const allTasks = await fs.readdir(tasksSourceDir);
+
+          // Por agora, copiar todas as tasks (refinável depois)
+          for (const taskFile of allTasks) {
+            if (taskFile.endsWith('.md')) {
+              await fs.copy(
+                path.join(tasksSourceDir, taskFile),
+                path.join(tasksTargetDir, taskFile),
+                { overwrite: true }
+              );
+            }
+          }
+        }
 
         spinner.text = `Instalando agentes... ✓ ${agent.name}`;
       }

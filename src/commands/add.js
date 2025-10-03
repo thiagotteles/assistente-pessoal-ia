@@ -29,10 +29,10 @@ async function addCommand(agentId) {
     return;
   }
 
-  // Check if already installed (in .claude/)
-  const targetPath = path.join(installPath, '.claude', agentId);
+  // Check if already installed (in .claude/commands/)
+  const targetDir = path.join(installPath, '.claude', 'commands', agentId);
 
-  if (await fs.pathExists(targetPath)) {
+  if (await fs.pathExists(targetDir)) {
     console.log(chalk.yellow(`⚠️  Agente ${agent.name} já está instalado`));
     console.log(chalk.gray('\nPara reinstalar, remova primeiro: npx assistente-pessoal remove ' + agentId + '\n'));
     return;
@@ -42,14 +42,36 @@ async function addCommand(agentId) {
   const spinner = ora(`Copiando ${agent.name}...`).start();
 
   try {
-    const sourcePath = agentRegistry.getAgentSourcePath(agentId);
+    await fs.ensureDir(targetDir);
 
-    if (!await fs.pathExists(sourcePath)) {
-      spinner.fail(`Arquivos do agente ${agent.name} não encontrados`);
+    // Copiar arquivo .md do agente
+    const agentMdSource = path.join(__dirname, '../..', '.assistant-core', 'agents', `${agentId}.md`);
+    const agentMdTarget = path.join(targetDir, `${agentId}.md`);
+
+    if (!await fs.pathExists(agentMdSource)) {
+      spinner.fail(`Arquivo ${agentId}.md não encontrado`);
       return;
     }
 
-    await fs.copy(sourcePath, targetPath);
+    await fs.copy(agentMdSource, agentMdTarget);
+
+    // Copiar tasks
+    const tasksSource = path.join(__dirname, '../..', '.assistant-core', 'tasks');
+    const tasksTarget = path.join(targetDir, 'tasks');
+
+    if (await fs.pathExists(tasksSource)) {
+      await fs.ensureDir(tasksTarget);
+      const tasks = await fs.readdir(tasksSource);
+
+      for (const task of tasks) {
+        if (task.endsWith('.md')) {
+          await fs.copy(
+            path.join(tasksSource, task),
+            path.join(tasksTarget, task)
+          );
+        }
+      }
+    }
 
     spinner.succeed(`${agent.icon} ${agent.name} instalado com sucesso!`);
 

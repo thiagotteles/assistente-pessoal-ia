@@ -20,15 +20,15 @@ async function listCommand() {
     return;
   }
 
-  // Read installed agents from .claude/ folder
-  const agentsPath = path.join(installPath, '.claude');
+  // Read installed agents from .claude/commands/ folder
+  const commandsPath = path.join(installPath, '.claude', 'commands');
 
-  if (!await fs.pathExists(agentsPath)) {
-    console.log(chalk.yellow('❌ Pasta de agentes não encontrada'));
+  if (!await fs.pathExists(commandsPath)) {
+    console.log(chalk.yellow('❌ Pasta de comandos não encontrada'));
     return;
   }
 
-  const installedAgentIds = await fs.readdir(agentsPath);
+  const installedAgentIds = await fs.readdir(commandsPath);
 
   if (installedAgentIds.length === 0) {
     console.log(chalk.yellow('Nenhum agente instalado'));
