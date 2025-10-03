@@ -1,6 +1,6 @@
 {
   "name": "assistente-pessoal-ia",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Assistente Pessoal IA - Seu segundo cérebro para TDAH com 5 agentes especializados",
   "keywords": [
     "assistant",
@@ -31,6 +31,8 @@
     "src/",
     "templates/",
     "docs/user-guide/",
+    ".assistant-core/agents/",
+    ".assistant-core/tasks/",
     "README.md",
     "QUICK-START.md",
     "CONTRIBUTING-AGENTS.md",
