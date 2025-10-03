@@ -20,8 +20,8 @@ async function listCommand() {
     return;
   }
 
-  // Read installed agents
-  const agentsPath = path.join(installPath, '.assistant', 'agents');
+  // Read installed agents from .claude/ folder
+  const agentsPath = path.join(installPath, '.claude');
 
   if (!await fs.pathExists(agentsPath)) {
     console.log(chalk.yellow('❌ Pasta de agentes não encontrada'));

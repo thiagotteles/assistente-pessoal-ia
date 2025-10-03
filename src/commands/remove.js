@@ -30,8 +30,8 @@ async function removeCommand(agentId) {
     return;
   }
 
-  // Check if installed
-  const targetPath = path.join(installPath, '.assistant', 'agents', agentId);
+  // Check if installed (in .claude/)
+  const targetPath = path.join(installPath, '.claude', agentId);
 
   if (!await fs.pathExists(targetPath)) {
     console.log(chalk.yellow(`⚠️  Agente ${agentName} não está instalado\n`));

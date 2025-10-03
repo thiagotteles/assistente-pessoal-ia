@@ -41,6 +41,8 @@ No Claude Code, digite:
 /organizador
 ```
 
+**Nota**: Os agentes ficam em `.claude/` para que os slash commands funcionem.
+
 O Organizador vai:
 1. Fazer perguntas específicas
 2. Categorizar automaticamente

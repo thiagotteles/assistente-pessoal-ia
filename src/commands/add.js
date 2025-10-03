@@ -29,8 +29,8 @@ async function addCommand(agentId) {
     return;
   }
 
-  // Check if already installed
-  const targetPath = path.join(installPath, '.assistant', 'agents', agentId);
+  // Check if already installed (in .claude/)
+  const targetPath = path.join(installPath, '.claude', agentId);
 
   if (await fs.pathExists(targetPath)) {
     console.log(chalk.yellow(`⚠️  Agente ${agent.name} já está instalado`));

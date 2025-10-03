@@ -28,11 +28,11 @@ class InstallationPrompts {
     // 3. User profile (for agent recommendations)
     preferences.userProfile = await this.promptUserProfile();
 
-    // 4. Git backup
-    preferences.setupGit = await this.promptGitBackup();
-
-    // 5. Obsidian integration
+    // 4. Obsidian integration
     preferences.setupObsidian = await this.promptObsidianIntegration();
+
+    // Git backup removido - usuário é responsável por seu próprio backup
+    preferences.setupGit = false;
 
     return preferences;
   }
@@ -119,22 +119,6 @@ class InstallationPrompts {
   }
 
   /**
-   * Prompt for Git backup setup
-   */
-  async promptGitBackup() {
-    const { setupGit } = await inquirer.prompt([
-      {
-        type: 'confirm',
-        name: 'setupGit',
-        message: '💾 Configurar backup automático com Git?',
-        default: true
-      }
-    ]);
-
-    return setupGit;
-  }
-
-  /**
    * Prompt for Obsidian integration
    */
   async promptObsidianIntegration() {
@@ -159,7 +143,6 @@ class InstallationPrompts {
     console.log(`  ${chalk.white('Nome:')} ${chalk.green(preferences.userName)}`);
     console.log(`  ${chalk.white('Perfil:')} ${chalk.green(preferences.userProfile)}`);
     console.log(`  ${chalk.white('Agentes:')} ${chalk.green(selectedAgents.length)} selecionados`);
-    console.log(`  ${chalk.white('Backup Git:')} ${preferences.setupGit ? chalk.green('Sim') : chalk.gray('Não')}`);
     console.log(`  ${chalk.white('Obsidian:')} ${preferences.setupObsidian ? chalk.green('Sim') : chalk.gray('Não')}`);
 
     const { confirm } = await inquirer.prompt([

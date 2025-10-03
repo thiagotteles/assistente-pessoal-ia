@@ -66,8 +66,8 @@ class AssistenteSetup {
         'knowledge-base/aprendizados',
         'todos',
         'diario',
+        '.claude',
         '.assistant',
-        '.assistant/agents',
         '.assistant/memory',
         '.assistant/config'
       ];
@@ -139,7 +139,9 @@ class AssistenteSetup {
 
         // Get source path from registry
         const sourcePath = agentRegistry.getAgentSourcePath(agentId);
-        const targetPath = path.join(this.installPath, '.assistant', 'agents', agentId);
+
+        // CORREÇÃO: Instalar em .claude/ para slash commands funcionarem
+        const targetPath = path.join(this.installPath, '.claude', agentId);
 
         // Check if source exists
         if (!await fs.pathExists(sourcePath)) {

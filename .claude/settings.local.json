@@ -29,7 +29,11 @@
       "Bash(node:*)",
       "Bash(git rm:*)",
       "Read(//c/**)",
-      "Bash(npm pack:*)"
+      "Bash(npm pack:*)",
+      "Bash(tar:*)",
+      "Bash(npm whoami:*)",
+      "Bash(npm publish:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
