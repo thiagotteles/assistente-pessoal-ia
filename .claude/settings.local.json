@@ -22,7 +22,12 @@
       "Bash(chmod:*)",
       "Bash(git commit:*)",
       "Bash(grep:*)",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "Bash(npm install)",
+      "Bash(npm link:*)",
+      "Bash(assistente-pessoal:*)",
+      "Bash(node:*)",
+      "Bash(git rm:*)"
     ],
     "deny": [],
     "ask": []
