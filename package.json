@@ -34,6 +34,7 @@
     "README.md",
     "QUICK-START.md",
     "CONTRIBUTING-AGENTS.md",
+    "CHANGELOG.md",
     "LICENSE"
   ],
   "scripts": {
