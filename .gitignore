@@ -1,9 +1,15 @@
+# Node
+node_modules/
+package-lock.json
+
 # Logs
 *.log
 
 # Temporary files
 .tmp/
 temp/
+test-install-output/
+test-install.js
 
 # OS generated files
 .DS_Store
