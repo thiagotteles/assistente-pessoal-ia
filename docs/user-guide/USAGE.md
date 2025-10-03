@@ -1,7 +1,53 @@
 # Manual do Usuário - Assistente Pessoal IA
 
 **Versão**: 1.0
-**Data**: 2025-09-26
+**Atualizado**: 2025-10-02
+
+---
+
+## 🚀 Instalação
+
+### Via NPM (Recomendado)
+
+```bash
+npx assistente-pessoal install
+```
+
+O instalador interativo vai:
+1. Perguntar onde instalar (padrão: `~/assistente-ia`)
+2. Deixar você escolher quais agentes instalar
+3. Configurar tudo automaticamente
+
+**Leia**: [Quick Start (5min)](../../QUICK-START.md) para começar imediatamente.
+
+---
+
+### Gerenciamento de Agentes
+
+**Listar instalados**:
+```bash
+assistente-pessoal list
+```
+
+**Ver disponíveis**:
+```bash
+assistente-pessoal available
+```
+
+**Adicionar agente**:
+```bash
+assistente-pessoal add arquiteto
+```
+
+**Remover agente**:
+```bash
+assistente-pessoal remove mentor
+```
+
+**Ver detalhes**:
+```bash
+assistente-pessoal info psicologo
+```
 
 ---
 

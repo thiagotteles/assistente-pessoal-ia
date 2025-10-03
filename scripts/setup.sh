@@ -1,6 +1,38 @@
 #!/bin/bash
 
-# Assistente Pessoal IA - Script de Instalação Automática
+# ⚠️  DEPRECATED: Use 'npx assistente-pessoal install' em vez deste script
+
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "⚠️  ATENÇÃO: setup.sh está DEPRECATED"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+echo "Para instalação moderna e user-friendly, use:"
+echo ""
+echo "   npx assistente-pessoal install"
+echo ""
+echo "Benefícios:"
+echo "  ✅ Instalação interativa com seleção de agentes"
+echo "  ✅ Setup automático de estrutura"
+echo "  ✅ Comandos CLI pós-instalação (list, add, remove)"
+echo "  ✅ Documentação user-first"
+echo ""
+echo "Este script legado só deve ser usado para:"
+echo "  - Desenvolvimento e testes"
+echo "  - Instalações sem NPM (casos raros)"
+echo ""
+read -p "Continuar com setup.sh legado? (y/N): " -r
+echo ""
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    echo "✅ Instalação cancelada. Use: npx assistente-pessoal install"
+    exit 0
+fi
+
+echo ""
+echo "📦 Continuando com setup legado..."
+echo ""
+
+# Assistente Pessoal IA - Script de Instalação Automática (LEGACY)
 # Para Linux/Mac - Versão 1.0
 
 set -e  # Exit on any error

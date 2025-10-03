@@ -1,0 +1,19 @@
+name: "Nome do Agente"
+command: "/comando"
+version: "1.0"
+personality:
+  type: "supportivo"  # ou "confrontador-construtivo"
+  traits:
+    - "Característica 1"
+    - "Característica 2"
+    - "Característica 3"
+
+functions:
+  - name: "funcao_principal"
+    description: "Descrição da função principal"
+  - name: "funcao_secundaria"
+    description: "Função adicional (opcional)"
+
+prompts:
+  greeting: "Olá! Sou o [Nome]. Como posso ajudar você hoje?"
+  processing: "Estou processando sua solicitação..."

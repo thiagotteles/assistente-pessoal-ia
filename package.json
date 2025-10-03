@@ -30,8 +30,10 @@
     "bin/",
     "src/",
     "templates/",
-    ".assistant-core/",
+    "docs/user-guide/",
     "README.md",
+    "QUICK-START.md",
+    "CONTRIBUTING-AGENTS.md",
     "LICENSE"
   ],
   "scripts": {

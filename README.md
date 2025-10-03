@@ -1,8 +1,14 @@
 # 🤖 Assistente Pessoal IA
 
+[![npm version](https://img.shields.io/npm/v/assistente-pessoal-ia?style=flat-square)](https://www.npmjs.com/package/assistente-pessoal-ia)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+[![Node](https://img.shields.io/node/v/assistente-pessoal-ia?style=flat-square)](package.json)
+
 **Seu segundo cérebro para TDAH**
 
 Pare de perder pensamentos importantes. O Assistente Pessoal IA captura tudo que vem à sua mente e organiza automaticamente - sem esforço, sem fricção.
+
+📚 **[Quick Start (5min)](QUICK-START.md)** | 📖 **[Manual Completo](docs/user-guide/USAGE.md)** | 🤝 **[Contribuir](CONTRIBUTING-AGENTS.md)**
 
 ---
 

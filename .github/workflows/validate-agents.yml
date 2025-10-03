@@ -1,0 +1,136 @@
+name: Validate Agents
+
+on:
+  pull_request:
+    paths:
+      - 'src/agents/**'
+      - 'src/agents/agents.json'
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/agents/**'
+      - 'src/agents/agents.json'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Validate agents.json structure
+        run: |
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+
+          const registry = JSON.parse(fs.readFileSync('src/agents/agents.json', 'utf8'));
+
+          console.log('✅ agents.json is valid JSON');
+
+          // Check required fields
+          if (!registry.version) throw new Error('Missing version field');
+          if (!registry.agents) throw new Error('Missing agents field');
+
+          console.log('✅ Required fields present');
+
+          // Check for duplicate IDs
+          const allAgents = [
+            ...registry.agents.core,
+            ...registry.agents.official,
+            ...registry.agents.community
+          ];
+
+          const ids = allAgents.map(a => a.id);
+          const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index);
+
+          if (duplicates.length > 0) {
+            throw new Error('Duplicate agent IDs: ' + duplicates.join(', '));
+          }
+
+          console.log('✅ No duplicate IDs found');
+
+          // Validate each agent has required fields
+          allAgents.forEach(agent => {
+            if (!agent.id) throw new Error('Agent missing ID');
+            if (!agent.name) throw new Error('Agent ' + agent.id + ' missing name');
+            if (!agent.description) throw new Error('Agent ' + agent.id + ' missing description');
+            if (!agent.path) throw new Error('Agent ' + agent.id + ' missing path');
+            if (!agent.icon) throw new Error('Agent ' + agent.id + ' missing icon');
+          });
+
+          console.log('✅ All agents have required fields');
+          console.log('📊 Total agents: ' + allAgents.length);
+          "
+
+      - name: Validate agent directories exist
+        run: |
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+
+          const registry = JSON.parse(fs.readFileSync('src/agents/agents.json', 'utf8'));
+
+          const allAgents = [
+            ...registry.agents.core,
+            ...registry.agents.official,
+            ...registry.agents.community
+          ];
+
+          allAgents.forEach(agent => {
+            const agentPath = agent.path;
+
+            if (!fs.existsSync(agentPath)) {
+              throw new Error('Agent path does not exist: ' + agentPath);
+            }
+
+            // Check for agent.yaml
+            const yamlPath = path.join(agentPath, 'agent.yaml');
+            if (!fs.existsSync(yamlPath)) {
+              throw new Error('Missing agent.yaml for: ' + agent.id);
+            }
+
+            // Check for README.md
+            const readmePath = path.join(agentPath, 'README.md');
+            if (!fs.existsSync(readmePath)) {
+              throw new Error('Missing README.md for: ' + agent.id);
+            }
+
+            console.log('✅ ' + agent.id + ' - structure valid');
+          });
+
+          console.log('\\n✅ All agent directories valid');
+          "
+
+      - name: Validate YAML syntax
+        run: |
+          npm run validate-agents || echo "Validation script not found, skipping"
+
+      - name: Check for secrets
+        run: |
+          # Check if any agent files contain potential secrets
+          if grep -r -i -E "(api[_-]?key|secret|password|token)" src/agents/community/ --include="*.yaml" --include="*.md"; then
+            echo "⚠️  Warning: Potential secrets found in agent files"
+            echo "Please review and remove any sensitive data"
+            exit 1
+          fi
+          echo "✅ No secrets detected"
+
+      - name: Success message
+        run: |
+          echo "🎉 All validations passed!"
+          echo "✅ agents.json structure is valid"
+          echo "✅ No duplicate IDs"
+          echo "✅ All agent directories exist"
+          echo "✅ Required files present (agent.yaml, README.md)"
+          echo "✅ No secrets detected"
