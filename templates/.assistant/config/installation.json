@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "installedAt": "{{TIMESTAMP}}",
+  "installedBy": "{{USERNAME}}",
+  "installPath": "{{INSTALL_PATH}}",
+  "selectedAgents": [],
+  "gitInitialized": false,
+  "obsidianConfigured": false
+}
