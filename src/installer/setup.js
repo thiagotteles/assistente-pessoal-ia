@@ -4,6 +4,7 @@ const chalk = require('chalk');
 const ora = require('ora');
 const { execSync } = require('child_process');
 const agentRegistry = require('../utils/agent-registry');
+const CursorCommandGenerator = require('./cursor-command-generator');
 
 /**
  * Installation Setup
@@ -124,16 +125,27 @@ class AssistenteSetup {
   }
 
   /**
-   * Install selected agents
+   * Install selected agents for chosen IDEs
    */
   async installSelectedAgents() {
-    const spinner = ora('Instalando agentes selecionados...').start();
+    const { installClaudeCode, installCursor } = this.preferences;
+
+    if (installClaudeCode) {
+      await this.installForClaudeCode();
+    }
+
+    if (installCursor) {
+      await this.installForCursor();
+    }
+  }
+
+  /**
+   * Install agents for Claude Code
+   */
+  async installForClaudeCode() {
+    const spinner = ora('Instalando para Claude Code...').start();
 
     try {
-      // Estrutura correta BMAD/Claude Code:
-      // .claude/commands/assistentes/agents/{agentId}.md
-      // .claude/commands/assistentes/tasks/{task}.md
-
       const agentsDir = path.join(this.installPath, '.claude', 'commands', 'assistentes', 'agents');
       const tasksDir = path.join(this.installPath, '.claude', 'commands', 'assistentes', 'tasks');
 
@@ -143,45 +155,79 @@ class AssistenteSetup {
       // Copiar agentes selecionados
       for (const agentId of this.selectedAgents) {
         const agent = agentRegistry.getAgent(agentId);
+        if (!agent) continue;
 
-        if (!agent) {
-          spinner.warn(`Agente ${agentId} não encontrado no registry`);
-          continue;
-        }
+        const source = path.join(__dirname, '../../.assistant-core/agents', `${agentId}.md`);
+        const target = path.join(agentsDir, `${agentId}.md`);
 
-        // Copiar arquivo .md do agente
-        const agentMdSource = path.join(__dirname, '../../.assistant-core/agents', `${agentId}.md`);
-        const agentMdTarget = path.join(agentsDir, `${agentId}.md`);
-
-        if (await fs.pathExists(agentMdSource)) {
-          await fs.copy(agentMdSource, agentMdTarget, { overwrite: true });
-          spinner.text = `Instalando agentes... ✓ ${agent.name}`;
-        } else {
-          spinner.warn(`Arquivo ${agentId}.md não encontrado`);
-          continue;
+        if (await fs.pathExists(source)) {
+          await fs.copy(source, target, { overwrite: true });
         }
       }
 
-      // Copiar TODAS as tasks (compartilhadas entre agentes)
-      const tasksSourceDir = path.join(__dirname, '../../.assistant-core/tasks');
-
-      if (await fs.pathExists(tasksSourceDir)) {
-        const allTasks = await fs.readdir(tasksSourceDir);
-
-        for (const taskFile of allTasks) {
-          if (taskFile.endsWith('.md')) {
+      // Copiar todas as tasks
+      const tasksSource = path.join(__dirname, '../../.assistant-core/tasks');
+      if (await fs.pathExists(tasksSource)) {
+        const tasks = await fs.readdir(tasksSource);
+        for (const task of tasks) {
+          if (task.endsWith('.md')) {
             await fs.copy(
-              path.join(tasksSourceDir, taskFile),
-              path.join(tasksDir, taskFile),
+              path.join(tasksSource, task),
+              path.join(tasksDir, task),
               { overwrite: true }
             );
           }
         }
       }
 
-      spinner.succeed(`Agentes instalados (${this.selectedAgents.length})`);
+      spinner.succeed(`Claude Code: ${this.selectedAgents.length} agentes instalados`);
     } catch (error) {
-      spinner.fail('Erro ao instalar agentes');
+      spinner.fail('Erro ao instalar para Claude Code');
+      throw error;
+    }
+  }
+
+  /**
+   * Install agents for Cursor IDE
+   */
+  async installForCursor() {
+    const spinner = ora('Instalando para Cursor...').start();
+
+    try {
+      const commandsDir = path.join(this.installPath, '.cursor', 'commands');
+      const rulesDir = path.join(this.installPath, '.cursor', 'rules');
+
+      await fs.ensureDir(commandsDir);
+      await fs.ensureDir(rulesDir);
+
+      // Gerar comandos usando o generator
+      const generator = new CursorCommandGenerator();
+      await generator.loadTemplates();
+
+      let totalCommands = 0;
+      for (const agentId of this.selectedAgents) {
+        const commands = await generator.generateAgentCommands(agentId);
+
+        for (const cmd of commands) {
+          const targetPath = path.join(commandsDir, cmd.filename);
+          await fs.writeFile(targetPath, cmd.content);
+          totalCommands++;
+        }
+
+        spinner.text = `Cursor: ${agentId} instalado`;
+      }
+
+      // Copiar regras globais
+      const rulesTemplate = path.join(__dirname, '../../templates/cursor-rules-assistente-core.md');
+      const rulesTarget = path.join(rulesDir, 'assistente-core.md');
+
+      if (await fs.pathExists(rulesTemplate)) {
+        await fs.copy(rulesTemplate, rulesTarget, { overwrite: true });
+      }
+
+      spinner.succeed(`Cursor: ${totalCommands} comandos instalados`);
+    } catch (error) {
+      spinner.fail('Erro ao instalar para Cursor');
       throw error;
     }
   }
@@ -437,8 +483,17 @@ Versão: 1.0.0
 
     console.log(chalk.white.bold('\n🚀 Próximos passos:\n'));
     console.log(chalk.white(`   1. ${chalk.cyan(`cd ${this.installPath}`)}`));
-    console.log(chalk.white(`   2. Abra no Claude Code`));
-    console.log(chalk.white(`   3. Execute: ${chalk.cyan('/organizador')}\n`));
+
+    if (this.preferences.installClaudeCode && this.preferences.installCursor) {
+      console.log(chalk.white(`   2. Abra no Claude Code ou Cursor`));
+      console.log(chalk.white(`   3. Execute: ${chalk.cyan('/organizador')} (ou comandos específicos no Cursor)\n`));
+    } else if (this.preferences.installCursor) {
+      console.log(chalk.white(`   2. Abra no Cursor`));
+      console.log(chalk.white(`   3. Digite ${chalk.cyan('/')} para ver comandos disponíveis\n`));
+    } else {
+      console.log(chalk.white(`   2. Abra no Claude Code`));
+      console.log(chalk.white(`   3. Execute: ${chalk.cyan('/organizador')}\n`));
+    }
 
     console.log(chalk.white.bold('💡 Adicionar mais agentes depois:\n'));
     console.log(chalk.white(`   ${chalk.cyan('npx assistente-pessoal add <agente>')}\n`));
