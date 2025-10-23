@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.5] - 2025-10-23
+
+### Added
+- **SUPORTE AO CURSOR IDE**: Agora funciona em Claude Code E Cursor!
+  - Detecção automática de IDEs instalados
+  - Instalação seletiva: Claude Code, Cursor, ou ambos
+  - Geração automática de 20 comandos Cursor (5 agentes x 4 comandos)
+  - Estrutura `.cursor/commands/` com comandos flat
+  - Regras globais em `.cursor/rules/assistente-core.md`
+
+### Changed
+- Instalador pergunta qual IDE instalar (checkbox)
+- Mensagem de sucesso customizada por IDE
+- Templates Handlebars para geração de comandos
+- Epic 6 completo (Stories 6.1 e 6.2)
+
+### Technical
+- Classe `IDEDetector`: Detecta Claude Code e Cursor
+- Classe `CursorCommandGenerator`: Gera comandos automaticamente
+- `installForClaudeCode()`: Estrutura hierárquica (mantida)
+- `installForCursor()`: Estrutura flat (nova)
+- Dependência: `handlebars@^4.7.8`
+
+### Compatibility
+- ✅ Claude Code: `.claude/commands/assistentes/` (v1.0.4 mantido)
+- ✅ Cursor: `.cursor/commands/` (novo)
+- ✅ Ambos: Instalação simultânea funcional
+- ✅ Backward compatible com v1.0.4
+
 ## [1.0.4] - 2025-10-03
 
 ### Fixed
