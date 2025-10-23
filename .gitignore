@@ -8,8 +8,13 @@ package-lock.json
 # Temporary files
 .tmp/
 temp/
+
+# Test files and directories
+test-*.js
+!test-basic.sh
+test-*/
 test-install-output/
-test-install.js
+test-cursor-output/
 
 # OS generated files
 .DS_Store
